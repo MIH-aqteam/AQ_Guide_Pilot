@@ -1,0 +1,160 @@
+/* Wider content area */
+.wy-nav-content {
+    max-width: 1200px !important;
+}
+
+/* More compact text */
+.rst-content {
+    font-size: 14px;
+    line-height: 1.25;
+}
+
+/* More compact paragraphs and lists */
+.rst-content p {
+    margin-bottom: 8px;
+}
+
+.rst-content ul,
+.rst-content ol {
+    margin-bottom: 8px;
+}
+
+.rst-content li {
+    margin-bottom: 3px;
+}
+
+/* More compact tables */
+.rst-content table.docutils td,
+.rst-content table.docutils th {
+    padding: 4px 6px;
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: normal !important;
+}
+
+/* ============================= */
+/* Bordeaux theme                */
+/* ============================= */
+
+/* Top banner */
+.wy-side-nav-search,
+.wy-nav-top {
+    background: #7A2832 !important;
+}
+
+/* Left navigation panel */
+.wy-nav-side {
+    background: #F5F3F2 !important;
+}
+
+/* Navigation links */
+.wy-menu-vertical a {
+    color: #4A4A4A !important;
+}
+
+.wy-menu-vertical a:hover {
+    background: #E8E3E1 !important;
+    color: #7A2832 !important;
+}
+
+/* Current page */
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on > a {
+    background: #FFFFFF !important;
+    color: #7A2832 !important;
+    border-left: 4px solid #7A2832 !important;
+}
+
+/* Level 2 headings (##) */
+.rst-content h2 {
+    border-bottom: 2px solid #7A2832;
+    padding-bottom: 4px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+/* Level 3 headings (###) */
+.rst-content h3 {
+    font-weight: 700;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    background: #FAF7F6;
+    padding: 4px 8px;
+    border-left: 4px solid #7A2832;
+}
+
+/* Links in content */
+.rst-content a {
+    color: #7A2832;
+}
+
+/* Tables */
+.rst-content table.docutils th {
+    background: #F2ECEB;
+}
+
+/* Contents title */
+.rst-content p.topic-title {
+    color: #7A2832 !important;
+    font-weight: 700;
+}
+
+/* Project title in sidebar */
+.wy-side-nav-search > a {
+    color: #FFFFFF !important;
+    font-weight: 600;
+}
+
+/* Search box */
+.wy-side-nav-search input[type=text] {
+    border: 1px solid #D8C5C8;
+}
+
+.wy-menu-vertical p.caption {
+    display: none !important;
+}
+
+/* Modern font */
+body,
+.wy-nav-content,
+.wy-menu-vertical {
+    font-family: Inter, "Segoe UI", Aptos, Arial, sans-serif;
+}
+
+/* Remove home icon but keep title */
+.wy-side-nav-search > a.icon-home::before {
+    display: none !important;
+}
+
+/* Keep project title visible */
+.wy-side-nav-search > a.icon-home {
+    display: block;
+    color: #FFFFFF !important;
+    font-weight: 600;
+    font-size: 18px;
+    padding-top: 90px;
+    position: relative;
+}
+
+/* Add EEA logo above title */
+.wy-side-nav-search > a.icon-home::after {
+    content: "";
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 150px;
+    height: 88px;
+    background-image: url("eea_logo_compact_en-1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.toctree-wrapper a {
+    font-weight: 500;
+}
+
+.toctree-wrapper > ul > li > a {
+    font-size: 1.15em;
+}

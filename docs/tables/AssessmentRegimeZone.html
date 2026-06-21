@@ -1,0 +1,694 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AssessmentRegimeZone &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ZoneGeometry" href="ZoneGeometry.html" />
+    <link rel="prev" title="MOEResultExternal" href="MOEResultExternal.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AssessmentRegimeZone</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#arz-01-countrycode">ARZ_01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-02-assessmentregimeid">ARZ_02 – AssessmentRegimeId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-03-zoneid">ARZ_03 – ZoneId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-04-zonenationalcode">ARZ_04 – ZoneNationalCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-05-zonearea">ARZ_05 – ZoneArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-06-zonecategory">ARZ_06 – ZoneCategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-07-zonetype">ARZ_07 – ZoneType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-08-zonename">ARZ_08 – ZoneName</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-09-pollutantid">ARZ_09 – PollutantId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-10-protectiontarget">ARZ_10 – ProtectionTarget</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-11-objectivetype">ARZ_11 – ObjectiveType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-12-reportingmetric">ARZ_12 – ReportingMetric</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-13-assessmentthresholdexceedance">ARZ_13 – AssessmentThresholdExceedance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-14-postponementyear">ARZ_14 – PostponementYear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-15-fixedmeasurementreduction">ARZ_15 – FixedMeasurementReduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-16-zoneresidentpopulationyear">ARZ_16 – ZoneResidentPopulationYear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-17-zoneresidentpopulation">ARZ_17 – ZoneResidentPopulation</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-18-classificationyear">ARZ_18 – ClassificationYear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#arz-19-classificationdocumentid">ARZ_19 – ClassificationDocumentId</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">AssessmentRegimeZone</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/AssessmentRegimeZone.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="assessmentregimezone">
+<h1>AssessmentRegimeZone<a class="headerlink" href="#assessmentregimezone" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p></li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id3">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id5">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#arz-01-countrycode" id="id6">ARZ_01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#arz-02-assessmentregimeid" id="id7">ARZ_02 – AssessmentRegimeId</a></p></li>
+<li><p><a class="reference internal" href="#arz-03-zoneid" id="id8">ARZ_03 – ZoneId</a></p></li>
+<li><p><a class="reference internal" href="#arz-04-zonenationalcode" id="id9">ARZ_04 – ZoneNationalCode</a></p></li>
+<li><p><a class="reference internal" href="#arz-05-zonearea" id="id10">ARZ_05 – ZoneArea</a></p></li>
+<li><p><a class="reference internal" href="#arz-06-zonecategory" id="id11">ARZ_06 – ZoneCategory</a></p></li>
+<li><p><a class="reference internal" href="#arz-07-zonetype" id="id12">ARZ_07 – ZoneType</a></p></li>
+<li><p><a class="reference internal" href="#arz-08-zonename" id="id13">ARZ_08 – ZoneName</a></p></li>
+<li><p><a class="reference internal" href="#arz-09-pollutantid" id="id14">ARZ_09 – PollutantId</a></p></li>
+<li><p><a class="reference internal" href="#arz-10-protectiontarget" id="id15">ARZ_10 – ProtectionTarget</a></p></li>
+<li><p><a class="reference internal" href="#arz-11-objectivetype" id="id16">ARZ_11 – ObjectiveType</a></p></li>
+<li><p><a class="reference internal" href="#arz-12-reportingmetric" id="id17">ARZ_12 – ReportingMetric</a></p></li>
+<li><p><a class="reference internal" href="#arz-13-assessmentthresholdexceedance" id="id18">ARZ_13 – AssessmentThresholdExceedance</a></p></li>
+<li><p><a class="reference internal" href="#arz-14-postponementyear" id="id19">ARZ_14 – PostponementYear</a></p></li>
+<li><p><a class="reference internal" href="#arz-15-fixedmeasurementreduction" id="id20">ARZ_15 – FixedMeasurementReduction</a></p></li>
+<li><p><a class="reference internal" href="#arz-16-zoneresidentpopulationyear" id="id21">ARZ_16 – ZoneResidentPopulationYear</a></p></li>
+<li><p><a class="reference internal" href="#arz-17-zoneresidentpopulation" id="id22">ARZ_17 – ZoneResidentPopulation</a></p></li>
+<li><p><a class="reference internal" href="#arz-18-classificationyear" id="id23">ARZ_18 – ClassificationYear</a></p></li>
+<li><p><a class="reference internal" href="#arz-19-classificationdocumentid" id="id24">ARZ_19 – ClassificationDocumentId</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id25">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the AssessmentRegimeZone table is to collect information about air quality zones and related assessment regimes. It specifies zone details such as (geographical) name, area, code, category, type, population as well as zone level parameters of assessment regimes such as objective, target, pollutant, reporting metric, assessment threshold and characteristics of exemptions (postponement, SPO reduction).</p>
+<p>AssessmentRegimeZone table has to be reported at least every 5 years or whenever a new information or an update of existing information is available.
+Attributes which create unique identifier of each record: CountryCode and AssessmentRegimeId.</p>
+<p>Updates of the AssessmentRegimeZone table will not be time stamped, i.e. each update generates the only version of the assessment regimes that is stored at the EEA:</p>
+<ul class="simple">
+<li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.
+Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against aggregation code list, existing records in Zone table, etc.</p></li>
+</ul>
+<p>Valid modifications of existing record in this table are:</p>
+<ul class="simple">
+<li><p>correction of PostponementYear or FixedMeasurementReduction or AssessmentThresholdExceedance,</p></li>
+<li><p>minor corrections e.g. of ZoneName or ZoneNationalCode, ZoneResidentPopulation and ZoneResidentPopulationYear.
+Validity of the modifications of existing record will be tested using QC (rules to be established).
+Allowed modifications may affect outcomes of compliance analysis and/or assessments, therefore re-submissions for past years, for which compliance reporting has been already done, will require additional tests vs reference/legacy data before official release of such data is granted.</p></li>
+</ul>
+<p>Data products for public will present the records validated at the latest deadline.
+Data products for reporters will present the records as reported recently, highlighting the differences between validated reports and recent reports in case of re-submissions.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>AssessmentRegimeZone table will be extended by EEA by several attributes in the reference data flow:</p>
+<ul class="simple">
+<li><p>Country (for convenience), based on ISO2 country codes,</p></li>
+<li><p>Pollutant (for convenience), based on code list,</p></li>
+<li><p>DataAggregationProcess, based on DataAggregationProcessId,</p></li>
+<li><p>ReportingYear, based on the corresponding records in ComplianceAssessmentMethod,</p></li>
+<li><p>Required number of sampling points, based on the recasted Air Quality Directive 2024/2881,</p></li>
+<li><p>Reported number of sampling points and modelling applications, based on data reported in ComplianceAssessmentMethod table,</p></li>
+<li><p>SR areas coverage,</p></li>
+<li><p>Modelling results coverage,</p></li>
+<li><p>Assessment regime zone exceedance status,</p></li>
+<li><p>Exceedance extent coverage,</p></li>
+<li><p>Reported number of measures.</p></li>
+</ul>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>It is recommended to report the AssessmentRegimeZone table only when a new classification is available (at least every 5 years).</p>
+<p>If a NUTS region is used - the ZoneCategory should be reported as <code class="docutils literal notranslate"><span class="pre">nuts</span></code> and NUTS region id should be provided as ZoneId, geometry does not need to be reported.
+If a combination of NUTS regions is used, the area should be reported in the same way as a zone, i.e. ZoneCategory should be reported as <code class="docutils literal notranslate"><span class="pre">aqzone</span></code>, ZoneId should be assigned (following the rule for ZoneIds) and the zone geometry must be provided.</p>
+<p>In case of reporting territorial units for AEI, the NUTS regions or combination of NUTS region may be used.</p>
+<p>The new environmental objectives should be reported from the beginning of the new reporting in ReportNet3, to cover the needs for roadmaps.</p>
+<p>Records in AssessmentRegimeZone table which do not have any correspondence to records in ComplianceAssessmentMethods table will be flagged for deletion in the reference data flow.</p>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARZ_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">countries</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_02</p></td>
+<td><p>AssessmentRegimeId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ComplianceAssessmentMethod.html"><span class="std std-doc">ComplianceAssessmentMethod</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_03</p></td>
+<td><p>ZoneId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ZoneGeometry.html"><span class="std std-doc">ZoneGeometry</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_04</p></td>
+<td><p>ZoneNationalCode</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_05</p></td>
+<td><p>ZoneArea</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_06</p></td>
+<td><p>ZoneCategory</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/zonecategory/view">zonecategory</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_07</p></td>
+<td><p>ZoneType</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/zonetype/view">zonetype</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_08</p></td>
+<td><p>ZoneName</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_09</p></td>
+<td><p>PollutantId</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view">pollutant</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_10</p></td>
+<td><p>ProtectionTarget</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/protectiontarget/view">protectiontarget</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_11</p></td>
+<td><p>ObjectiveType</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/objectivetype/view">objectivetype</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_12</p></td>
+<td><p>ReportingMetric</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/reportingmetric/view">reportingmetric</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_13</p></td>
+<td><p>AssessmentThresholdExceedance</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/assessmentthresholdexceedance/view">assessmentthresholdexceedance</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_14</p></td>
+<td><p>PostponementYear</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_15</p></td>
+<td><p>FixedMeasurementReduction</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_16</p></td>
+<td><p>ZoneResidentPopulationYear</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_17</p></td>
+<td><p>ZoneResidentPopulation</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_18</p></td>
+<td><p>ClassificationYear</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_19</p></td>
+<td><p>ClassificationDocumentId</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="Documentation.html"><span class="std std-doc">Documentation</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="arz-01-countrycode">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">ARZ_01 – CountryCode</a><a class="headerlink" href="#arz-01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="arz-02-assessmentregimeid">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">ARZ_02 – AssessmentRegimeId</a><a class="headerlink" href="#arz-02-assessmentregimeid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality assessment regime, given by data provider.</p>
+</section>
+<section id="arz-03-zoneid">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">ARZ_03 – ZoneId</a><a class="headerlink" href="#arz-03-zoneid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality zone, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>It will be cross-checked against the ZoneGeometry table.</p>
+</section>
+<section id="arz-04-zonenationalcode">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">ARZ_04 – ZoneNationalCode</a><a class="headerlink" href="#arz-04-zonenationalcode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Unique identifier of the air quality zone, given by data provider.</p>
+</section>
+<section id="arz-05-zonearea">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">ARZ_05 – ZoneArea</a><a class="headerlink" href="#arz-05-zonearea" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Total area of the air quality zone.</p>
+</section>
+<section id="arz-06-zonecategory">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">ARZ_06 – ZoneCategory</a><a class="headerlink" href="#arz-06-zonecategory" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Category of the air quality zone (aq zone or nuts) - new code list.</p>
+</section>
+<section id="arz-07-zonetype">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">ARZ_07 – ZoneType</a><a class="headerlink" href="#arz-07-zonetype" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Type of air quality zone (e.g., agglomeration and non-agglomeration).</p>
+</section>
+<section id="arz-08-zonename">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">ARZ_08 – ZoneName</a><a class="headerlink" href="#arz-08-zonename" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Geographical name of the air quality zone.</p>
+</section>
+<section id="arz-09-pollutantid">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">ARZ_09 – PollutantId</a><a class="headerlink" href="#arz-09-pollutantid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Code of the air pollutant for which the assessment is being conducted.</p>
+</section>
+<section id="arz-10-protectiontarget">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">ARZ_10 – ProtectionTarget</a><a class="headerlink" href="#arz-10-protectiontarget" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Protection target for air quality (e.g., human health, vegetation).</p>
+</section>
+<section id="arz-11-objectivetype">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">ARZ_11 – ObjectiveType</a><a class="headerlink" href="#arz-11-objectivetype" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Type of environmental objective related to air quality assessment.</p>
+</section>
+<section id="arz-12-reportingmetric">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">ARZ_12 – ReportingMetric</a><a class="headerlink" href="#arz-12-reportingmetric" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Metric corresponding to the standard (objective type).</p>
+</section>
+<section id="arz-13-assessmentthresholdexceedance">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">ARZ_13 – AssessmentThresholdExceedance</a><a class="headerlink" href="#arz-13-assessmentthresholdexceedance" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Status indicating whether an assessment threshold has been exceeded.</p>
+</section>
+<section id="arz-14-postponementyear">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">ARZ_14 – PostponementYear</a><a class="headerlink" href="#arz-14-postponementyear" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Year of postponement applied to the air quality zone, pollutant, target, objective and metric/aggregation.</p>
+<p><strong>Remarks</strong></p>
+<p>PostponementYear relates to the postponement of attainment deadline and exemption from the obligation to apply certain limit values foreseen in the recasted Air Quality Directive 2024/2881 art. 18.
+Leaving this attribute blank will mean that no postponement does apply.</p>
+</section>
+<section id="arz-15-fixedmeasurementreduction">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">ARZ_15 – FixedMeasurementReduction</a><a class="headerlink" href="#arz-15-fixedmeasurementreduction" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Use of indicative measurements and/or modelling to reduce fixed measurement network.</p>
+<p><strong>Remarks</strong></p>
+<p>Y/N.</p>
+<p>FixedSPOReduction relates to the reduction of the number of sampling points for fixed measurements, which may be reduced by up to 50% under certain conditions as foreseen in the recasted Air Quality Directive 2024/2881 art. 9 §3.</p>
+</section>
+<section id="arz-16-zoneresidentpopulationyear">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">ARZ_16 – ZoneResidentPopulationYear</a><a class="headerlink" href="#arz-16-zoneresidentpopulationyear" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Reference year for the resident population data in the zone.</p>
+</section>
+<section id="arz-17-zoneresidentpopulation">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">ARZ_17 – ZoneResidentPopulation</a><a class="headerlink" href="#arz-17-zoneresidentpopulation" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Number of people residing within the air quality zone.</p>
+</section>
+<section id="arz-18-classificationyear">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">ARZ_18 – ClassificationYear</a><a class="headerlink" href="#arz-18-classificationyear" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>The year of the last classification of the pollution level in the zone.</p>
+</section>
+<section id="arz-19-classificationdocumentid">
+<h3><a class="toc-backref" href="#id24" role="doc-backlink">ARZ_19 – ClassificationDocumentId</a><a class="headerlink" href="#arz-19-classificationdocumentid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the report detailing the classification procedure given by data provider.</p>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id25" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARZ_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_02</p></td>
+<td><p>AssessmentRegimeId</p></td>
+<td><p>ARE_ZON_DU000A_0005_LV_H_aMean_2021_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_03</p></td>
+<td><p>ZoneId</p></td>
+<td><p>ZON_DU000A</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_04</p></td>
+<td><p>ZoneNationalCode</p></td>
+<td><p>DU000A</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_05</p></td>
+<td><p>ZoneArea</p></td>
+<td><p>442.31</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_06</p></td>
+<td><p>ZoneCategory</p></td>
+<td><p>zone</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_07</p></td>
+<td><p>ZoneType</p></td>
+<td><p>agg</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_08</p></td>
+<td><p>ZoneName</p></td>
+<td><p>EcoDome Heights</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_09</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_10</p></td>
+<td><p>ProtectionTarget</p></td>
+<td><p>H</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_11</p></td>
+<td><p>ObjectiveType</p></td>
+<td><p>LV</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_12</p></td>
+<td><p>ReportingMetric</p></td>
+<td><p>aMean</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_13</p></td>
+<td><p>AssessmentThresholdExceedance</p></td>
+<td><p>aboveUAT</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_14</p></td>
+<td><p>PostponementYear</p></td>
+<td><p>null</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_15</p></td>
+<td><p>FixedMeasurementReduction</p></td>
+<td><p>N</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_16</p></td>
+<td><p>ZoneResidentPopulationYear</p></td>
+<td><p>2020</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_17</p></td>
+<td><p>ZoneResidentPopulation</p></td>
+<td><p>599159</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_18</p></td>
+<td><p>ClassificationYear</p></td>
+<td><p>2021</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_19</p></td>
+<td><p>ClassificationDocumentId</p></td>
+<td><p>DOC_ARE_ZON_DU_2021</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">AssessmentRegimeZone</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MOEResultExternal.html" class="btn btn-neutral float-left" title="MOEResultExternal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ZoneGeometry.html" class="btn btn-neutral float-right" title="ZoneGeometry" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

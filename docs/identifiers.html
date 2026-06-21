@@ -1,0 +1,455 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identifiers &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=44fe6501" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Tables" href="tables/index.html" />
+    <link rel="prev" title="Data model diagram" href="diagram.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagram.html">Data model diagram</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Identifiers</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#identifier-categories">Identifier categories</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#fully-mandatory-identifier-formats">Fully mandatory identifier formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#partially-mandatory-identifier-formats">Partially mandatory identifier formats</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#free-format-identifiers">Free-format identifiers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#separators">Separators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assessmentregimeid">AssessmentRegimeId</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#samplingpointreferenceid">SamplingPointReferenceId</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attainmentid">AttainmentId</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#scenarioid">ScenarioId</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#assessmentmethodid-for-models-and-obe">AssessmentMethodId for models and OBE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#planid">PlanId</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="tables/index.html">Tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Identifiers</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/identifiers.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="identifiers">
+<h1>Identifiers<a class="headerlink" href="#identifiers" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#identifier-categories" id="id2">Identifier categories</a></p>
+<ul>
+<li><p><a class="reference internal" href="#fully-mandatory-identifier-formats" id="id3">Fully mandatory identifier formats</a></p></li>
+<li><p><a class="reference internal" href="#partially-mandatory-identifier-formats" id="id4">Partially mandatory identifier formats</a></p></li>
+<li><p><a class="reference internal" href="#free-format-identifiers" id="id5">Free-format identifiers</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#separators" id="id6">Separators</a></p></li>
+<li><p><a class="reference internal" href="#assessmentregimeid" id="id7">AssessmentRegimeId</a></p></li>
+<li><p><a class="reference internal" href="#samplingpointreferenceid" id="id8">SamplingPointReferenceId</a></p></li>
+<li><p><a class="reference internal" href="#attainmentid" id="id9">AttainmentId</a></p></li>
+<li><p><a class="reference internal" href="#scenarioid" id="id10">ScenarioId</a></p></li>
+<li><p><a class="reference internal" href="#assessmentmethodid-for-models-and-obe" id="id11">AssessmentMethodId for models and OBE</a></p></li>
+<li><p><a class="reference internal" href="#planid" id="id12">PlanId</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>This section describes the identifier formats used throughout the reporting schema.</p>
+<p>Some identifiers follow a fully mandatory naming convention in order to ensure consistency across reporting authorities and facilitate automatic processing by the EEA. Other identifiers are partially constrained or completely free.</p>
+<p>Unless specified otherwise, identifier values must be unique within the scope of the reporting country.</p>
+</section>
+<section id="identifier-categories">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">Identifier categories</a><a class="headerlink" href="#identifier-categories" title="Link to this heading"></a></h2>
+<section id="fully-mandatory-identifier-formats">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">Fully mandatory identifier formats</a><a class="headerlink" href="#fully-mandatory-identifier-formats" title="Link to this heading"></a></h3>
+<p>The following identifiers must follow the format specified in this guide:</p>
+<ul class="simple">
+<li><p>AssessmentRegimeId</p></li>
+<li><p>SamplingPointReferenceId</p></li>
+<li><p>AttainmentId</p></li>
+<li><p>ScenarioId</p></li>
+</ul>
+</section>
+<section id="partially-mandatory-identifier-formats">
+<h3><a class="toc-backref" href="#id4" role="doc-backlink">Partially mandatory identifier formats</a><a class="headerlink" href="#partially-mandatory-identifier-formats" title="Link to this heading"></a></h3>
+<p>The following identifiers have mandatory prefixes or structural elements, while other parts may be defined by the reporting authority:</p>
+<ul class="simple">
+<li><p>AssessmentMethodId (models and OBE)</p></li>
+<li><p>PlanId</p></li>
+</ul>
+</section>
+<section id="free-format-identifiers">
+<h3><a class="toc-backref" href="#id5" role="doc-backlink">Free-format identifiers</a><a class="headerlink" href="#free-format-identifiers" title="Link to this heading"></a></h3>
+<p>All remaining identifiers may be freely defined by reporting authorities.</p>
+<p>For readability and easier interpretation, it is strongly recommended to use meaningful prefixes indicating the identifier type, for example:</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Prefix</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>NET</p></td>
+<td><p>Network</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOC</p></td>
+<td><p>Document</p></td>
+</tr>
+<tr class="row-even"><td><p>SAP</p></td>
+<td><p>Source Apportionment</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRS</p></td>
+<td><p>Spatial Representativeness</p></td>
+</tr>
+<tr class="row-even"><td><p>EXC</p></td>
+<td><p>Exceedance Extent</p></td>
+</tr>
+<tr class="row-odd"><td><p>PLA</p></td>
+<td><p>Plan</p></td>
+</tr>
+<tr class="row-even"><td><p>SCE</p></td>
+<td><p>Scenario</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOD</p></td>
+<td><p>Model</p></td>
+</tr>
+<tr class="row-even"><td><p>OBE</p></td>
+<td><p>Objective Estimation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="separators">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Separators</a><a class="headerlink" href="#separators" title="Link to this heading"></a></h2>
+<p>For fully mandatory identifiers, the separator must be:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>_
+</pre></div>
+</div>
+<p>For all other identifiers, including partially mandatory identifiers, any separator may be used, for example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>_
+-
+.
+</pre></div>
+</div>
+</section>
+<section id="assessmentregimeid">
+<h2><a class="toc-backref" href="#id7" role="doc-backlink">AssessmentRegimeId</a><a class="headerlink" href="#assessmentregimeid" title="Link to this heading"></a></h2>
+<p><strong>Referenced in:</strong> ARZ_02</p>
+<p>Mandatory format:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ARE_&lt;ZoneId&gt;_&lt;PollutantId&gt;_&lt;ObjectiveType&gt;_&lt;ProtectionTarget&gt;_&lt;ReportingMetric&gt;_&lt;ClassificationYear&gt;_&lt;Index&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ARE_ZON_DU000A_0005_LV_H_aMean_2021_1
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARE</p></td>
+<td><p>Fixed prefix indicating Assessment Regime</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZoneId</p></td>
+<td><p>Air quality zone identifier</p></td>
+</tr>
+<tr class="row-even"><td><p>PollutantId</p></td>
+<td><p>Pollutant code</p></td>
+</tr>
+<tr class="row-odd"><td><p>ObjectiveType</p></td>
+<td><p>Environmental objective type</p></td>
+</tr>
+<tr class="row-even"><td><p>ProtectionTarget</p></td>
+<td><p>Protection target</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReportingMetric</p></td>
+<td><p>Reporting metric</p></td>
+</tr>
+<tr class="row-even"><td><p>ClassificationYear</p></td>
+<td><p>Year of classification</p></td>
+</tr>
+<tr class="row-odd"><td><p>Index</p></td>
+<td><p>Sequential number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="samplingpointreferenceid">
+<h2><a class="toc-backref" href="#id8" role="doc-backlink">SamplingPointReferenceId</a><a class="headerlink" href="#samplingpointreferenceid" title="Link to this heading"></a></h2>
+<p><strong>Referenced in:</strong> SPO_03</p>
+<p>Mandatory format:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SPOref_&lt;StationEoICode&gt;_&lt;PollutantId&gt;_&lt;Index&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SPOref_DU0001_0005_1
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPOref</p></td>
+<td><p>Fixed prefix indicating Sampling Point Reference</p></td>
+</tr>
+<tr class="row-odd"><td><p>StationEoICode</p></td>
+<td><p>Station identifier</p></td>
+</tr>
+<tr class="row-even"><td><p>PollutantId</p></td>
+<td><p>Pollutant code</p></td>
+</tr>
+<tr class="row-odd"><td><p>Index</p></td>
+<td><p>Sequential number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attainmentid">
+<h2><a class="toc-backref" href="#id9" role="doc-backlink">AttainmentId</a><a class="headerlink" href="#attainmentid" title="Link to this heading"></a></h2>
+<p><strong>Referenced in:</strong> CAM_15</p>
+<p>Mandatory format:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ATT_&lt;ZoneId&gt;_&lt;PollutantId&gt;_&lt;ObjectiveType&gt;_&lt;ProtectionTarget&gt;_&lt;ReportingMetric&gt;_&lt;ReportingYear&gt;_&lt;Index&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ATT_ZON_DU000A_00005_LV_H_aMean_2024_1
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ATT</p></td>
+<td><p>Fixed prefix indicating compliance situation</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZoneId</p></td>
+<td><p>Air quality zone identifier</p></td>
+</tr>
+<tr class="row-even"><td><p>PollutantId</p></td>
+<td><p>Pollutant code</p></td>
+</tr>
+<tr class="row-odd"><td><p>ObjectiveType</p></td>
+<td><p>Environmental objective type</p></td>
+</tr>
+<tr class="row-even"><td><p>ProtectionTarget</p></td>
+<td><p>Protection target</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReportingMetric</p></td>
+<td><p>Reporting metric</p></td>
+</tr>
+<tr class="row-even"><td><p>ReportingYear</p></td>
+<td><p>Reporting year</p></td>
+</tr>
+<tr class="row-odd"><td><p>Index</p></td>
+<td><p>Sequential number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="scenarioid">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">ScenarioId</a><a class="headerlink" href="#scenarioid" title="Link to this heading"></a></h2>
+<p><strong>Referenced in:</strong> PSC_03, CPL_04</p>
+<p>Mandatory format:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SCE_&lt;ZoneId&gt;_&lt;PollutantId&gt;_&lt;ObjectiveType&gt;_&lt;ProtectionTarget&gt;_&lt;ReportingMetric&gt;_&lt;Index&gt;
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>SCE_ZON_DU000B_00005_LV_H_daysAbove_1
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SCE</p></td>
+<td><p>Fixed prefix indicating scenario</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZoneId</p></td>
+<td><p>Air quality zone identifier</p></td>
+</tr>
+<tr class="row-even"><td><p>PollutantId</p></td>
+<td><p>Pollutant code</p></td>
+</tr>
+<tr class="row-odd"><td><p>ObjectiveType</p></td>
+<td><p>Environmental objective type</p></td>
+</tr>
+<tr class="row-even"><td><p>ProtectionTarget</p></td>
+<td><p>Protection target</p></td>
+</tr>
+<tr class="row-odd"><td><p>ReportingMetric</p></td>
+<td><p>Reporting metric</p></td>
+</tr>
+<tr class="row-even"><td><p>Index</p></td>
+<td><p>Sequential number</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="assessmentmethodid-for-models-and-obe">
+<h2><a class="toc-backref" href="#id11" role="doc-backlink">AssessmentMethodId for models and OBE</a><a class="headerlink" href="#assessmentmethodid-for-models-and-obe" title="Link to this heading"></a></h2>
+<p><strong>Referenced in:</strong> MOE_02</p>
+<p>Partially mandatory format.</p>
+<p>Recommended prefixes:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MOD_
+OBE_
+</pre></div>
+</div>
+<p>Examples:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>MOD_DU_PM10_LOC_SCEN_REF
+OBE_DU_SEASALT_PM10_H_LV_ADJ
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Prefix</p></th>
+<th class="head"><p>Meaning</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MOD</p></td>
+<td><p>Modelling application</p></td>
+</tr>
+<tr class="row-odd"><td><p>OBE</p></td>
+<td><p>Objective estimation</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="planid">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">PlanId</a><a class="headerlink" href="#planid" title="Link to this heading"></a></h2>
+<p><strong>Referenced in:</strong> CPL_03</p>
+<p>Partially mandatory format.</p>
+<p>Recommended prefix:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>PLA_
+</pre></div>
+</div>
+<p>Example:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>PLA_ZON_DU000B_00005_LV_H_daysAbove
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Element</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PLA</p></td>
+<td><p>Fixed prefix indicating plan</p></td>
+</tr>
+<tr class="row-odd"><td><p>Remaining elements</p></td>
+<td><p>Defined by reporting authority</p></td>
+</tr>
+</tbody>
+</table>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="diagram.html" class="btn btn-neutral float-left" title="Data model diagram" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="tables/index.html" class="btn btn-neutral float-right" title="Tables" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,677 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ComplianceAssessmentMethod &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SpatialRepresentativeness" href="SpatialRepresentativeness.html" />
+    <link rel="prev" title="ZoneGeometry" href="ZoneGeometry.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ComplianceAssessmentMethod</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cam-01-countrycode">CAM_01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-02-reportingyear">CAM_02 – ReportingYear</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-03-assessmentregimeid">CAM_03 – AssessmentRegimeId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-04-dataaggregationprocessid">CAM_04 – DataAggregationProcessId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-05-assessmentmethodid">CAM_05 – AssessmentMethodId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-06-pollutantid">CAM_06 – PollutantId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-07-assessmenttype">CAM_07 – AssessmentType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-08-isexceedance">CAM_08 – IsExceedance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-09-datacoverage">CAM_09 – DataCoverage</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-10-pollutionlevel">CAM_10 – PollutionLevel</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-11-pollutionleveladjusted">CAM_11 – PollutionLevelAdjusted</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-12-relativeuncertaintylimit">CAM_12 – RelativeUncertaintyLimit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-13-assessmentmqi">CAM_13 – AssessmentMQI</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-14-correctionflag">CAM_14 – CorrectionFlag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-15-attainmentid">CAM_15 – AttainmentId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-16-srsid">CAM_16 – SRSId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-17-preliminaryreason">CAM_17 – PreliminaryReason</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cam-18-deletion">CAM_18 – Deletion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">ComplianceAssessmentMethod</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/ComplianceAssessmentMethod.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="complianceassessmentmethod">
+<h1>ComplianceAssessmentMethod<a class="headerlink" href="#complianceassessmentmethod" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p></li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id3">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id5">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#cam-01-countrycode" id="id6">CAM_01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#cam-02-reportingyear" id="id7">CAM_02 – ReportingYear</a></p></li>
+<li><p><a class="reference internal" href="#cam-03-assessmentregimeid" id="id8">CAM_03 – AssessmentRegimeId</a></p></li>
+<li><p><a class="reference internal" href="#cam-04-dataaggregationprocessid" id="id9">CAM_04 – DataAggregationProcessId</a></p></li>
+<li><p><a class="reference internal" href="#cam-05-assessmentmethodid" id="id10">CAM_05 – AssessmentMethodId</a></p></li>
+<li><p><a class="reference internal" href="#cam-06-pollutantid" id="id11">CAM_06 – PollutantId</a></p></li>
+<li><p><a class="reference internal" href="#cam-07-assessmenttype" id="id12">CAM_07 – AssessmentType</a></p></li>
+<li><p><a class="reference internal" href="#cam-08-isexceedance" id="id13">CAM_08 – IsExceedance</a></p></li>
+<li><p><a class="reference internal" href="#cam-09-datacoverage" id="id14">CAM_09 – DataCoverage</a></p></li>
+<li><p><a class="reference internal" href="#cam-10-pollutionlevel" id="id15">CAM_10 – PollutionLevel</a></p></li>
+<li><p><a class="reference internal" href="#cam-11-pollutionleveladjusted" id="id16">CAM_11 – PollutionLevelAdjusted</a></p></li>
+<li><p><a class="reference internal" href="#cam-12-relativeuncertaintylimit" id="id17">CAM_12 – RelativeUncertaintyLimit</a></p></li>
+<li><p><a class="reference internal" href="#cam-13-assessmentmqi" id="id18">CAM_13 – AssessmentMQI</a></p></li>
+<li><p><a class="reference internal" href="#cam-14-correctionflag" id="id19">CAM_14 – CorrectionFlag</a></p></li>
+<li><p><a class="reference internal" href="#cam-15-attainmentid" id="id20">CAM_15 – AttainmentId</a></p></li>
+<li><p><a class="reference internal" href="#cam-16-srsid" id="id21">CAM_16 – SRSId</a></p></li>
+<li><p><a class="reference internal" href="#cam-17-preliminaryreason" id="id22">CAM_17 – PreliminaryReason</a></p></li>
+<li><p><a class="reference internal" href="#cam-18-deletion" id="id23">CAM_18 – Deletion</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id24">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the ComplianceAssessmentMethod table is to collect information about assessment regimes and compliance situations on assessment method level. It specifies measured and/or modelled air quality values, aggregated in the context of the assessment regimes and allowed limits, provides uncertainty estimations for these values, describes some additional features of the air quality values (such as ‘hotspot’ and ‘correction flag’), links to spatial representativeness areas (for sampling points and possibly - exceedance values) and gives preliminary description of reason for exceedance (based on code listed values) if such occurs.</p>
+<p>ComplianceAssessmentMethod table has to be reported every year.
+Attributes which create unique identifier of each record: CountryCode, ReportingYear, AssessmentRegimeId, AssessmentMethodId and DataAggregationProcessId.</p>
+<p>Updates of the ComplianceAssessmentMethod table will not be time stamped, i.e. each update generates the only version of the compliance situation that is stored at the EEA:</p>
+<ul class="simple">
+<li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.
+Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against aggregation code list, existing records in ModelObjectiveEstimation table, SamplingPoint table, SpatialRepresentativeness table and AssessmentRegimeZone table, as well as - indirectly - against ObservationMeasurementResult and MOEResult tables.</p></li>
+</ul>
+<p>Valid modifications of existing record: beside the attributes which create unique identifier, AttainmentId, PollutantId and SRSId, modifications of value are in principle allowed for all other attributes. However, the degree of freedom for such modifications will be different, depending on data type and impact of modification, e.g.:</p>
+<ul class="simple">
+<li><p>CorrectionFlag, Hotspot - all changes may be allowed,</p></li>
+<li><p>Uncertainties - changes within certain numeric ranges,</p></li>
+<li><p>PollutionLevel(s) - must agree with EEA’s aggregations,</p></li>
+<li><p>PreliminaryReason - all changes may be allowed within AttainmentId, but split into more compliance situation (&gt; 1 of AttainmentId) will require additional rules (impact on PollutionLevelAdjustment, CompliancePlanLink), etc.</p></li>
+</ul>
+<p>Validity of the modifications of existing record will be tested using QC (rules to be established).
+Allowed modifications may affect outcomes of compliance analysis and/or assessments, therefore re-submissions for past years, for which compliance reporting has been already done, will require additional tests vs reference/legacy data before official release of such data is granted.</p>
+<p>Data products for public will present the records validated at the latest deadline.
+Data products for reporters will present the records as reported recently, highlighting the differences between validated reports and recent reports in case of re-submissions.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>ComplianceAssessmentMethod table will be extended by EEA by several attributes:</p>
+<ul class="simple">
+<li><p>Country (for convenience), based on ISO2 country codes,</p></li>
+<li><p>Pollutant (for convenience), based on code list,</p></li>
+<li><p>DataAggregationProcess, based on DataAggregationProcessId,</p></li>
+<li><p>EEAAdjustmentEstimation, based on EEA’s processing of information included in the PollutionLevelAdjustment table,</p></li>
+<li><p>EEAExceedanceAssessment, based on EEAAdjustmentEstimation and allowed limit values,</p></li>
+<li><p>EEAMQIestimation, based on EEA’s interpretation of MOEResults vs. ObservationMeasurementResult.</p></li>
+</ul>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>In case of reporting AEI, one record for each relevant AssessmentRegimeId should be reported, specifying the value of AEI under PollutionLevel attribute and an OBE method identifier under AssessmentMethodId. OBE method (averaging across territorial unit) should be described in ModelObjectiveEstimation table with ResultEncoding ‘zone’.</p>
+<p>The values related to the new environmental objectives should be reported from the beginning of the new reporting in ReportNet3. Exceedances of the new thresholds should be indicated via IsExceedance attribute in the same way as exceedances of the currently used threshold values. They cannot and will not be handled as legally binding exceedances, i.e. will not determine compliance status of zones but they will be used for identification of needs for the roadmaps.</p>
+<p>Deletion of an existing record is possible via the Deletion attribute (by reporting value = 1).</p>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CAM_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">countries</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_02</p></td>
+<td><p>ReportingYear</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_03</p></td>
+<td><p>AssessmentRegimeId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="AssessmentRegimeZone.html"><span class="std std-doc">AssessmentRegimeZone</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view">aggregationprocess</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_05</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="SamplingPoint.html"><span class="std std-doc">SamplingPoint</span></a><br><a class="reference internal" href="SamplingProcess.html"><span class="std std-doc">SamplingProcess</span></a><br><a class="reference internal" href="SamplingPointLocation.html"><span class="std std-doc">SamplingPointLocation</span></a><br><a class="reference internal" href="ObservationMeasurementResult.html"><span class="std std-doc">ObservationMeasurementResult</span></a><br><a class="reference internal" href="ModelObjectiveEstimation.html"><span class="std std-doc">ModelObjectiveEstimation</span></a><br><a class="reference internal" href="MOEResultInline.html"><span class="std std-doc">MOEResultInline</span></a><br><a class="reference internal" href="MOEResultExternal.html"><span class="std std-doc">MOEResultExternal</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_06</p></td>
+<td><p>PollutantId</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view">pollutant</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_07</p></td>
+<td><p>AssessmentType</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/assessmenttype/view">assessmenttype</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_08</p></td>
+<td><p>IsExceedance</p></td>
+<td><p>varchar(5)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_09</p></td>
+<td><p>DataCoverage</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_10</p></td>
+<td><p>PollutionLevel</p></td>
+<td><p>decimal(10,3)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_11</p></td>
+<td><p>PollutionLevelAdjusted</p></td>
+<td><p>decimal(10,3)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_12</p></td>
+<td><p>RelativeUncertaintyLimit</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_13</p></td>
+<td><p>AssessmentMQI</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_14</p></td>
+<td><p>CorrectionFlag</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_15</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="CompliancePlanLink.html"><span class="std std-doc">CompliancePlanLink</span></a><br><a class="reference internal" href="PollutionLevelAdjustment.html"><span class="std std-doc">PollutionLevelAdjustment</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_16</p></td>
+<td><p>SRSId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="SpatialRepresentativeness.html"><span class="std std-doc">SpatialRepresentativeness</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_17</p></td>
+<td><p>PreliminaryReason</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/exceedancereason/view">exceedancereason</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_18</p></td>
+<td><p>Deletion</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="cam-01-countrycode">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">CAM_01 – CountryCode</a><a class="headerlink" href="#cam-01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="cam-02-reportingyear">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">CAM_02 – ReportingYear</a><a class="headerlink" href="#cam-02-reportingyear" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Year for which the data has been reported.</p>
+</section>
+<section id="cam-03-assessmentregimeid">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">CAM_03 – AssessmentRegimeId</a><a class="headerlink" href="#cam-03-assessmentregimeid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality assessment regime, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>It will be cross-checked against the AssessmentRegimeZone table.</p>
+</section>
+<section id="cam-04-dataaggregationprocessid">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">CAM_04 – DataAggregationProcessId</a><a class="headerlink" href="#cam-04-dataaggregationprocessid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the process used for aggregating air quality data into statistical values.</p>
+</section>
+<section id="cam-05-assessmentmethodid">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">CAM_05 – AssessmentMethodId</a><a class="headerlink" href="#cam-05-assessmentmethodid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the assessment method used for air quality evaluation, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>Either SamplingPoint or Model/OBE, it will be cross-checked against the SamplingPoint table or the Model table, also - indirectly - against the ObservationMeasurementResult table and/or the ModellingResult tables.</p>
+</section>
+<section id="cam-06-pollutantid">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">CAM_06 – PollutantId</a><a class="headerlink" href="#cam-06-pollutantid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Code of the air pollutant for which the assessment is being conducted.</p>
+</section>
+<section id="cam-07-assessmenttype">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">CAM_07 – AssessmentType</a><a class="headerlink" href="#cam-07-assessmenttype" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Classification of assessment methods into common types.</p>
+</section>
+<section id="cam-08-isexceedance">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">CAM_08 – IsExceedance</a><a class="headerlink" href="#cam-08-isexceedance" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Statement indicating whether pollution levels exceed environmental objectives.</p>
+</section>
+<section id="cam-09-datacoverage">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">CAM_09 – DataCoverage</a><a class="headerlink" href="#cam-09-datacoverage" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>The proportion of the calendar year for which valid measurement data are available, expressed as a percentage.</p>
+<p><strong>Remarks</strong></p>
+<p>One element of DQO (see Directive 2024/2881 Section B.</p>
+</section>
+<section id="cam-10-pollutionlevel">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">CAM_10 – PollutionLevel</a><a class="headerlink" href="#cam-10-pollutionlevel" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Measured or modeled concentration level of the air pollutant.</p>
+<p><strong>Remarks</strong></p>
+<p>AirPollutionLevel must be reported for every AssessmentMethodId.</p>
+</section>
+<section id="cam-11-pollutionleveladjusted">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">CAM_11 – PollutionLevelAdjusted</a><a class="headerlink" href="#cam-11-pollutionleveladjusted" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Adjusted concentration level of the air pollutant, accounting for specific corrections.</p>
+</section>
+<section id="cam-12-relativeuncertaintylimit">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">CAM_12 – RelativeUncertaintyLimit</a><a class="headerlink" href="#cam-12-relativeuncertaintylimit" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>The maximum relative uncertaintyfor assessment method (given for measurement).</p>
+<p><strong>Remarks</strong></p>
+<p>RelativeUncertaintyLimit must be reported for every AssessmentMethodId which refer to sampling points.</p>
+</section>
+<section id="cam-13-assessmentmqi">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">CAM_13 – AssessmentMQI</a><a class="headerlink" href="#cam-13-assessmentmqi" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Modelling Quality Indicator</p>
+</section>
+<section id="cam-14-correctionflag">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">CAM_14 – CorrectionFlag</a><a class="headerlink" href="#cam-14-correctionflag" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Correction factor for measured values applied (Y/N)</p>
+<p><strong>Remarks</strong></p>
+<p>Y/N. Correction is a string/boolean to be used in order to certify that, in case the SamplingProcess is equivalent to the reference method, the values have been corrected adequately (e.g. PM but also ozone with the cross section).</p>
+</section>
+<section id="cam-15-attainmentid">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">CAM_15 – AttainmentId</a><a class="headerlink" href="#cam-15-attainmentid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality compliance situation, given by data provider (preliminary reason level).</p>
+<p><strong>Remarks</strong></p>
+<p>AttainmentId distinguishes each compliance situation. If there is no exceedance in the zone/assessment regime, there will be only one AttainmentId. If exceedance occurs, if it is caused (most probably) by the same reason and its extent (delineated by sampling point SRAs or modelling results) covers the whole zone, there will be also only one AttainmentId. However, if single exceedance (caused by the same reason) does not cover the whole zone, there will be 2 AttainmentIds - one for the exceedance situation and one for the non-exceedance situation in the same zone/assessment regime. Also - if the exceedances in the same zone/assessment regime are caused by different reasons, there will be more than 1 AttainmentIds.</p>
+</section>
+<section id="cam-16-srsid">
+<h3><a class="toc-backref" href="#id21" role="doc-backlink">CAM_16 – SRSId</a><a class="headerlink" href="#cam-16-srsid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the area representing spatial representativeness.</p>
+<p><strong>Remarks</strong></p>
+<p>Identifier linking to either SPO representativeness or to exceedance extent.</p>
+</section>
+<section id="cam-17-preliminaryreason">
+<h3><a class="toc-backref" href="#id22" role="doc-backlink">CAM_17 – PreliminaryReason</a><a class="headerlink" href="#cam-17-preliminaryreason" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Initial justification or reasoning for reported exceedance levels.</p>
+<p><strong>Remarks</strong></p>
+<p>This is crucial for distinguishing between different compliance situations in the same zone/assessment regime and pointing the relevant actions (air quality plans). It does not have to be precise at the first assessment of new exceedance and it can be changed from one year to another.</p>
+</section>
+<section id="cam-18-deletion">
+<h3><a class="toc-backref" href="#id23" role="doc-backlink">CAM_18 – Deletion</a><a class="headerlink" href="#cam-18-deletion" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Flag to indicate that this element and all related information must be deleted.</p>
+<p><strong>Remarks</strong></p>
+<p>Y/N</p>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id24" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CAM_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_02</p></td>
+<td><p>ReportingYear</p></td>
+<td><p>2024</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_03</p></td>
+<td><p>AssessmentRegimeId</p></td>
+<td><p>ARE_ZON_DU000A_0005_LV_H_aMean_2021_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1Y</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_05</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_06</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_07</p></td>
+<td><p>AssessmentType</p></td>
+<td><p>fixed</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_08</p></td>
+<td><p>IsExceedance</p></td>
+<td><p>FALSE</p></td>
+<td><p>varchar(5)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_09</p></td>
+<td><p>DataCoverage</p></td>
+<td><p>85.78</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_10</p></td>
+<td><p>PollutionLevel</p></td>
+<td><p>21</p></td>
+<td><p>decimal(10,3)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_11</p></td>
+<td><p>PollutionLevelAdjusted</p></td>
+<td><p>null</p></td>
+<td><p>decimal(10,3)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_12</p></td>
+<td><p>RelativeUncertaintyLimit</p></td>
+<td><p>0.2</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_13</p></td>
+<td><p>AssessmentMQI</p></td>
+<td><p>null</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_14</p></td>
+<td><p>CorrectionFlag</p></td>
+<td><p>Y</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_15</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>ATT_ZON_DU000A_00005_LV_H_aMean_2024_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_16</p></td>
+<td><p>SRSId</p></td>
+<td><p>SRS_ZON_DU000A_00005_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_17</p></td>
+<td><p>PreliminaryReason</p></td>
+<td><p>null</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_18</p></td>
+<td><p>Deletion</p></td>
+<td><p>0</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ZoneGeometry.html" class="btn btn-neutral float-left" title="ZoneGeometry" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SpatialRepresentativeness.html" class="btn btn-neutral float-right" title="SpatialRepresentativeness" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

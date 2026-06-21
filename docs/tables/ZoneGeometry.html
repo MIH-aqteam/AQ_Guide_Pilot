@@ -1,0 +1,336 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZoneGeometry &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ComplianceAssessmentMethod" href="ComplianceAssessmentMethod.html" />
+    <link rel="prev" title="AssessmentRegimeZone" href="AssessmentRegimeZone.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ZoneGeometry</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#zonegeometrygrid">ZoneGeometryGrid</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#zge-01-countrycode">ZGE_01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zge-02-zoneid">ZGE_02 – ZoneId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#zge-03-zonegeometrygeojson">ZGE_03 – ZoneGeometryGeoJson</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">ZoneGeometry</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/ZoneGeometry.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="zonegeometry">
+<h1>ZoneGeometry<a class="headerlink" href="#zonegeometry" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zonegeometrygrid" id="id3">ZoneGeometryGrid</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id4">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id5">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id6">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#zge-01-countrycode" id="id7">ZGE_01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#zge-02-zoneid" id="id8">ZGE_02 – ZoneId</a></p></li>
+<li><p><a class="reference internal" href="#zge-03-zonegeometrygeojson" id="id9">ZGE_03 – ZoneGeometryGeoJson</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id10">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the ZoneGeometry table is to collect information on air quality geometries.</p>
+<p>ZoneGeometry table has to be reported whenever new information or an update of existing information is available.
+Attributes which create unique identifier of each record: <strong>CountryCode</strong> and <strong>ZoneId</strong>.</p>
+<p>Updates of the ZoneGeometry table will not be time stamped - i.e. each update generates the only version of the table in reference/legacy data:</p>
+<ul class="simple">
+<li><p>either as addition of a new zone geometry;</p></li>
+<li><p>or modification of an existing geometry.
+Validity of a new record will be tested using QC procedures (rules to be established), for example checking OGC compliance of the reported geometry.</p></li>
+</ul>
+<p>Validity of modifications of existing geometries will also be tested through QC procedures.
+Allowed modifications are not supposed to affect outcomes of compliance analysis and/or assessments and will therefore be strictly limited to fulfil certain conditions (e.g. area difference thresholds).</p>
+<p>Data products for the public will present records validated at the latest deadline.
+Data products for reporters will present records as most recently reported, highlighting differences between validated reports and recent reports in case of re-submissions.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>ZoneGeometry table will be extended by EEA in the reference/legacy data flow with a <strong>Country</strong> attribute.</p>
+<p>In addition, a gridded version of the zones will be generated:</p>
+<section id="zonegeometrygrid">
+<h3><a class="toc-backref" href="#id3" role="doc-backlink">ZoneGeometryGrid</a><a class="headerlink" href="#zonegeometrygrid" title="Link to this heading"></a></h3>
+<p>ZoneGeometry table will be extended  by EEA in the reference/legacy data flow with a ‘Country’ attribute. However, another, gridded version of the zones will be generated in there - ZoneGeometryGrid, which will contain gridded AQ values in 2 layers:</p>
+<ul class="simple">
+<li><p>1 Very High Resolution layer (100m) for populated areas,</p></li>
+<li><p>1 High Resolution layer (1000m) for all areas.</p></li>
+</ul>
+<p>ZoneGeometryGrid will be extended by EEA with the following attributes:</p>
+<ul class="simple">
+<li><p>CountryCode;</p></li>
+<li><p>ZoneId;</p></li>
+<li><p>X, Y coordinates (SRID 3035);</p></li>
+<li><p>Grid number identifiers based on X and Y coordinates.</p></li>
+</ul>
+</section>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>It is recommended to report the ZoneGeometry table only for new zone geometries.</p>
+<p>Zone geometries should be reported as geojson with SRID identifier and only the spatial data type “multipolygon” can be used.
+Expected projections are:</p>
+<ul class="simple">
+<li><p>SRID3035,</p></li>
+<li><p>SRID4258 or</p></li>
+<li><p>SRID4326 (the only allowed for the French overseas areas).</p></li>
+</ul>
+<p>Records in the ZoneGeometry table (and subsequently in ZoneGeometryGrid) which do not have any correspondence to records in the AssessmentRegimeZone table will be flagged for deletion in the reference data flow.</p>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ZGE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">countries</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ZGE_02</p></td>
+<td><p>ZoneId</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="AssessmentRegimeZone.html"><span class="std std-doc">AssessmentRegimeZone</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>ZGE_03</p></td>
+<td><p>ZoneGeometryGeoJson</p></td>
+<td><p>varbinary</p></td>
+<td><p>geometry</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id6" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="zge-01-countrycode">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">ZGE_01 – CountryCode</a><a class="headerlink" href="#zge-01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="zge-02-zoneid">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">ZGE_02 – ZoneId</a><a class="headerlink" href="#zge-02-zoneid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality zone, given by data provider.</p>
+</section>
+<section id="zge-03-zonegeometrygeojson">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">ZGE_03 – ZoneGeometryGeoJson</a><a class="headerlink" href="#zge-03-zonegeometrygeojson" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Geospatial representation of the air quality zone (e.g. polygon geometry).</p>
+<p><strong>Remarks</strong></p>
+<p>It is allowed to report zone geometries in coordinate systems with the following EPSG codes:</p>
+<ul class="simple">
+<li><p>3035,</p></li>
+<li><p>4258,</p></li>
+<li><ol class="arabic simple" start="4326">
+<li></li>
+</ol>
+</li>
+</ul>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id10" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ZGE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZGE_02</p></td>
+<td><p>ZoneId</p></td>
+<td><p>ZON_DU000A</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ZGE_03</p></td>
+<td><p>ZoneGeometryGeoJson</p></td>
+<td><p>{“type”:”Feature”,”geometry”:{“type”:”MultiPolygon”,”coordinates”:[[[[4.419074,51.3040095],[4.4181004999999995,51.305457],…,[4.3362534,51.1730749],[4.3367638,51.1732234]]]]},”properties”:{“srid”:”4326”}}</p></td>
+<td><p>varbinary</p></td>
+<td><p>geometry</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">ZoneGeometry</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="AssessmentRegimeZone.html" class="btn btn-neutral float-left" title="AssessmentRegimeZone" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ComplianceAssessmentMethod.html" class="btn btn-neutral float-right" title="ComplianceAssessmentMethod" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

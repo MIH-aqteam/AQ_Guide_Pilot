@@ -1,0 +1,523 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CompliancePlanLink &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="PlanScenario" href="PlanScenario.html" />
+    <link rel="prev" title="PollutionLevelAdjustment" href="PollutionLevelAdjustment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">CompliancePlanLink</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-01-countrycode">CPL_01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-02-attainmentid">CPL_02 – AttainmentId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-03-planid">CPL_03 – PlanId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-04-scenarioid">CPL_04 – ScenarioId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-05-sourceapportionmentid">CPL_05 – SourceApportionmentId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-06-plancategory">CPL_06 – PlanCategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-07-plantitle">CPL_07 – PlanTitle</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-08-planadoptiondate">CPL_08 – PlanAdoptionDate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-09-planbegindate">CPL_09 – PlanBeginDate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-10-planenddate">CPL_10 – PlanEndDate</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-11-plandocumentid">CPL_11 – PlanDocumentId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#cpl-12-deletion">CPL_12 – Deletion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">CompliancePlanLink</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/CompliancePlanLink.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="complianceplanlink">
+<h1>CompliancePlanLink<a class="headerlink" href="#complianceplanlink" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p></li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id3">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id5">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#cpl-01-countrycode" id="id6">CPL_01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#cpl-02-attainmentid" id="id7">CPL_02 – AttainmentId</a></p></li>
+<li><p><a class="reference internal" href="#cpl-03-planid" id="id8">CPL_03 – PlanId</a></p></li>
+<li><p><a class="reference internal" href="#cpl-04-scenarioid" id="id9">CPL_04 – ScenarioId</a></p></li>
+<li><p><a class="reference internal" href="#cpl-05-sourceapportionmentid" id="id10">CPL_05 – SourceApportionmentId</a></p></li>
+<li><p><a class="reference internal" href="#cpl-06-plancategory" id="id11">CPL_06 – PlanCategory</a></p></li>
+<li><p><a class="reference internal" href="#cpl-07-plantitle" id="id12">CPL_07 – PlanTitle</a></p></li>
+<li><p><a class="reference internal" href="#cpl-08-planadoptiondate" id="id13">CPL_08 – PlanAdoptionDate</a></p></li>
+<li><p><a class="reference internal" href="#cpl-09-planbegindate" id="id14">CPL_09 – PlanBeginDate</a></p></li>
+<li><p><a class="reference internal" href="#cpl-10-planenddate" id="id15">CPL_10 – PlanEndDate</a></p></li>
+<li><p><a class="reference internal" href="#cpl-11-plandocumentid" id="id16">CPL_11 – PlanDocumentId</a></p></li>
+<li><p><a class="reference internal" href="#cpl-12-deletion" id="id17">CPL_12 – Deletion</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id18">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the CompliancePlanLink table is to ensure the link between the AttainmentId as reported in the ComplianceAssessmentMethod table with the plan developed to tackle the exceedance (with source apportionment and relevant scenario).</p>
+<p>CompliancePlanLink table has to be reported every year to maintaint the link between exceedance situations (evolving through years) and the relevant plans.
+Attributes which create unique identifier of each record: CountryCode, AttainmentId, PlanId, ScenarioId and SourceApportionmentId.</p>
+<p>Updates of the CompliancePlanLink table will not be time stamped, i.e. each update generates the only version of the CompliancePlanLink that is stored at the EEA. Since all the attributes create unique identifier of each record, the only update possible for this table is addition of a new record.
+Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ComplianceAssessmentMethod table, PlanScenario table and SourceApportionment table.</p>
+<p>Data products for public will present the records validated at the latest deadline.
+Data products for reporters will present the records as reported recently, highlighting the differences between validated reports and recent reports in case of re-submissions.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>CompliancePlanLink table will be extended by:</p>
+<ul class="simple">
+<li><p>Country (for convenience), based on ISO2 country codes,</p></li>
+<li><p>ReportingYear (for convenience), based on ComplianceAssessmentMethod (year of AttainmentId).</p></li>
+</ul>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>All AttainmentIds which refer to exceedance indicated in ComplianceAssessmentMethod must be covered by plan developed to tackle the exceedance (with source apportionment and relevant scenario).
+There can be only one unique combination of PlanId, ScenarioId and SourceApportionmentId for each AttainmentId. However, there can be many AttainmentIds (describing either one or many compliance situations evolving across years) for each unique combination of PlanId, ScenarioId and SourceApportionmentId.</p>
+<p>It is recommended not to change PlanDocumentId in case of documentation update related to the same plan/scenario. Instead, a new attachment should be uploaded in Document table re-using the same DocumentId. Previous versions of documentation will be kept in reference data.
+In case when the same PlanDocumentId was used for all records and there is a need to modify documentation e.g. only for one specific scenario, it is recommended to create a new PlanDocumentId for that record in CompliancePlanLink table, and then report old (plan specific) and new (e.g. scenario specific) documents as attachments for that new PlandocumentId (as DocumentId) in the Document table in a subsequent manner.</p>
+<p>Records in CompliancePlanLink table which do not have any correspondence to records in ComplianceAssessmentMethods table will be flagged for deletion in the reference data flow.</p>
+<p>Deletion of an existing record will be also possible via the Deletion attribute (by reporting value = 1).</p>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CPL_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">countries</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_02</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ComplianceAssessmentMethod.html"><span class="std std-doc">ComplianceAssessmentMethod</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_03</p></td>
+<td><p>PlanId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="PlanScenario.html"><span class="std std-doc">PlanScenario</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_04</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="PlanScenario.html"><span class="std std-doc">PlanScenario</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_05</p></td>
+<td><p>SourceApportionmentId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="SourceApportionment.html"><span class="std std-doc">SourceApportionment</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_06</p></td>
+<td><p>PlanCategory</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/plancategory/view">plancategory</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_07</p></td>
+<td><p>PlanTitle</p></td>
+<td><p>nvarchar(1000)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_08</p></td>
+<td><p>PlanAdoptionDate</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_09</p></td>
+<td><p>PlanBeginDate</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_10</p></td>
+<td><p>PlanEndDate</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_11</p></td>
+<td><p>PlanDocumentId</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="Documentation.html"><span class="std std-doc">Documentation</span></a></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_12</p></td>
+<td><p>Deletion</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="cpl-01-countrycode">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">CPL_01 – CountryCode</a><a class="headerlink" href="#cpl-01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="cpl-02-attainmentid">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">CPL_02 – AttainmentId</a><a class="headerlink" href="#cpl-02-attainmentid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality compliance situation, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>Several AttainmentIds can point to the same PlanId (e.g. the plan covers different pollutants or successive years of exceedance for the same pollutant). Alternatively, there might be several plans applying to the same AttainmentId (e.g. different authority level, or successive plans). It will be cross-checked against the ComplianceAssessmentMethod table.</p>
+</section>
+<section id="cpl-03-planid">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">CPL_03 – PlanId</a><a class="headerlink" href="#cpl-03-planid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality plan, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>It will be cross-checked against the PlanScenario table.</p>
+</section>
+<section id="cpl-04-scenarioid">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">CPL_04 – ScenarioId</a><a class="headerlink" href="#cpl-04-scenarioid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the scenario, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>ScenarioId, several scenarios can apply to the same PlanId (e.g. different pollutant and/or data aggregation) and vice versa. It will be cross-checked against the PlanScenario table.</p>
+</section>
+<section id="cpl-05-sourceapportionmentid">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">CPL_05 – SourceApportionmentId</a><a class="headerlink" href="#cpl-05-sourceapportionmentid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the source apportionment, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>SourceApportionmentId, there might be only one SourceApportionment per ScenarioId but several per PlanId (e.g.: different pollutant and/or data aggregation). It will be cross-checked against the SourceApportionment table.</p>
+</section>
+<section id="cpl-06-plancategory">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">CPL_06 – PlanCategory</a><a class="headerlink" href="#cpl-06-plancategory" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Category of the air quality plan (e.g., roadmap, short-term plan, plan).</p>
+<p><strong>Remarks</strong></p>
+<p>PlanCategory: corresponds to the different type of plan considered under the recasted Air Quality Directive 2024/2881 – roadmap, short-term plan, plan.</p>
+</section>
+<section id="cpl-07-plantitle">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">CPL_07 – PlanTitle</a><a class="headerlink" href="#cpl-07-plantitle" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Title of the plan</p>
+<p><strong>Remarks</strong></p>
+<p>PlanTitle can be reported in any of the EU languages.</p>
+</section>
+<section id="cpl-08-planadoptiondate">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">CPL_08 – PlanAdoptionDate</a><a class="headerlink" href="#cpl-08-planadoptiondate" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Date of official adoption of the plan by the responsible authorities</p>
+</section>
+<section id="cpl-09-planbegindate">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">CPL_09 – PlanBeginDate</a><a class="headerlink" href="#cpl-09-planbegindate" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Start date (enforcement date) for the plan</p>
+<p><strong>Remarks</strong></p>
+<p>Begin/End date refers to the validity period of the plan/roadmap, i.e. when it enters into force and until it’s unvalid. Note that some plans might not have an end date. In such cases PlanEndDate should be NULL.</p>
+</section>
+<section id="cpl-10-planenddate">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">CPL_10 – PlanEndDate</a><a class="headerlink" href="#cpl-10-planenddate" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>End date for the plan</p>
+<p><strong>Remarks</strong></p>
+<p>Begin/End date refers to the validity period of the plan/roadmap, i.e. when it enters into force and until it’s unvalid. Note that some plans might not have an end date. In such cases PlanEndDate should be NULL.</p>
+</section>
+<section id="cpl-11-plandocumentid">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">CPL_11 – PlanDocumentId</a><a class="headerlink" href="#cpl-11-plandocumentid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the air quality plan document given by data provider.</p>
+</section>
+<section id="cpl-12-deletion">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">CPL_12 – Deletion</a><a class="headerlink" href="#cpl-12-deletion" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Flag to indicate that this element must be deleted</p>
+<p><strong>Remarks</strong></p>
+<p>Y/N</p>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id18" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CPL_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_02</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>ATT_ZON_DU000B_00005_LV_H_daysAbove_2024_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_03</p></td>
+<td><p>PlanId</p></td>
+<td><p>PLA_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_04</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>SCE_ZON_DU000B_00005_LV_H_daysAbove_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_05</p></td>
+<td><p>SourceApportionmentId</p></td>
+<td><p>SAP_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_06</p></td>
+<td><p>PlanCategory</p></td>
+<td><p>plan</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_07</p></td>
+<td><p>PlanTitle</p></td>
+<td><p>აირე კალიტატე პროგрама გენერალა, კლიმა ბაბეს ე ემისა ულიე პლანა პორ ურბა-იუგ დუსტოვა რეჟიონ, მე ვეპრიმ პლანა, ტრეგუეს ე ნდიეკიე მეხანიზამ 2028–2035</p></td>
+<td><p>nvarchar(1000)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_08</p></td>
+<td><p>PlanAdoptionDate</p></td>
+<td><p>2025-11-28</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_09</p></td>
+<td><p>PlanBeginDate</p></td>
+<td><p>2026-01-01</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_10</p></td>
+<td><p>PlanEndDate</p></td>
+<td><p>2030-12-31</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_11</p></td>
+<td><p>PlanDocumentId</p></td>
+<td><p>DOC_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_12</p></td>
+<td><p>Deletion</p></td>
+<td><p>0</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="PollutionLevelAdjustment.html" class="btn btn-neutral float-left" title="PollutionLevelAdjustment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="PlanScenario.html" class="btn btn-neutral float-right" title="PlanScenario" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

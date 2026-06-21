@@ -1,0 +1,2158 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>&lt;no title&gt; &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=44fe6501" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=2709fde1"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="identifiers.html">Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="tables/index.html">Tables</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">&lt;no title&gt;</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/Example input.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <p>Here are the examples</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>AUT_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUT_02</p></td>
+<td><p>AuthorityInstanceId</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AUT_03</p></td>
+<td><p>AuthorityRole</p></td>
+<td><p>1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUT_04</p></td>
+<td><p>Email</p></td>
+<td><p>eve.bot&#64;dema.dus</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AUT_05</p></td>
+<td><p>AuthorityInstance</p></td>
+<td><p>nuts0</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>AUT_06</p></td>
+<td><p>AuthorityName</p></td>
+<td><p>Dustovia Environmental Agency (DEA) – Air Quality Division</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AUT_07</p></td>
+<td><p>AuthorityURL</p></td>
+<td><p>www.dea.dustovia.dus</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>AUT_08</p></td>
+<td><p>AuthorityAddress</p></td>
+<td><p>42 CleanAir St, Terminalgrad, Dustovia (DUS-4242)</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>AUT_09</p></td>
+<td><p>PersonName</p></td>
+<td><p>E.V.E. Bot</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>AUT_10</p></td>
+<td><p>AuthorityStatus</p></td>
+<td><p>active</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>STA_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>STA_02</p></td>
+<td><p>StationEoICode</p></td>
+<td><p>DU0001</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>STA_03</p></td>
+<td><p>NetworkId</p></td>
+<td><p>NET_DU01</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>STA_04</p></td>
+<td><p>NetworkName</p></td>
+<td><p>Dustovia Capital</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>STA_05</p></td>
+<td><p>NetworkOrganisationalLevel</p></td>
+<td><p>regional</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>STA_06</p></td>
+<td><p>Timezone</p></td>
+<td><p>UTC-1</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>STA_07</p></td>
+<td><p>StationNationalCode</p></td>
+<td><p>DU01_01</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>STA_08</p></td>
+<td><p>StationName</p></td>
+<td><p>Rivny-Suburb-A</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>STA_09</p></td>
+<td><p>NetworkDocumentId</p></td>
+<td><p>DOC_NET_DU01</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPO_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPO_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPO_03</p></td>
+<td><p>SamplingPointReferenceId</p></td>
+<td><p>SPOref_DU0001_0005_1</p></td>
+<td><p>varchar(32)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPO_04</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SPO_05</p></td>
+<td><p>StationEoICode</p></td>
+<td><p>DU0001</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPL_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_03</p></td>
+<td><p>LocationBegin</p></td>
+<td><p>25/06/2013 00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_04</p></td>
+<td><p>LocationEnd</p></td>
+<td><p>null</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_05</p></td>
+<td><p>StationArea</p></td>
+<td><p>urban</p></td>
+<td><p>varchar(100)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_06</p></td>
+<td><p>SamplingPointCategory</p></td>
+<td><p>background</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_07</p></td>
+<td><p>Hotspot</p></td>
+<td><p>N</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_08</p></td>
+<td><p>Supersite</p></td>
+<td><p>N</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_09</p></td>
+<td><p>Latitude</p></td>
+<td><p>43.60625</p></td>
+<td><p>decimal(8,4)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_10</p></td>
+<td><p>Longitude</p></td>
+<td><p>33.093242</p></td>
+<td><p>decimal(8,4)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_11</p></td>
+<td><p>Altitude</p></td>
+<td><p>21</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_12</p></td>
+<td><p>InletHeight</p></td>
+<td><p>2</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_13</p></td>
+<td><p>BuildingDistance</p></td>
+<td><p>10</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_14</p></td>
+<td><p>KerbDistance</p></td>
+<td><p>5</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_15</p></td>
+<td><p>EmissionSourceDistance</p></td>
+<td><p>5</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPP_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_02</p></td>
+<td><p>ProcessId</p></td>
+<td><p>SPP_DU0001_0005_1</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPP_03</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_04</p></td>
+<td><p>ProcessActivityBegin</p></td>
+<td><p>25/06/2013 00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPP_05</p></td>
+<td><p>ProcessActivityEnd</p></td>
+<td><p>null</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_06</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SPP_07</p></td>
+<td><p>MeasurementType</p></td>
+<td><p>automatic</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_08</p></td>
+<td><p>Method</p></td>
+<td><p>BETA</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SPP_09</p></td>
+<td><p>Equipment</p></td>
+<td><p>BETA1020</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_10</p></td>
+<td><p>AnalyticalTechnique</p></td>
+<td><p>null</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SPP_11</p></td>
+<td><p>EquivalenceDemonstrated</p></td>
+<td><p>yes</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_12</p></td>
+<td><p>DataQualityDocumentId</p></td>
+<td><p>DOC_DQ_SPP_DU0005_1</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPP_13</p></td>
+<td><p>EquivalenceDemonstrationDocumentId</p></td>
+<td><p>DOC_EQ_SPP_DU0005_1</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPP_14</p></td>
+<td><p>ProcessDocumentId</p></td>
+<td><p>DOC_PR_SPP_DU0005_1</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MOE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOE_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>MOD_DU_NO2</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MOE_03</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1Y</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOE_04</p></td>
+<td><p>AssessmentMethodName</p></td>
+<td><p>null</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MOE_05</p></td>
+<td><p>PollutantId</p></td>
+<td><p>8</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOE_06</p></td>
+<td><p>ResultEncoding</p></td>
+<td><p>external</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MOE_07</p></td>
+<td><p>MethodApplication</p></td>
+<td><p>assessment</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MOE_08</p></td>
+<td><p>GenericMQI</p></td>
+<td><p>0.8</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MOE_09</p></td>
+<td><p>DataQualityDocumentId</p></td>
+<td><p>DOC_MOD_DQ_MOD_DU_NO2</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MOE_10</p></td>
+<td><p>MethodDocumentId</p></td>
+<td><p>DOC_MOD_MR_MOD_DU_NO2</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>OMR_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMR_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>OMR_03</p></td>
+<td><p>Start</p></td>
+<td><p>2024-01-01 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>OMR_04</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>OMR_05</p></td>
+<td><p>End</p></td>
+<td><p>2024-01-01 01:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>OMR_06</p></td>
+<td><p>Value</p></td>
+<td><p>16.4</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>OMR_07</p></td>
+<td><p>Unit</p></td>
+<td><p>ug/m3</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMR_08</p></td>
+<td><p>Validity</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>OMR_09</p></td>
+<td><p>Verification</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMR_10</p></td>
+<td><p>DataCapture</p></td>
+<td><p></p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>OMR_11</p></td>
+<td><p>TimeResolution</p></td>
+<td><p>hour</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>OMR_12</p></td>
+<td><p>ResultTime</p></td>
+<td><p>2025-09-28 16:12:36</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MRI_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRI_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>OBE_DU_SEASALT_PM10_H_LV_ADJ</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRI_03</p></td>
+<td><p>Start</p></td>
+<td><p>2024-01-01 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRI_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1D</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRI_05</p></td>
+<td><p>X</p></td>
+<td><p>3463000</p></td>
+<td><p>bigint</p></td>
+<td><p>numeric</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRI_06</p></td>
+<td><p>Y</p></td>
+<td><p>2245000</p></td>
+<td><p>bigint</p></td>
+<td><p>numeric</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRI_07</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRI_08</p></td>
+<td><p>End</p></td>
+<td><p>2024-01-02 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRI_09</p></td>
+<td><p>Value</p></td>
+<td><p>1</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRI_10</p></td>
+<td><p>Unit</p></td>
+<td><p>ug/m3</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRI_11</p></td>
+<td><p>Validity</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRI_12</p></td>
+<td><p>SpatialResolution</p></td>
+<td><p>1000</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRI_13</p></td>
+<td><p>ResultTime</p></td>
+<td><p>2025-09-14 10:19:44</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MRE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>MOD_DU_PM10_NAT_SR</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_03</p></td>
+<td><p>Start</p></td>
+<td><p>2021-01-01 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1Y</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_05</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_06</p></td>
+<td><p>End</p></td>
+<td><p>2022-01-01 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_07</p></td>
+<td><p>Unit</p></td>
+<td><p>ug/m3</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_08</p></td>
+<td><p>Validity</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_09</p></td>
+<td><p>SpatialResolution</p></td>
+<td><p>1000</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_10</p></td>
+<td><p>ResultTime</p></td>
+<td><p>2023-04-14 10:19:44</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_11</p></td>
+<td><p>GeoTiffAttachment</p></td>
+<td><p></p></td>
+<td><p>varchar(100)</p></td>
+<td><p>attachment (R3 data type)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ZGE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ZGE_02</p></td>
+<td><p>ZoneId</p></td>
+<td><p>ZON_DU000A</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ZGE_03</p></td>
+<td><p>ZoneGeometryGeoJson</p></td>
+<td><p>{“type”:”Feature”,”geometry”:{“type”:”MultiPolygon”,”coordinates”:[[[[4.419074,51.3040095],[4.4181004999999995,51.305457],…,[4.3362534,51.1730749],[4.3367638,51.1732234]]]]},”properties”:{“srid”:”4326”}}</p></td>
+<td><p>varbinary</p></td>
+<td><p>geometry</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ARZ_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_02</p></td>
+<td><p>AssessmentRegimeId</p></td>
+<td><p>ARE_ZON_DU000A_0005_LV_H_aMean_2021_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_03</p></td>
+<td><p>ZoneId</p></td>
+<td><p>ZON_DU000A</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_04</p></td>
+<td><p>ZoneNationalCode</p></td>
+<td><p>DU000A</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_05</p></td>
+<td><p>ZoneArea</p></td>
+<td><p>442.31</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_06</p></td>
+<td><p>ZoneCategory</p></td>
+<td><p>zone</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_07</p></td>
+<td><p>ZoneType</p></td>
+<td><p>agg</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_08</p></td>
+<td><p>ZoneName</p></td>
+<td><p>EcoDome Heights</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_09</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_10</p></td>
+<td><p>ProtectionTarget</p></td>
+<td><p>H</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_11</p></td>
+<td><p>ObjectiveType</p></td>
+<td><p>LV</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_12</p></td>
+<td><p>ReportingMetric</p></td>
+<td><p>aMean</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_13</p></td>
+<td><p>AssessmentThresholdExceedance</p></td>
+<td><p>aboveUAT</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_14</p></td>
+<td><p>PostponementYear</p></td>
+<td><p>null</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_15</p></td>
+<td><p>FixedMeasurementReduction</p></td>
+<td><p>N</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_16</p></td>
+<td><p>ZoneResidentPopulationYear</p></td>
+<td><p>2020</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_17</p></td>
+<td><p>ZoneResidentPopulation</p></td>
+<td><p>599159</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>ARZ_18</p></td>
+<td><p>ClassificationYear</p></td>
+<td><p>2021</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ARZ_19</p></td>
+<td><p>ClassificationDocumentId</p></td>
+<td><p>DOC_ARE_ZON_DU_2021</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CAM_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_02</p></td>
+<td><p>ReportingYear</p></td>
+<td><p>2024</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_03</p></td>
+<td><p>AssessmentRegimeId</p></td>
+<td><p>ARE_ZON_DU000A_0005_LV_H_aMean_2021_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1Y</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_05</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_06</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_07</p></td>
+<td><p>AssessmentType</p></td>
+<td><p>fixed</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_08</p></td>
+<td><p>IsExceedance</p></td>
+<td><p>FALSE</p></td>
+<td><p>varchar(5)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_09</p></td>
+<td><p>DataCoverage</p></td>
+<td><p>85.78</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_10</p></td>
+<td><p>PollutionLevel</p></td>
+<td><p>21</p></td>
+<td><p>decimal(10,3)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_11</p></td>
+<td><p>PollutionLevelAdjusted</p></td>
+<td><p>null</p></td>
+<td><p>decimal(10,3)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_12</p></td>
+<td><p>RelativeUncertaintyLimit</p></td>
+<td><p>0.2</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_13</p></td>
+<td><p>AssessmentMQI</p></td>
+<td><p>null</p></td>
+<td><p>decimal(5,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_14</p></td>
+<td><p>CorrectionFlag</p></td>
+<td><p>Y</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_15</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>ATT_ZON_DU000A_00005_LV_H_aMean_2024_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_16</p></td>
+<td><p>SRSId</p></td>
+<td><p>SRS_ZON_DU000A_00005_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CAM_17</p></td>
+<td><p>PreliminaryReason</p></td>
+<td><p>null</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CAM_18</p></td>
+<td><p>Deletion</p></td>
+<td><p>0</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SRS_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRS_02</p></td>
+<td><p>SRSId</p></td>
+<td><p>SRS_ZON_DU000A_00005_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SRS_03</p></td>
+<td><p>SRSApplicationId</p></td>
+<td><p>SRS_SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SRS_04</p></td>
+<td><p>SRSApplication</p></td>
+<td><p>spo_sr</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SRS_05</p></td>
+<td><p>ResultEncoding</p></td>
+<td><p>inline</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRS_06</p></td>
+<td><p>RepresentativenessAssessmentMethodId</p></td>
+<td><p>MOD_DU_PM10_NAT_SR</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SRI_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRI_02</p></td>
+<td><p>SRSApplicationId</p></td>
+<td><p>SRS_SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SRI_03</p></td>
+<td><p>X</p></td>
+<td><p>3825000</p></td>
+<td><p>bigint</p></td>
+<td><p>numeric</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SRI_04</p></td>
+<td><p>Y</p></td>
+<td><p>2274000</p></td>
+<td><p>bigint</p></td>
+<td><p>numeric</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SRI_05</p></td>
+<td><p>SpatialResolution</p></td>
+<td><p>1000</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SRE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRE_02</p></td>
+<td><p>SRSApplicationId</p></td>
+<td><p>SRS_SPO_DU0001_0008_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SRE_03</p></td>
+<td><p>SpatialResolution</p></td>
+<td><p>100</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SRE_04</p></td>
+<td><p>GeoTiffAttachment</p></td>
+<td><p></p></td>
+<td><p>varchar(100)</p></td>
+<td><p>attachment (R3 data type)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ADJ_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADJ_02</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>ATT_ZON_DU000B_00005_LV_H_aMean_2024_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ADJ_03</p></td>
+<td><p>AdjustmentSource</p></td>
+<td><p>H</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>ADJ_04</p></td>
+<td><p>AdjustmentAssessmentMethodId</p></td>
+<td><p>OBE_DU_SEASALT_PM10_H_LV_ADJ</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>ADJ_05</p></td>
+<td><p>AdjustmentDocumentId</p></td>
+<td><p>null</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>CPL_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_02</p></td>
+<td><p>AttainmentId</p></td>
+<td><p>ATT_ZON_DU000B_00005_LV_H_daysAbove_2024_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_03</p></td>
+<td><p>PlanId</p></td>
+<td><p>PLA_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_04</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>SCE_ZON_DU000B_00005_LV_H_daysAbove_1</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_05</p></td>
+<td><p>SourceApportionmentId</p></td>
+<td><p>SAP_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_06</p></td>
+<td><p>PlanCategory</p></td>
+<td><p>plan</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_07</p></td>
+<td><p>PlanTitle</p></td>
+<td><p>აირე კალიტატე პროგрама გენერალა, კლიმა ბაბეს ე ემისა ულიე პლანა პორ ურბა-იუგ დუსტოვა რეჟიონ, მე ვეპრიმ პლანა, ტრეგუეს ე ნდიეკიე მეხანიზამ 2028–2035</p></td>
+<td><p>nvarchar(1000)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_08</p></td>
+<td><p>PlanAdoptionDate</p></td>
+<td><p>2025-11-28</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_09</p></td>
+<td><p>PlanBeginDate</p></td>
+<td><p>2026-01-01</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_10</p></td>
+<td><p>PlanEndDate</p></td>
+<td><p>2030-12-31</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>CPL_11</p></td>
+<td><p>PlanDocumentId</p></td>
+<td><p>DOC_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>CPL_12</p></td>
+<td><p>Deletion</p></td>
+<td><p>0</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>PSC_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>PSC_02</p></td>
+<td><p>PlanId</p></td>
+<td><p>PLA_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>PSC_03</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>PSC_04</p></td>
+<td><p>ScenarioCategory</p></td>
+<td><p>reference</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>PSC_05</p></td>
+<td><p>ScenarioNationalCode</p></td>
+<td><p>PLA_another_scenario</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>PSC_06</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>PSC_07</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1Y-daysAbove50</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>PSC_08</p></td>
+<td><p>ScenarioYear</p></td>
+<td><p>2024</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>PSC_09</p></td>
+<td><p>ScenarioPollutionLevel</p></td>
+<td><p>43</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>PSC_10</p></td>
+<td><p>ExposedPopulation</p></td>
+<td><p>95250</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>PSC_11</p></td>
+<td><p>ScenarioAssessmentMethodId</p></td>
+<td><p>MOD_DU_PM10_LOC_SCEN_REF</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SAP_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SAP_02</p></td>
+<td><p>SourceApportionmentId</p></td>
+<td><p>SAP_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SAP_03</p></td>
+<td><p>ContributionType</p></td>
+<td><p>background</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SAP_04</p></td>
+<td><p>SpatialScale</p></td>
+<td><p>regional</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SAP_05</p></td>
+<td><p>SourceSector</p></td>
+<td><p>other</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SAP_06</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SAP_07</p></td>
+<td><p>Contribution</p></td>
+<td><p>9</p></td>
+<td><p>decimal(8,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SAP_08</p></td>
+<td><p>SourceApportionmentDocumentId</p></td>
+<td><p>DOC_SAP_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SME_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_02</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SME_03</p></td>
+<td><p>ScenarioCategory</p></td>
+<td><p>baseline</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_04</p></td>
+<td><p>MeasureGroupId</p></td>
+<td><p>MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SME_05</p></td>
+<td><p>MeasureGroupPollutionReduction</p></td>
+<td><p>null</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_06</p></td>
+<td><p>MeasureReductionAssessmentMethodId</p></td>
+<td><p>null</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MEA_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_02</p></td>
+<td><p>MeasureGroupId</p></td>
+<td><p>MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_03</p></td>
+<td><p>MeasureId</p></td>
+<td><p>Measure_1256</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_04</p></td>
+<td><p>MeasureNationalCode</p></td>
+<td><p>Measure_1256</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_05</p></td>
+<td><p>MeasureName</p></td>
+<td><p>Industrial Emission Control</p></td>
+<td><p>varchar(150)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_06</p></td>
+<td><p>MeasureClassification</p></td>
+<td><p>emissioncontrol</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_07</p></td>
+<td><p>MeasureType</p></td>
+<td><p>outside</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_08</p></td>
+<td><p>SourceSector</p></td>
+<td><p>industry</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_09</p></td>
+<td><p>SpatialScale</p></td>
+<td><p>local</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_10</p></td>
+<td><p>ImplementationBegin</p></td>
+<td><p>01-02-2025</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_11</p></td>
+<td><p>ImplementationEnd</p></td>
+<td><p>31-12-2027</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_12</p></td>
+<td><p>MeasureCost</p></td>
+<td><p>null</p></td>
+<td><p>decimal(18,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_13</p></td>
+<td><p>FullEffectDate</p></td>
+<td><p>null</p></td>
+<td><p>date</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_14</p></td>
+<td><p>MeasureStatus</p></td>
+<td><p>implementation</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MEA_15</p></td>
+<td><p>ReasonIfMeasureNotUsed</p></td>
+<td><p>null</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MEA_16</p></td>
+<td><p>Deletion</p></td>
+<td><p>0</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>DOC_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOC_02</p></td>
+<td><p>DataTable</p></td>
+<td><p>Station</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>DOC_03</p></td>
+<td><p>DocumentType</p></td>
+<td><p>NetworkDocument</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>DOC_04</p></td>
+<td><p>DocumentId</p></td>
+<td><p>DOC_NET_DU01</p></td>
+<td><p>varchar(500)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>DOC_05</p></td>
+<td><p>DocumentAttachment</p></td>
+<td><p>DUS_NET_DU01.pdf</p></td>
+<td><p>varchar(100)</p></td>
+<td><p>attachment (R3 data type)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>DOC_06</p></td>
+<td><p>DocumentOriginalURL</p></td>
+<td><p>www.dea.dustovia.dus/AQeREP/NET/DU01.pdf</p></td>
+<td><p>varchar(100)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

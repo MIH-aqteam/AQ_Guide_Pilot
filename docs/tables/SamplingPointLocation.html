@@ -1,0 +1,592 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SamplingPointLocation &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SamplingProcess" href="SamplingProcess.html" />
+    <link rel="prev" title="SamplingPoint" href="SamplingPoint.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">SamplingPointLocation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#spl01-countrycode">SPL01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl02-assessmentmethodid">SPL02 – AssessmentMethodId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl03-locationbegin">SPL03 – LocationBegin</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl04-locationend">SPL04 – LocationEnd</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl-05-stationarea">SPL_05 – StationArea</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl-06-samplingpointcategory">SPL_06 – SamplingPointCategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl07-hotspot">SPL07 – Hotspot</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl08-supersite">SPL08 – Supersite</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl09-latitude">SPL09 – Latitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl10-longitude">SPL10 – Longitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl11-altitude">SPL11 – Altitude</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl12-inletheight">SPL12 – InletHeight</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl13-buildingdistance">SPL13 – BuildingDistance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl14-kerbdistance">SPL14 – KerbDistance</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#spl15-emissionsourcedistance">SPL15 – EmissionSourceDistance</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">SamplingPointLocation</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/SamplingPointLocation.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="samplingpointlocation">
+<h1>SamplingPointLocation<a class="headerlink" href="#samplingpointlocation" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p></li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id3">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id5">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#spl01-countrycode" id="id6">SPL01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#spl02-assessmentmethodid" id="id7">SPL02 – AssessmentMethodId</a></p></li>
+<li><p><a class="reference internal" href="#spl03-locationbegin" id="id8">SPL03 – LocationBegin</a></p></li>
+<li><p><a class="reference internal" href="#spl04-locationend" id="id9">SPL04 – LocationEnd</a></p></li>
+<li><p><a class="reference internal" href="#spl-05-stationarea" id="id10">SPL_05 – StationArea</a></p></li>
+<li><p><a class="reference internal" href="#spl-06-samplingpointcategory" id="id11">SPL_06 – SamplingPointCategory</a></p></li>
+<li><p><a class="reference internal" href="#spl07-hotspot" id="id12">SPL07 – Hotspot</a></p></li>
+<li><p><a class="reference internal" href="#spl08-supersite" id="id13">SPL08 – Supersite</a></p></li>
+<li><p><a class="reference internal" href="#spl09-latitude" id="id14">SPL09 – Latitude</a></p></li>
+<li><p><a class="reference internal" href="#spl10-longitude" id="id15">SPL10 – Longitude</a></p></li>
+<li><p><a class="reference internal" href="#spl11-altitude" id="id16">SPL11 – Altitude</a></p></li>
+<li><p><a class="reference internal" href="#spl12-inletheight" id="id17">SPL12 – InletHeight</a></p></li>
+<li><p><a class="reference internal" href="#spl13-buildingdistance" id="id18">SPL13 – BuildingDistance</a></p></li>
+<li><p><a class="reference internal" href="#spl14-kerbdistance" id="id19">SPL14 – KerbDistance</a></p></li>
+<li><p><a class="reference internal" href="#spl15-emissionsourcedistance" id="id20">SPL15 – EmissionSourceDistance</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id21">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the SamplingPoint table is to collect data on air quality sampling locations. It describes their identifiers, coordinates and other area and location characteristics. The table includes corresponding times of location characteristic effectiveness.</p>
+<p>SamplingPointLocation table has to be reported whenever new information or an update of existing information is available.
+Attributes which create unique identifier of each record: CountryCode, AssessmentMethodId and LocationBegin.</p>
+<p>Updates of the SamplingLocation table will not be time stamped, i.e. each update generates the only version of the table in reference/legacy data:</p>
+<ul class="simple">
+<li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute, e.g. entering end date.
+Validity of the new record will be tested using QC rules to be established, e.g. cross-checking relation between the code listed values.</p></li>
+</ul>
+<p>Valid modifications of existing record in this table are minor corrections, e.g. of building distance or coordinates, or altitude, which are not considered as SamplingPoint re-location into new conditions.
+Validity of the modifications of existing record will be tested using QC rules to be established.
+Allowed modifications are not supposed to affect outcomes of compliance analysis and/or assessments.</p>
+<p>Data products will present all records related to SamplingPoints reported recently for the UTD purpose.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>SamplingPointLocation table will be extended by EEA by several attributes:</p>
+<ul class="simple">
+<li><p>Country, for convenience, based on ISO2 country codes,</p></li>
+<li><p>Pollutant, for convenience, based on code list,</p></li>
+<li><p>SamplingPointStatus, based on values in SamplingLocation.LocationEnd  (if all AssessmentMethodId have LocationEnd populated the SamplingPointStatus is ‘inactive’, otherwise it is ‘active’),,</p></li>
+<li><p>X and Y, based on coordinates re-projected to SRID3035,</p></li>
+<li><p>grid number identifiers, based on X and Y in SRID3035,</p></li>
+<li><p>SamplingPointType, following the previous version of sampling point type classification (traffic, background,industrial); the new type SamplingPointCategory for closed/inactive sampling points will be mapped to the older types using road traffic, background and industry categories, unless countries re-submit meta-data for these sampling points and set their own values; countries should set their own values of SamplingPointCategory for all active sampling points.</p></li>
+</ul>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>In case where the LocationBegin was reported wrongly and/or the corresponding record needs to be deleted, the same value should be reported for LocationEnd. Records where LocationBegin = LocationEnd will be flagged for deletion in the reference data flow.</p>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPL01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ComplianceAssessmentMethod.html"><span class="std std-doc">ComplianceAssessmentMethod</span></a><br><a class="reference internal" href="SamplingPoint.html"><span class="std std-doc">SamplingPoint</span></a><br><a class="reference internal" href="SamplingProcess.html"><span class="std std-doc">SamplingProcess</span></a><br><a class="reference internal" href="ObservationMeasurementResult.html"><span class="std std-doc">ObservationMeasurementResult</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL03</p></td>
+<td><p>LocationBegin</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL04</p></td>
+<td><p>LocationEnd</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_05</p></td>
+<td><p>StationArea</p></td>
+<td><p>varchar(100)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/areaclassification/view">areaclassification</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_06</p></td>
+<td><p>SamplingPointCategory</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>Code list to be developed</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL07</p></td>
+<td><p>Hotspot</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL08</p></td>
+<td><p>Supersite</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL09</p></td>
+<td><p>Latitude</p></td>
+<td><p>decimal(8,4)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL10</p></td>
+<td><p>Longitude</p></td>
+<td><p>decimal(8,4)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL11</p></td>
+<td><p>Altitude</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL12</p></td>
+<td><p>InletHeight</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL13</p></td>
+<td><p>BuildingDistance</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL14</p></td>
+<td><p>KerbDistance</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL15</p></td>
+<td><p>EmissionSourceDistance</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="spl01-countrycode">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">SPL01 – CountryCode</a><a class="headerlink" href="#spl01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="spl02-assessmentmethodid">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">SPL02 – AssessmentMethodId</a><a class="headerlink" href="#spl02-assessmentmethodid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the assessment method (sampling point), given by data provider.</p>
+</section>
+<section id="spl03-locationbegin">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">SPL03 – LocationBegin</a><a class="headerlink" href="#spl03-locationbegin" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Start time of the location characteristic(s).</p>
+<p><strong>Remarks</strong></p>
+<p>The permissible modifications in the location characteristics will be verified by adequate QC.</p>
+</section>
+<section id="spl04-locationend">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">SPL04 – LocationEnd</a><a class="headerlink" href="#spl04-locationend" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>End time of the location characteristic(s).</p>
+</section>
+<section id="spl-05-stationarea">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">SPL_05 – StationArea</a><a class="headerlink" href="#spl-05-stationarea" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Classification of the air quality measurement station’s area (urban, suburban, rural, etc.).</p>
+<p><strong>Remarks</strong></p>
+<p>A change in station area implies closing the associated sampling points by ending the SamplingProcess, declaring a new station and the associated new sampling points.</p>
+</section>
+<section id="spl-06-samplingpointcategory">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">SPL_06 – SamplingPointCategory</a><a class="headerlink" href="#spl-06-samplingpointcategory" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Intention or reason for placing sampling point.</p>
+<p><strong>Code list / reference</strong></p>
+<p>Code list to be developed.</p>
+<p><strong>Remarks</strong></p>
+<p>Potential categories: traffic, background, industrial, port, airport, residential heating, multisource.</p>
+</section>
+<section id="spl07-hotspot">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">SPL07 – Hotspot</a><a class="headerlink" href="#spl07-hotspot" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Indicator if the measurement site is considered as a hotspot.</p>
+<p><strong>Remarks</strong></p>
+<p>Y/N.</p>
+<p>Hotspot relates to the provisions of the recasted Air Quality Directive 2024/2881, Article 4(27) and others.</p>
+</section>
+<section id="spl08-supersite">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">SPL08 – Supersite</a><a class="headerlink" href="#spl08-supersite" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Indicator if the measurement site is classified as a “Super Site” for advanced monitoring.</p>
+<p><strong>Remarks</strong></p>
+<p>Y/N.</p>
+</section>
+<section id="spl09-latitude">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">SPL09 – Latitude</a><a class="headerlink" href="#spl09-latitude" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Latitude coordinate of the air quality station location (decimal degrees).</p>
+</section>
+<section id="spl10-longitude">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">SPL10 – Longitude</a><a class="headerlink" href="#spl10-longitude" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Longitude coordinate of the air quality station location (decimal degrees).</p>
+</section>
+<section id="spl11-altitude">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">SPL11 – Altitude</a><a class="headerlink" href="#spl11-altitude" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Altitude of the air quality station location in meters above sea level.</p>
+</section>
+<section id="spl12-inletheight">
+<h3><a class="toc-backref" href="#id17" role="doc-backlink">SPL12 – InletHeight</a><a class="headerlink" href="#spl12-inletheight" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Height of the sampling inlet where air quality measurements are taken, in meters.</p>
+</section>
+<section id="spl13-buildingdistance">
+<h3><a class="toc-backref" href="#id18" role="doc-backlink">SPL13 – BuildingDistance</a><a class="headerlink" href="#spl13-buildingdistance" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Horizontal distance from the sampling inlet to the nearest building, in meters.</p>
+</section>
+<section id="spl14-kerbdistance">
+<h3><a class="toc-backref" href="#id19" role="doc-backlink">SPL14 – KerbDistance</a><a class="headerlink" href="#spl14-kerbdistance" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Horizontal distance from the sampling inlet to the nearest road kerb, in meters.</p>
+</section>
+<section id="spl15-emissionsourcedistance">
+<h3><a class="toc-backref" href="#id20" role="doc-backlink">SPL15 – EmissionSourceDistance</a><a class="headerlink" href="#spl15-emissionsourcedistance" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Horizontal distance from the main emission source, in meters.</p>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id21" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SPL_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>SPO_DU0001_0005_100</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_03</p></td>
+<td><p>LocationBegin</p></td>
+<td><p>25/06/2013 00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_04</p></td>
+<td><p>LocationEnd</p></td>
+<td><p>null</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_05</p></td>
+<td><p>StationArea</p></td>
+<td><p>urban</p></td>
+<td><p>varchar(100)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_06</p></td>
+<td><p>SamplingPointCategory</p></td>
+<td><p>background</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_07</p></td>
+<td><p>Hotspot</p></td>
+<td><p>N</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_08</p></td>
+<td><p>Supersite</p></td>
+<td><p>N</p></td>
+<td><p>bit</p></td>
+<td><p>boolean</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_09</p></td>
+<td><p>Latitude</p></td>
+<td><p>43.60625</p></td>
+<td><p>decimal(8,4)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_10</p></td>
+<td><p>Longitude</p></td>
+<td><p>33.093242</p></td>
+<td><p>decimal(8,4)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_11</p></td>
+<td><p>Altitude</p></td>
+<td><p>21</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_12</p></td>
+<td><p>InletHeight</p></td>
+<td><p>2</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_13</p></td>
+<td><p>BuildingDistance</p></td>
+<td><p>10</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SPL_14</p></td>
+<td><p>KerbDistance</p></td>
+<td><p>5</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SPL_15</p></td>
+<td><p>EmissionSourceDistance</p></td>
+<td><p>5</p></td>
+<td><p>decimal(10,1)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">SamplingPointLocation</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SamplingPoint.html" class="btn btn-neutral float-left" title="SamplingPoint" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="SamplingProcess.html" class="btn btn-neutral float-right" title="SamplingProcess" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

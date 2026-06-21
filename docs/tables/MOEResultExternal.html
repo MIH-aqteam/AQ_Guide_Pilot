@@ -1,0 +1,514 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MOEResultExternal &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="AssessmentRegimeZone" href="AssessmentRegimeZone.html" />
+    <link rel="prev" title="MOEResultInline" href="MOEResultInline.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MOEResultExternal</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mre-01-countrycode">MRE_01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-02-assessmentmethodid">MRE_02 – AssessmentMethodId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-03-start">MRE_03 – Start</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-04-dataaggregationprocessid">MRE_04 – DataAggregationProcessId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-05-pollutantid">MRE_05 – PollutantId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-06-end">MRE_06 – End</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-07-unit">MRE_07 – Unit</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-08-validity">MRE_08 – Validity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-09-spatialresolution">MRE_09 – SpatialResolution</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-10-resulttime">MRE_10 – ResultTime</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mre-11-geotiffattachment">MRE_11 – GeoTiffAttachment</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">MOEResultExternal</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/MOEResultExternal.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="moeresultexternal">
+<h1>MOEResultExternal<a class="headerlink" href="#moeresultexternal" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p></li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id3">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id5">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#mre-01-countrycode" id="id6">MRE_01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#mre-02-assessmentmethodid" id="id7">MRE_02 – AssessmentMethodId</a></p></li>
+<li><p><a class="reference internal" href="#mre-03-start" id="id8">MRE_03 – Start</a></p></li>
+<li><p><a class="reference internal" href="#mre-04-dataaggregationprocessid" id="id9">MRE_04 – DataAggregationProcessId</a></p></li>
+<li><p><a class="reference internal" href="#mre-05-pollutantid" id="id10">MRE_05 – PollutantId</a></p></li>
+<li><p><a class="reference internal" href="#mre-06-end" id="id11">MRE_06 – End</a></p></li>
+<li><p><a class="reference internal" href="#mre-07-unit" id="id12">MRE_07 – Unit</a></p></li>
+<li><p><a class="reference internal" href="#mre-08-validity" id="id13">MRE_08 – Validity</a></p></li>
+<li><p><a class="reference internal" href="#mre-09-spatialresolution" id="id14">MRE_09 – SpatialResolution</a></p></li>
+<li><p><a class="reference internal" href="#mre-10-resulttime" id="id15">MRE_10 – ResultTime</a></p></li>
+<li><p><a class="reference internal" href="#mre-11-geotiffattachment" id="id16">MRE_11 – GeoTiffAttachment</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id17">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the MOEResultExternal table is to collect information on results from air quality modelling applications. It is similar to the table MREResultInline except that here the results are submitted in attached GEOTIFF file, following the common grid approach (see Introduction).</p>
+<p>MOEResultExternal table has to be reported every year (if models/OBE are declared for compliance) because new information is expected at each reporting cycle.
+Attributes which create unique identifier of each record: CountryCode, AssessmentMethodId, Start and DataAggregationProcessId.</p>
+<p>Updates of the MOEResultExternal table will not be time stamped - i.e. each update generates the only version of the (gridded) AQ values that is stored at the EEA, as well - the only version of the corresponding table in reference/legacy data:</p>
+<ul class="simple">
+<li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.
+Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.</p></li>
+</ul>
+<p>Valid modifications of existing record in this table are based on re-submission of a GEOTIFF file for the existing set of attributes creating unique identifier:</p>
+<ul class="simple">
+<li><p>either to overwrite/correct the values of other attributes,</p></li>
+<li><p>or to modify Validity flag to -1 for deletion purpose.
+Validity of the modifications will be tested using QC (rules to be established).
+Allowed modifications may affect outcomes of compliance analysis and/or assessments. Therefore, re-submissions for past years, for which compliance reporting has already been completed, will require additional tests against reference/legacy data before official release of such data is granted.</p></li>
+</ul>
+<p>Data products for the public will present records validated at the latest deadline.
+Data products for reporters will present records as most recently reported, highlighting differences between validated reports and recent reports in case of re-submissions.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>Reference data flow will have two tables representing reporting of model/OBE results:</p>
+<ul class="simple">
+<li><p>MOEResultInventory;</p></li>
+<li><p>MOEResultGrid.
+MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file. MOEResultGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers:</p></li>
+<li><p>2 Very High Resolution layers (10 and 100m - depending on original resolutions) for populated areas, traffic links and areas with values above thresholds,</p></li>
+<li><p>1 High Resolution layer (1000m) for all areas.</p></li>
+</ul>
+<p>MOEResultGrid table will be extended by several attributes:</p>
+<ul class="simple">
+<li><p>Pollutant (for convenience), based on code list,</p></li>
+<li><p>DataAggregationProcess, based on DataAggregationProcessId,</p></li>
+<li><p>SourceDataFlow (R2 e-Reporting, R3 e-Reporting),</p></li>
+<li><p>Verification,</p></li>
+<li><p>Grid number identifiers, based on X,Y (SRID 3035).</p></li>
+</ul>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>Results from modelling reported through external files should point to a record in the ModelObjectiveEstimation table with:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ResultEncoding = &#39;external&#39;
+</pre></div>
+</div>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MRE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">https://dd.eionet.europa.eu/vocabulary/common/countries</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ComplianceAssessmentMethod.html"><span class="std std-doc">ComplianceAssessmentMethod</span></a><br><a class="reference internal" href="ModelObjectiveEstimation.html"><span class="std std-doc">ModelObjectiveEstimation</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_03</p></td>
+<td><p>Start</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view">https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view</a></p></td>
+<td><p><a class="reference internal" href="ModelObjectiveEstimation.html"><span class="std std-doc">ModelObjectiveEstimation</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_05</p></td>
+<td><p>PollutantId</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view">https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_06</p></td>
+<td><p>End</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_07</p></td>
+<td><p>Unit</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/uom/concentration/">https://dd.eionet.europa.eu/vocabulary/uom/concentration/</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_08</p></td>
+<td><p>Validity</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view">https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_09</p></td>
+<td><p>SpatialResolution</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution">https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_10</p></td>
+<td><p>ResultTime</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_11</p></td>
+<td><p>GeoTiffAttachment</p></td>
+<td><p>varchar(100)</p></td>
+<td><p>attachment (R3 data type)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="mre-01-countrycode">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">MRE_01 – CountryCode</a><a class="headerlink" href="#mre-01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="mre-02-assessmentmethodid">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">MRE_02 – AssessmentMethodId</a><a class="headerlink" href="#mre-02-assessmentmethodid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the assessment method (model), given by provider.</p>
+<p><strong>Remarks</strong></p>
+<p>It will be cross-checked against the Model table.</p>
+</section>
+<section id="mre-03-start">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">MRE_03 – Start</a><a class="headerlink" href="#mre-03-start" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Start date and time of the model simulation period.</p>
+<p><strong>Remarks</strong></p>
+<p>Start must be provided with time zone.
+This information will be used for recalculation of all datetimes into UTC+1 for storage and analytical purposes.</p>
+</section>
+<section id="mre-04-dataaggregationprocessid">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">MRE_04 – DataAggregationProcessId</a><a class="headerlink" href="#mre-04-dataaggregationprocessid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier for the process of aggregating model data into statistical values.</p>
+</section>
+<section id="mre-05-pollutantid">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">MRE_05 – PollutantId</a><a class="headerlink" href="#mre-05-pollutantid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Code of the air pollutant being modeled, as per Data Dictionary standards.</p>
+</section>
+<section id="mre-06-end">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">MRE_06 – End</a><a class="headerlink" href="#mre-06-end" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>End date and time of the model simulation period.</p>
+<p><strong>Remarks</strong></p>
+<p>End must be provided with time zone.
+This information will be used for recalculation of all datetimes into UTC+1 for storage and analytical purposes.</p>
+</section>
+<section id="mre-07-unit">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">MRE_07 – Unit</a><a class="headerlink" href="#mre-07-unit" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Unit of measurement for the air pollution level (e.g., µg/m³).</p>
+<p><strong>Remarks</strong></p>
+<p>Units must follow those recommended unit for AQD pollutants.</p>
+</section>
+<section id="mre-08-validity">
+<h3><a class="toc-backref" href="#id13" role="doc-backlink">MRE_08 – Validity</a><a class="headerlink" href="#mre-08-validity" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Indicator of whether the model data is valid or flagged.</p>
+</section>
+<section id="mre-09-spatialresolution">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">MRE_09 – SpatialResolution</a><a class="headerlink" href="#mre-09-spatialresolution" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Description of the spatial resolution of the model output, indicating the level of detail - new code list.</p>
+<p><strong>Remarks</strong></p>
+<p>SpatialResolution will be tested against the code list for allowed values.</p>
+</section>
+<section id="mre-10-resulttime">
+<h3><a class="toc-backref" href="#id15" role="doc-backlink">MRE_10 – ResultTime</a><a class="headerlink" href="#mre-10-resulttime" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Time at which the model results were generated or recorded.</p>
+</section>
+<section id="mre-11-geotiffattachment">
+<h3><a class="toc-backref" href="#id16" role="doc-backlink">MRE_11 – GeoTiffAttachment</a><a class="headerlink" href="#mre-11-geotiffattachment" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Attached GEOTIFF.</p>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id17" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>MRE_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_02</p></td>
+<td><p>AssessmentMethodId</p></td>
+<td><p>MOD_DU_PM10_NAT_SR</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_03</p></td>
+<td><p>Start</p></td>
+<td><p>2021-01-01 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_04</p></td>
+<td><p>DataAggregationProcessId</p></td>
+<td><p>P1Y</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_05</p></td>
+<td><p>PollutantId</p></td>
+<td><p>5</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_06</p></td>
+<td><p>End</p></td>
+<td><p>2022-01-01 00:00:00</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_07</p></td>
+<td><p>Unit</p></td>
+<td><p>ug/m3</p></td>
+<td><p>varchar(10)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_08</p></td>
+<td><p>Validity</p></td>
+<td><p>1</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_09</p></td>
+<td><p>SpatialResolution</p></td>
+<td><p>1000</p></td>
+<td><p>int</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>MRE_10</p></td>
+<td><p>ResultTime</p></td>
+<td><p>2023-04-14 10:19:44</p></td>
+<td><p>datetime</p></td>
+<td><p>datetime</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>MRE_11</p></td>
+<td><p>GeoTiffAttachment</p></td>
+<td><p></p></td>
+<td><p>varchar(100)</p></td>
+<td><p>attachment (R3 data type)</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; FK = Foreign Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">MOEResultExternal</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="MOEResultInline.html" class="btn btn-neutral float-left" title="MOEResultInline" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="AssessmentRegimeZone.html" class="btn btn-neutral float-right" title="AssessmentRegimeZone" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

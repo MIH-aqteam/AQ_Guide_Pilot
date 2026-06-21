@@ -1,0 +1,387 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ScenarioMeasure &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=44fe6501" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Measure" href="Measure.html" />
+    <link rel="prev" title="SourceApportionment" href="SourceApportionment.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Tables</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ScenarioMeasure</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sme-01-countrycode">SME_01 – CountryCode</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sme-02-scenarioid">SME_02 – ScenarioId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sme-03-scenariocategory">SME_03 – ScenarioCategory</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sme-04-measuregroupid">SME_04 – MeasureGroupId</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sme-05-measuregrouppollutionreduction">SME_05 – MeasureGroupPollutionReduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#sme-06-measurereductionassessmentmethodid">SME_06 – MeasureReductionAssessmentMethodId</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Tables</a></li>
+      <li class="breadcrumb-item active">ScenarioMeasure</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/tables/ScenarioMeasure.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="scenariomeasure">
+<h1>ScenarioMeasure<a class="headerlink" href="#scenariomeasure" title="Link to this heading"></a></h1>
+<nav class="contents local" id="contents">
+<ul class="simple">
+<li><p><a class="reference internal" href="#description" id="id1">Description</a></p></li>
+<li><p><a class="reference internal" href="#eea-extensions" id="id2">EEA extensions</a></p></li>
+<li><p><a class="reference internal" href="#data-management-rules" id="id3">Data management rules</a></p></li>
+<li><p><a class="reference internal" href="#attributes" id="id4">Attributes</a></p></li>
+<li><p><a class="reference internal" href="#attribute-details" id="id5">Attribute details</a></p>
+<ul>
+<li><p><a class="reference internal" href="#sme-01-countrycode" id="id6">SME_01 – CountryCode</a></p></li>
+<li><p><a class="reference internal" href="#sme-02-scenarioid" id="id7">SME_02 – ScenarioId</a></p></li>
+<li><p><a class="reference internal" href="#sme-03-scenariocategory" id="id8">SME_03 – ScenarioCategory</a></p></li>
+<li><p><a class="reference internal" href="#sme-04-measuregroupid" id="id9">SME_04 – MeasureGroupId</a></p></li>
+<li><p><a class="reference internal" href="#sme-05-measuregrouppollutionreduction" id="id10">SME_05 – MeasureGroupPollutionReduction</a></p></li>
+<li><p><a class="reference internal" href="#sme-06-measurereductionassessmentmethodid" id="id11">SME_06 – MeasureReductionAssessmentMethodId</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference internal" href="#example" id="id12">Example</a></p></li>
+</ul>
+</nav>
+<section id="description">
+<h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
+<p>The purpose of the ScenarioMeasures table is to define the group(s) of measures (MeasureGroupId) associated to a scenario, as well as the total (by group of measures) reduction of pollution level which can be expected. It also points to model/OBE which was used for generating the results for the group of measures.</p>
+<p>ScenarioMeasure (record) table has to be reported whenever a new information or an update of existing information is available.
+Attributes which create unique identifier of each record: CountryCode, ScenarioId, MeasureGroupId and ScenarioCategory.</p>
+<p>Updates of the ScenarioMeasure table will not be time stamped, i.e. each update generates the only version of the ScenarioMeasure that is stored at the EEA:</p>
+<ul class="simple">
+<li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.
+Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against PlanScenario table and Measure table, it may be cross-checking against the ModelObjectiveEstimation table.</p></li>
+</ul>
+<p>There are no valid modifications of existing record in this table.</p>
+<p>Data products for public will present the records validated at the latest deadline.
+Data products for reporters will present the records as reported recently, highlighting the differences between validated reports and recent reports in case of re-submissions.</p>
+</section>
+<section id="eea-extensions">
+<h2><a class="toc-backref" href="#id2" role="doc-backlink">EEA extensions</a><a class="headerlink" href="#eea-extensions" title="Link to this heading"></a></h2>
+<p>ScenarioMeasure table will be extended by several attributes:</p>
+<ul class="simple">
+<li><p>Country (for convenience), based on ISO2 country codes,</p></li>
+<li><p>PollutantId (for convenience), from PlanScenario for the corresponding ScenarioId,</p></li>
+<li><p>Pollutant (for convenience), based on code list,</p></li>
+<li><p>DataAggregationProcessId, (for convenience), from PlanScenario for the corresponding ScenarioId,</p></li>
+<li><p>DataAggregationProcess, (for convenience) based on DataAggregationProcessId.</p></li>
+</ul>
+</section>
+<section id="data-management-rules">
+<h2><a class="toc-backref" href="#id3" role="doc-backlink">Data management rules</a><a class="headerlink" href="#data-management-rules" title="Link to this heading"></a></h2>
+<p>MeasureGroupId allows reporting of impacts for group of measures e.g. originating from different national, regional or local level plans. In such case - MeasureReductionAssessmentMethodId may be used for pointing to AssessmentMethodId in the ModelObjectiveEstimation table for definition of the modelling/OBE method which generated the scenario values for each measure group.
+In case the MeasureReductionAssessmentMethodId is reported - it must be different for each ScenarioId, ScenarioCategory and MeasureGroupId so that it is possible to report values for each of them in the MOEResult tables.
+Also, one of the MOEResult tables must be populated for each reported MeasureReductionAssessmentMethodId but the results may be provided just for the grid cells corresponding to the sampling point locations.</p>
+<p>There is no need to report records for ‘reference’ scenario category in ScenarioMeasure table.</p>
+<p>If MeasureGroupPollutionReduction is reported - the sum for specific scenario category within ScenarioId must be =&lt; the difference between the values of ScenarioPollutionLevel reported for ‘reference’ and that ScenarioId and ScenarioCategory in PlanScenario table.
+It is not allowed to re-use MeasureGroupId in different ScenarioId (to avoid complications in deletion procedures).</p>
+<p>Records in ScenarioMeasure table which do not have any correspondence to records in PlanScenario table or Measure table will be flagged for deletion in the reference data flow.</p>
+</section>
+<section id="attributes">
+<h2><a class="toc-backref" href="#id4" role="doc-backlink">Attributes</a><a class="headerlink" href="#attributes" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>Properties</p></th>
+<th class="head"><p>Code list</p></th>
+<th class="head"><p>Related table(s)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SME_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">countries</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_02</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ComplianceAssessmentMethod.html"><span class="std std-doc">ComplianceAssessmentMethod</span></a><br><a class="reference internal" href="PlanScenario.html"><span class="std std-doc">PlanScenario</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>SME_03</p></td>
+<td><p>ScenarioCategory</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/scenariocategory">scenariocategory</a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_04</p></td>
+<td><p>MeasureGroupId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>PK</p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="MeasurementStation.html"><span class="std std-doc">MeasurementStation</span></a></p></td>
+</tr>
+<tr class="row-even"><td><p>SME_05</p></td>
+<td><p>MeasureGroupPollutionReduction</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_06</p></td>
+<td><p>MeasureReductionAssessmentMethodId</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+<td><p><a class="reference internal" href="ModelObjectiveEstimation.html"><span class="std std-doc">ModelObjectiveEstimation</span></a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attribute-details">
+<h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
+<section id="sme-01-countrycode">
+<h3><a class="toc-backref" href="#id6" role="doc-backlink">SME_01 – CountryCode</a><a class="headerlink" href="#sme-01-countrycode" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Country or territory ISO2 code.</p>
+</section>
+<section id="sme-02-scenarioid">
+<h3><a class="toc-backref" href="#id7" role="doc-backlink">SME_02 – ScenarioId</a><a class="headerlink" href="#sme-02-scenarioid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the scenario, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>It will be cross-checked against PlanScenario table.</p>
+</section>
+<section id="sme-03-scenariocategory">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">SME_03 – ScenarioCategory</a><a class="headerlink" href="#sme-03-scenariocategory" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Classification of the scenario (e.g., baseline, projection).</p>
+<p><strong>Remarks</strong></p>
+<p>ScenarioCategory: baseline or projection. It should be included in the composite PK in the next iteration of schema version.</p>
+</section>
+<section id="sme-04-measuregroupid">
+<h3><a class="toc-backref" href="#id9" role="doc-backlink">SME_04 – MeasureGroupId</a><a class="headerlink" href="#sme-04-measuregroupid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the pollution reduction for measure group, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>MeasureGroupId: distinct groups might contain one or more measures. For example, group 1 contains all the measures related to traffic, while group 2 contains all the measures related to industry. To the extreme, the group may correspond to one measure only; the same MeasureGroupId might be used for different scenarios, also - several MeasureGroupId might be declared for the same scenario.</p>
+<p>It will be cross-checked against Measure table.</p>
+</section>
+<section id="sme-05-measuregrouppollutionreduction">
+<h3><a class="toc-backref" href="#id10" role="doc-backlink">SME_05 – MeasureGroupPollutionReduction</a><a class="headerlink" href="#sme-05-measuregrouppollutionreduction" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Reduction in air pollution concentration levels due to the applied group of measures.</p>
+<p><strong>Remarks</strong></p>
+<p>Sum of MeasureGroupAirPollutionReduction within ScenarioId should agree with the difference between value of AirPollutionLevel in the first AttainmentId and the value reported in PlanScenario as ScenarioAirPollutionLevel.</p>
+</section>
+<section id="sme-06-measurereductionassessmentmethodid">
+<h3><a class="toc-backref" href="#id11" role="doc-backlink">SME_06 – MeasureReductionAssessmentMethodId</a><a class="headerlink" href="#sme-06-measurereductionassessmentmethodid" title="Link to this heading"></a></h3>
+<p><strong>Content</strong></p>
+<p>Identifier of the assessment method - model - used in the scenario, given by data provider.</p>
+<p><strong>Remarks</strong></p>
+<p>AssessmentMethodId: the model/OBE used for producing the results for the measure group (also to be declared in the Model table). It may be cross-checked against Model table, also - indirectly - against ModellingResult table.</p>
+</section>
+</section>
+<section id="example">
+<h2><a class="toc-backref" href="#id12" role="doc-backlink">Example</a><a class="headerlink" href="#example" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Attribute Code</p></th>
+<th class="head"><p>Attribute Name</p></th>
+<th class="head"><p>Example</p></th>
+<th class="head"><p>SQL DB Data Type</p></th>
+<th class="head"><p>ReportNet3 Data Type</p></th>
+<th class="head"><p>PK</p></th>
+<th class="head"><p>CL</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>SME_01</p></td>
+<td><p>CountryCode</p></td>
+<td><p>DU</p></td>
+<td><p>varchar(2)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_02</p></td>
+<td><p>ScenarioId</p></td>
+<td><p>SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SME_03</p></td>
+<td><p>ScenarioCategory</p></td>
+<td><p>baseline</p></td>
+<td><p>varchar(20)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p>✓</p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_04</p></td>
+<td><p>MeasureGroupId</p></td>
+<td><p>MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p>✓</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p>SME_05</p></td>
+<td><p>MeasureGroupPollutionReduction</p></td>
+<td><p>null</p></td>
+<td><p>decimal(10,2)</p></td>
+<td><p>numeric</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>SME_06</p></td>
+<td><p>MeasureReductionAssessmentMethodId</p></td>
+<td><p>null</p></td>
+<td><p>varchar(50)</p></td>
+<td><p>string</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Legend:</strong> PK = Primary Key; CL = Code List.</p>
+<p>The complete set of examples is available in the Excel workbook, worksheet <code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code>.</p>
+<p><a class="reference download internal" download="" href="../_downloads/c7d3627823fa17f2166571783d9562c2/R3_v501_AQ_Reporting_guide_example.xlsx"><span class="xref download myst">Download complete examples workbook</span></a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="SourceApportionment.html" class="btn btn-neutral float-left" title="SourceApportionment" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="Measure.html" class="btn btn-neutral float-right" title="Measure" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
