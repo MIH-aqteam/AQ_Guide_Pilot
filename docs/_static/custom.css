@@ -65,7 +65,14 @@
     border-left: 4px solid #7A2832 !important;
 }
 
-/* Level 2 headings (##) */
+/* Level 1 headings */
+.rst-content h1 {
+    color: #7A2832;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Level 2 headings */
 .rst-content h2 {
     border-bottom: 2px solid #7A2832;
     padding-bottom: 4px;
@@ -73,7 +80,7 @@
     margin-bottom: 15px;
 }
 
-/* Level 3 headings (###) */
+/* Level 3 headings */
 .rst-content h3 {
     font-weight: 700;
     margin-top: 20px;
@@ -89,8 +96,13 @@
 }
 
 /* Tables */
+.rst-content table.docutils {
+    border: 1px solid #D8C5C8;
+}
+
 .rst-content table.docutils th {
-    background: #F2ECEB;
+    background: #E8D9D6;
+    font-weight: 700;
 }
 
 /* Contents title */
@@ -132,7 +144,7 @@ body,
     color: #FFFFFF !important;
     font-weight: 600;
     font-size: 18px;
-    padding-top: 90px;
+    padding-top: 110px;
     position: relative;
 }
 
@@ -151,10 +163,62 @@ body,
     background-position: center;
 }
 
+/* Toctree links */
 .toctree-wrapper a {
     font-weight: 500;
 }
 
 .toctree-wrapper > ul > li > a {
     font-size: 1.15em;
+}
+
+/* Landing page cards */
+.landing-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+    gap: 18px;
+    margin: 30px 0;
+}
+
+.landing-card {
+    display: block;
+    padding: 20px;
+    border: 1px solid #D8C5C8;
+    border-left: 5px solid #7A2832;
+    border-radius: 6px;
+    background: #FAF7F6;
+    text-decoration: none !important;
+    color: #333333 !important;
+}
+
+.landing-card:hover {
+    background: #F2ECEB;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.landing-icon {
+    font-size: 30px;
+    margin-bottom: 8px;
+}
+
+.landing-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #7A2832;
+    margin-bottom: 6px;
+}
+
+.landing-text {
+    font-size: 14px;
+    line-height: 1.35;
+}
+
+/* Version information on landing page */
+.version-info {
+    font-size: 0.80em;
+    font-style: italic;
+    color: #777777;
+    border-bottom: 1px solid #D8C5C8;
+    padding-bottom: 8px;
+    margin-bottom: 20px;
 }
