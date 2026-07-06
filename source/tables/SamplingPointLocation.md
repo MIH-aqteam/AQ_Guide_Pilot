@@ -41,21 +41,21 @@ In case where the LocationBegin was reported wrongly and/or the corresponding re
 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
-| SPL01 | CountryCode | varchar(2) | string | PK |  |  |
-| SPL02 | AssessmentMethodId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[SamplingPoint](SamplingPoint.md)<br>[SamplingProcess](SamplingProcess.md)<br>[ObservationMeasurementResult](ObservationMeasurementResult.md) |
-| SPL03 | LocationBegin | datetime | datetime | PK |  |  |
-| SPL04 | LocationEnd | datetime | datetime |  |  |  |
+| SPL_01 | CountryCode | varchar(2) | string | PK |  |  |
+| SPL_02 | AssessmentMethodId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[SamplingPoint](SamplingPoint.md)<br>[SamplingProcess](SamplingProcess.md)<br>[ObservationMeasurementResult](ObservationMeasurementResult.md) |
+| SPL_03 | LocationBegin | datetime | datetime | PK |  |  |
+| SPL_04 | LocationEnd | datetime | datetime |  |  |  |
 | SPL_05 | StationArea | varchar(100) | string |  | [areaclassification](https://dd.eionet.europa.eu/vocabulary/aq/areaclassification/view) |  |
 | SPL_06 | SamplingPointCategory | varchar(50) | string |  | Code list to be developed |  |
-| SPL07 | Hotspot | bit | boolean |  |  |  |
-| SPL08 | Supersite | bit | boolean |  |  |  |
-| SPL09 | Latitude | decimal(8,4) | numeric |  |  |  |
-| SPL10 | Longitude | decimal(8,4) | numeric |  |  |  |
-| SPL11 | Altitude | decimal(10,1) | numeric |  |  |  |
-| SPL12 | InletHeight | decimal(10,1) | numeric |  |  |  |
-| SPL13 | BuildingDistance | decimal(10,1) | numeric |  |  |  |
-| SPL14 | KerbDistance | decimal(10,1) | numeric |  |  |  |
-| SPL15 | EmissionSourceDistance | decimal(10,1) | numeric |  |  |  |
+| SPL_07 | Hotspot | bit | boolean |  |  |  |
+| SPL_08 | Supersite | bit | boolean |  |  |  |
+| SPL_09 | Latitude | decimal(8,4) | numeric |  |  |  |
+| SPL_10 | Longitude | decimal(8,4) | numeric |  |  |  |
+| SPL_11 | Altitude | decimal(10,1) | numeric |  |  |  |
+| SPL_12 | InletHeight | decimal(10,1) | numeric |  |  |  |
+| SPL_13 | BuildingDistance | decimal(10,1) | numeric |  |  |  |
+| SPL_14 | KerbDistance | decimal(10,1) | numeric |  |  |  |
+| SPL_15 | EmissionSourceDistance | decimal(10,1) | numeric |  |  |  |
 
 
 ## Attribute details
