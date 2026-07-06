@@ -1,4 +1,12 @@
+# Sphinx local build
 build/
+
+# macOS
+.DS_Store
+
+# Sphinx temporary files
+docs/.doctrees/
+docs/.buildinfobuild/
 .DS_Store
 */.DS_Store
 .DS_Store
