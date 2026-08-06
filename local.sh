@@ -1,10 +1,23 @@
 #!/bin/bash
 
-echo "Building local version..."
+set -Eeuo pipefail
 
-rm -rf build
+echo "Building local documentation..."
 
-python3 -m sphinx -E -a -b html source build/html
+rm -rf build/html
+
+python3 -m sphinx \
+    --keep-going \
+    -E \
+    -a \
+    -b html \
+    source \
+    build/html
+
+echo "Build completed successfully."
+
+if command -v open >/dev/null 2>&1; then
+    open build/html/index.html
+fi
 
 echo "Done!"
-

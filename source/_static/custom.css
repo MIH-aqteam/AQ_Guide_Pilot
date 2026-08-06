@@ -1,144 +1,69 @@
-/* Wider content area */
+/* =========================================================
+   AQ REPORTING GUIDE — GREY REPORTNET-STYLE THEME
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   General layout
+   --------------------------------------------------------- */
+
 .wy-nav-content {
     max-width: 1200px !important;
+    padding: 40px 55px;
 }
 
-/* More compact text */
+.wy-nav-content-wrap {
+    background: hsl(0, 0%, 95%);
+}
+
+/* ---------------------------------------------------------
+   Typography
+   --------------------------------------------------------- */
+
+body,
+.wy-nav-content,
+.wy-menu-vertical,
+.rst-content {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #33383D;
+}
+
 .rst-content {
     font-size: 14px;
-    line-height: 1.25;
+    line-height: 1.35;
 }
 
-/* More compact paragraphs and lists */
 .rst-content p {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .rst-content ul,
 .rst-content ol {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .rst-content li {
-    margin-bottom: 3px;
+    margin-bottom: 4px;
 }
 
-/* More compact tables */
-.rst-content table.docutils td,
-.rst-content table.docutils th {
-    padding: 4px 6px;
-    font-size: 13px;
-    line-height: 1.25;
-    white-space: normal !important;
-}
+/* ---------------------------------------------------------
+   Top banner and logo area
+   --------------------------------------------------------- */
 
-/* ============================= */
-/* Bordeaux theme                */
-/* ============================= */
-
-/* Top banner */
 .wy-side-nav-search,
 .wy-nav-top {
-    background: #7A2832 !important;
+    background: #4F555A !important;
 }
 
-/* Left navigation panel */
-.wy-nav-side {
-    background: #F5F3F2 !important;
+.wy-side-nav-search {
+    border-bottom: 1px solid #D5D5D5;
 }
 
-/* Navigation links */
-.wy-menu-vertical a {
-    color: #4A4A4A !important;
-}
-
-.wy-menu-vertical a:hover {
-    background: #E8E3E1 !important;
-    color: #7A2832 !important;
-}
-
-/* Current page */
-.wy-menu-vertical li.current > a,
-.wy-menu-vertical li.on > a {
-    background: #FFFFFF !important;
-    color: #7A2832 !important;
-    border-left: 4px solid #7A2832 !important;
-}
-
-/* Level 1 headings */
-.rst-content h1 {
-    color: #7A2832;
-    font-weight: 700;
-    margin-bottom: 20px;
-}
-
-/* Level 2 headings */
-.rst-content h2 {
-    border-bottom: 2px solid #7A2832;
-    padding-bottom: 4px;
-    margin-top: 30px;
-    margin-bottom: 15px;
-}
-
-/* Level 3 headings */
-.rst-content h3 {
-    font-weight: 700;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    background: #FAF7F6;
-    padding: 4px 8px;
-    border-left: 4px solid #7A2832;
-}
-
-/* Links in content */
-.rst-content a {
-    color: #7A2832;
-}
-
-/* Tables */
-.rst-content table.docutils {
-    border: 1px solid #D8C5C8;
-}
-
-.rst-content table.docutils th {
-    background: #E8D9D6;
-    font-weight: 700;
-}
-
-/* Contents title */
-.rst-content p.topic-title {
-    color: #7A2832 !important;
-    font-weight: 700;
-}
-
-/* Project title in sidebar */
-.wy-side-nav-search > a {
-    color: #FFFFFF !important;
-    font-weight: 600;
-}
-
-/* Search box */
-.wy-side-nav-search input[type=text] {
-    border: 1px solid #D8C5C8;
-}
-
-.wy-menu-vertical p.caption {
-    display: none !important;
-}
-
-/* Modern font */
-body,
-.wy-nav-content,
-.wy-menu-vertical {
-    font-family: Inter, "Segoe UI", Aptos, Arial, sans-serif;
-}
-
-/* Remove home icon but keep title */
+/* Remove home icon but keep project title */
 .wy-side-nav-search > a.icon-home::before {
     display: none !important;
 }
 
-/* Keep project title visible */
+/* Project title */
 .wy-side-nav-search > a.icon-home {
     display: block;
     color: #FFFFFF !important;
@@ -148,7 +73,7 @@ body,
     position: relative;
 }
 
-/* Add EEA logo above title */
+/* EEA logo above title */
 .wy-side-nav-search > a.icon-home::after {
     content: "";
     position: absolute;
@@ -157,13 +82,120 @@ body,
     transform: translateX(-50%);
     width: 150px;
     height: 88px;
-    background-image: url("eea_logo_compact_en-1.svg");
+    background-image: url("EEA.png");
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
 }
 
-/* Toctree links */
+/* Search box */
+.wy-side-nav-search input[type="text"] {
+    border: 1px solid #C8C8C8;
+    border-radius: 2px;
+    background: #FFFFFF;
+    color: #33383D;
+    box-shadow: none;
+}
+
+/* ---------------------------------------------------------
+   Left navigation
+   --------------------------------------------------------- */
+
+.wy-nav-side {
+    background: #F4F4F4 !important;
+    border-right: 1px solid #D8D8D8;
+}
+
+.wy-menu-vertical p.caption {
+    display: none !important;
+}
+
+.wy-menu-vertical a {
+    color: #68717A !important;
+    background: transparent !important;
+}
+
+.wy-menu-vertical a:hover {
+    background: #E8E8E8 !important;
+    color: #202428 !important;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.on > a {
+    background: #E3E3E3 !important;
+    color: #202428 !important;
+    border-left: 4px solid #666D73 !important;
+    font-weight: 600;
+}
+
+.wy-menu-vertical li.current a {
+    border-color: #D4D4D4;
+}
+
+.wy-menu-vertical li.toctree-l1.current > a {
+    background: #DDDDDD !important;
+    color: #202428 !important;
+}
+
+.wy-menu-vertical li.toctree-l2.current > a,
+.wy-menu-vertical li.toctree-l3.current > a {
+    background: #ECECEC !important;
+    color: #202428 !important;
+}
+
+/* ---------------------------------------------------------
+   Headings
+   --------------------------------------------------------- */
+
+.rst-content h1,
+.rst-content h2,
+.rst-content h3,
+.rst-content h4,
+.rst-content h5,
+.rst-content h6 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #252A2E;
+}
+
+.rst-content h1 {
+    font-size: 2.2em;
+    font-weight: 700;
+    margin-bottom: 22px;
+}
+
+.rst-content h2 {
+    font-size: 1.45em;
+    font-weight: 600;
+    border-bottom: 1px solid #BFC3C6;
+    padding-bottom: 5px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+.rst-content h3 {
+    font-size: 1.15em;
+    font-weight: 600;
+    margin-top: 22px;
+    margin-bottom: 10px;
+    background: #F2F2F2;
+    padding: 6px 9px;
+    border-left: 4px solid #737A80;
+}
+
+/* ---------------------------------------------------------
+   Links
+   --------------------------------------------------------- */
+
+.rst-content a,
+.rst-content a:visited {
+    color: #65717A;
+    text-decoration: underline;
+}
+
+.rst-content a:hover {
+    color: #24282C;
+}
+
 .toctree-wrapper a {
     font-weight: 500;
 }
@@ -172,7 +204,131 @@ body,
     font-size: 1.15em;
 }
 
-/* Landing page cards */
+/* ---------------------------------------------------------
+   Tables
+   --------------------------------------------------------- */
+
+.rst-content table.docutils {
+    border: 1px solid #D1D1D1;
+}
+
+.rst-content table.docutils td,
+.rst-content table.docutils th {
+    padding: 4px 6px;
+    font-size: 13px;
+    line-height: 1.25;
+    white-space: normal !important;
+    border: 1px solid #D1D1D1;
+}
+
+.rst-content table.docutils th {
+    background: #E4E4E4;
+    color: #252A2E;
+    font-weight: 700;
+}
+
+.rst-content table.docutils tr:nth-child(even) {
+    background: #F7F7F7;
+}
+
+/* ---------------------------------------------------------
+   Contents title
+   --------------------------------------------------------- */
+
+.rst-content p.topic-title {
+    color: #353A3E !important;
+    font-weight: 700;
+}
+
+/* ---------------------------------------------------------
+   Code and literal text
+   --------------------------------------------------------- */
+
+.rst-content code,
+.rst-content tt {
+    background: #F0F0F0;
+    border: 1px solid #DDDDDD;
+    color: #33383D;
+}
+
+/* ---------------------------------------------------------
+   Relationship dropdowns
+   --------------------------------------------------------- */
+
+/* Space between individual relationship dropdowns */
+.rst-content details.sd-dropdown {
+    margin-top: 0;
+    margin-bottom: 14px;
+    border: 1px solid #C9CDD0 !important;
+    border-radius: 4px;
+    box-shadow: none !important;
+    overflow: hidden;
+}
+
+/* Relationship title bar */
+.rst-content details.sd-dropdown > summary,
+.rst-content details.sd-dropdown > summary.sd-summary-title,
+.rst-content .sd-dropdown > .sd-summary-title {
+    padding: 11px 14px !important;
+    background: #E4E6E8 !important;
+    border-left: 5px solid #666D73 !important;
+    color: #252A2E !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    font-size: 1.12rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    text-decoration: none !important;
+}
+
+/* Actual text inside the dropdown title */
+.rst-content details.sd-dropdown > summary .sd-summary-text,
+.rst-content .sd-summary-title .sd-summary-text {
+    color: #252A2E !important;
+    font-size: 1.12rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+}
+
+/* Hover state for relationship title */
+.rst-content details.sd-dropdown > summary:hover,
+.rst-content details.sd-dropdown > summary.sd-summary-title:hover {
+    background: #D9DCDE !important;
+    color: #171A1D !important;
+}
+
+/* Open relationship title */
+.rst-content details.sd-dropdown[open] > summary,
+.rst-content details.sd-dropdown[open] > summary.sd-summary-title {
+    background: #DDE0E2 !important;
+    border-bottom: 1px solid #C9CDD0 !important;
+}
+
+/* Dropdown arrow */
+.rst-content details.sd-dropdown > summary::marker {
+    color: #5E666C;
+}
+
+.rst-content details.sd-dropdown > summary .sd-summary-state-marker {
+    color: #5E666C !important;
+}
+
+/* Dropdown content */
+.rst-content details.sd-dropdown > div.sd-summary-content,
+.rst-content details.sd-dropdown > .sd-summary-content {
+    padding: 16px 16px 10px 16px !important;
+    background: #FFFFFF;
+}
+
+/* Preserve the existing internal subtitles */
+.rst-content details.sd-dropdown .sd-summary-content > p > strong,
+.rst-content details.sd-dropdown .sd-summary-content strong {
+    color: #33383D;
+}
+
+/* ---------------------------------------------------------
+   Landing page cards
+   --------------------------------------------------------- */
+
 .landing-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(220px, 1fr));
@@ -183,17 +339,17 @@ body,
 .landing-card {
     display: block;
     padding: 20px;
-    border: 1px solid #D8C5C8;
-    border-left: 5px solid #7A2832;
-    border-radius: 6px;
-    background: #FAF7F6;
+    border: 1px solid #D0D0D0;
+    border-left: 5px solid #6B7278;
+    border-radius: 4px;
+    background: #F7F7F7;
     text-decoration: none !important;
-    color: #333333 !important;
+    color: #33383D !important;
 }
 
 .landing-card:hover {
-    background: #F2ECEB;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    background: #ECECEC;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .landing-icon {
@@ -204,21 +360,166 @@ body,
 .landing-title {
     font-size: 18px;
     font-weight: 700;
-    color: #7A2832;
+    color: #34393D;
     margin-bottom: 6px;
 }
 
 .landing-text {
     font-size: 14px;
     line-height: 1.35;
+    color: #51575C;
 }
 
-/* Version information on landing page */
+/* ---------------------------------------------------------
+   Version information
+   --------------------------------------------------------- */
+
 .version-info {
     font-size: 0.80em;
     font-style: italic;
     color: #777777;
-    border-bottom: 1px solid #D8C5C8;
+    border-bottom: 1px solid #D0D0D0;
     padding-bottom: 8px;
     margin-bottom: 20px;
+}
+
+/* ---------------------------------------------------------
+   Breadcrumbs and footer
+   --------------------------------------------------------- */
+
+.wy-breadcrumbs {
+    color: #747B81;
+}
+
+.wy-breadcrumbs a {
+    color: #747B81;
+}
+
+footer {
+    color: #777D82;
+}
+
+/* ---------------------------------------------------------
+   Reporting tables illustrated matrix
+   --------------------------------------------------------- */
+
+.reporting-table-grid {
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+}
+
+/* Entire card is clickable */
+.rst-content a.reporting-table-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    height: 190px;
+    padding: 10px;
+    overflow: hidden;
+
+    color: #333333;
+    background: #FFFFFF;
+    border: 1px solid #D4D4D4;
+    border-radius: 5px;
+
+    text-align: center;
+    text-decoration: none;
+    box-shadow: none;
+
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease,
+        transform 0.15s ease;
+}
+
+.rst-content a.reporting-table-card:hover {
+    color: #111111;
+    background: #F2F2F2;
+    border-color: #777777;
+    text-decoration: none;
+    transform: translateY(-2px);
+}
+
+/* Table name */
+.reporting-table-title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 38px;
+    margin-bottom: 6px;
+
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+}
+
+/* Identical image area for every card */
+.reporting-table-image {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    min-height: 0;
+    overflow: hidden;
+}
+
+/* Normalises illustrations having different dimensions */
+.rst-content .reporting-table-image img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+
+    object-fit: contain;
+    object-position: center;
+    border: 0;
+}
+
+/* ---------------------------------------------------------
+   Responsive reporting table grid
+   --------------------------------------------------------- */
+
+/* Five columns on moderately wide screens */
+@media screen and (max-width: 1250px) {
+    .reporting-table-grid {
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+}
+
+/* Four columns on smaller desktop screens */
+@media screen and (max-width: 1050px) {
+    .reporting-table-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+}
+
+/* Three columns on tablets */
+@media screen and (max-width: 800px) {
+    .reporting-table-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* Two columns on phones */
+@media screen and (max-width: 550px) {
+    .reporting-table-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .rst-content a.reporting-table-card {
+        height: 175px;
+    }
+
+    .rst-content .reporting-table-image img {
+        height: 110px;
+    }
 }

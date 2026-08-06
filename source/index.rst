@@ -45,6 +45,12 @@ This guide provides structured documentation for the Reportnet 3 air quality rep
       </a>
    </div>
 
+   <a class="landing-card" href="relationships/index.html">
+      <div class="landing-icon">🔄</div>
+      <div class="landing-title">Table relationships</div>
+      <div class="landing-text">Physical and logical relationships between reporting tables.</div>
+   </a>
+
 .. toctree::
    :maxdepth: 1
    :caption: Contents:
@@ -54,3 +60,4 @@ This guide provides structured documentation for the Reportnet 3 air quality rep
    diagram
    tables/index
    identifiers
+   relationships/index

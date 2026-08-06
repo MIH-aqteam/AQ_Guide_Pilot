@@ -34,7 +34,7 @@ Records in Document table which do not have any correspondence (via DocumentId) 
 |---|---|---|---|---|---|---|
 | DOC_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | DOC_02 | DataTable | varchar(50) | string | PK | [datatable](https://dd.eionet.europa.eu/vocabulary/aq/datatable) |  |
-| DOC_03 | DocumentType | varchar(50) | string | PK | [documentobject](https://dd.eionet.europa.eu/vocabulary/aq/documentobject) |  |
+| DOC_03 | DocumentType | varchar(50) | string | PK | [documenttype](https://dd.eionet.europa.eu/vocabulary/aq/documenttype) |  |
 | DOC_04 | DocumentId | varchar(500) | string | PK |  | [MeasurementStation](MeasurementStation.md)<br>[SamplingProcess](SamplingProcess.md)<br>[ModelObjectiveEstimation](ModelObjectiveEstimation.md)<br>[AssessmentRegimeZone](AssessmentRegimeZone.md)<br>[CompliancePlanLink](CompliancePlanLink.md)<br>[SourceApportionment](SourceApportionment.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
 | DOC_05 | DocumentAttachment | varchar(100) | attachment (R3 data type) |  |  |  |
 | DOC_06 | DocumentOriginalURL | varchar(100) | string |  |  |  |

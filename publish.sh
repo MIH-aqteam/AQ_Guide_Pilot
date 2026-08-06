@@ -1,18 +1,61 @@
 #!/bin/bash
 
-echo "Commit message:"
-read MSG
+set -Eeuo pipefail
 
-rm -rf docs
+clear
 
-python3 -m sphinx -E -a -b html source docs
+echo "=================================================="
+echo "    AQ eREPORTING GUIDE - PUBLISH TO GITHUB"
+echo "=================================================="
+echo
 
-touch docs/.nojekyll
+echo "Building local documentation..."
+echo
 
-git add .
+rm -rf build/html
 
-git commit -m "$MSG"
+python3 -m sphinx \
+    -W \
+    --keep-going \
+    -E \
+    -a \
+    -b html \
+    source \
+    build/html
 
-git push
+echo
+echo "✓ Local build completed successfully (no warnings)."
+echo
 
-echo "Done!"
+git status --short
+
+echo
+echo "--------------------------------------------------"
+read -p "Commit message: " COMMITMSG
+
+if [ -z "$COMMITMSG" ]; then
+    echo
+    echo "❌ No commit message entered. Publication cancelled."
+    exit 1
+fi
+
+echo
+echo "Staging files..."
+git add -A
+
+echo "Creating commit..."
+git commit -m "$COMMITMSG"
+
+echo
+echo "Pushing to personal GitHub..."
+git push personal main
+
+echo
+echo "=================================================="
+echo "✓ Publication completed successfully."
+echo
+echo "Repository : https://github.com/MIH-aqteam/AQ_Guide_Pilot"
+echo "Website    : https://mih-aqteam.github.io/AQ_Guide_Pilot/"
+echo
+echo "GitHub Actions is now deploying the updated website."
+echo "=================================================="

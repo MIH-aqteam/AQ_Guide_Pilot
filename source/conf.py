@@ -1,30 +1,36 @@
 # Configuration file for the Sphinx documentation builder.
-#
-# For the full list of built-in configuration values, see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 # -- Project information -----------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'AQ eReporting Guide'
-copyright = '2026, EEA AQ Team'
-author = 'EEA AQ Team'
-release = '0.1'
+project = "AQ eReporting Guide"
+copyright = "2026, EEA AQ Team"
+author = "EEA AQ Team"
+release = "0.1"
 
 # -- General configuration ---------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
-extensions = ["myst_parser"]
-html_theme = "sphinx_rtd_theme"
+extensions = [
+    "myst_parser",
+    "sphinx_design",
+]
 
-templates_path = ['_templates']
+templates_path = ["_templates"]
 exclude_patterns = []
 
+# -- HTML output -------------------------------------------------------------
 
+html_theme = "sphinx_rtd_theme"
 
-# -- Options for HTML output -------------------------------------------------
-# https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+html_theme_options = {
+    "collapse_navigation": False,
+    "sticky_navigation": True,
+    "navigation_depth": 4,
+    "includehidden": True,
+    "titles_only": True,
+}
 
 html_static_path = ["_static"]
 
-html_css_files = ["custom.css"]
+html_css_files = [
+    "custom.css",
+]
