@@ -23,6 +23,8 @@ python3 -m sphinx \
     source \
     docs
 
+touch docs/.nojekyll
+
 echo
 echo "✓ Build completed successfully (no warnings)."
 echo
