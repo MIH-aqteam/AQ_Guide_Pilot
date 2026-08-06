@@ -52,7 +52,7 @@ git push personal main
 
 echo
 echo "=================================================="
-echo "✓ Publication completed successfully."
+git push origin mainecho "✓ Publication completed successfully."
 echo
 echo "Repository : https://github.com/MIH-aqteam/AQ_Guide_Pilot"
 echo "Website    : https://mih-aqteam.github.io/AQ_Guide_Pilot/"
