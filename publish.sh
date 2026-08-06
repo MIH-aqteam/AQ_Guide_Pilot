@@ -48,7 +48,7 @@ git commit -m "$COMMITMSG"
 
 echo
 echo "Pushing to personal GitHub..."
-git push personal main
+git push origin  main
 
 echo
 echo "=================================================="
@@ -59,3 +59,4 @@ echo "Website    : https://mih-aqteam.github.io/AQ_Guide_Pilot/"
 echo
 echo "GitHub Actions is now deploying the updated website."
 echo "=================================================="
+
