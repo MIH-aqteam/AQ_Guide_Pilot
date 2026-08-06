@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logical Relationships &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f5f27675" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Documentation Relationships" href="documentation-relationships.html" />
+    <link rel="prev" title="Physical PK–FK Relationships" href="physical-pk-fk.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tables/index.html">Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Table Relationships</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="physical-pk-fk.html">Physical PK–FK Relationships</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Logical Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation-relationships.html">Documentation Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-summary.html">Physical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logical-summary.html">Logical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Table Relationships</a></li>
+      <li class="breadcrumb-item active">Logical Relationships</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/relationships/logical-relationships.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="logical-relationships">
+<h1>Logical Relationships<a class="headerlink" href="#logical-relationships" title="Link to this heading"></a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Authority → Multiple Entity Tables</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Authority.AuthorityInstanceId</span></code> can identify different types of reporting entities.</p>
+<p class="sd-card-text">Depending on the value of <code class="docutils literal notranslate"><span class="pre">AuthorityInstance</span></code>, or an equivalent type attribute, it may refer to:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">MeasurementStation.StationEoICode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SamplingPoint.AssessmentMethodId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AssessmentRegimeZone.ZoneId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ZoneGeometry.ZoneId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation.AssessmentMethodId</span></code></p></li>
+</ul>
+<p class="sd-card-text">or to a national level if <code class="docutils literal notranslate"><span class="pre">AuthorityInstance</span> <span class="pre">=</span> <span class="pre">'nuts0'</span></code>.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The target parent table depends on another attribute.</p>
+<p class="sd-card-text">A single SQL foreign key cannot conditionally reference different parent tables.</p>
+<p class="sd-card-text">Creating several foreign keys would incorrectly require the same identifier to exist in <strong>all</strong> possible parent tables.</p>
+<p class="sd-card-text">This is therefore a <strong>polymorphic logical relationship</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingPointLocation ↔ ObservationMeasurementResult</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text">An observation must correspond to a valid sampling-point location for the observation time.</p>
+<p class="sd-card-text">The matching logic uses:</p>
+<ul class="simple">
+<li><p class="sd-card-text">same <code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text">same <code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Observation.Start</span> <span class="pre">&gt;=</span> <span class="pre">LocationBegin</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Observation.Start</span> <span class="pre">&lt;</span> <span class="pre">LocationEnd</span></code></p></li>
+</ul>
+<p class="sd-card-text">or:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">LocationEnd</span></code> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code></p></li>
+</ul>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The relationship depends on the observation timestamp falling within a validity interval.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ObservationMeasurementResult</span></code> does not contain <code class="docutils literal notranslate"><span class="pre">LocationBegin</span></code>, which forms part of the <code class="docutils literal notranslate"><span class="pre">SamplingPointLocation</span></code> primary key.</p>
+<p class="sd-card-text">It therefore does not directly identify one specific location record.</p>
+<p class="sd-card-text">This is a <strong>temporal logical relationship</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingProcess ↔ ObservationMeasurementResult</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text">An observation must correspond to an active sampling process for the same sampling point.</p>
+<p class="sd-card-text">The matching logic uses:</p>
+<ul class="simple">
+<li><p class="sd-card-text">same <code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text">same <code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Observation.Start</span> <span class="pre">&gt;=</span> <span class="pre">ProcessActivityBegin</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Observation.Start</span> <span class="pre">&lt;</span> <span class="pre">ProcessActivityEnd</span></code></p></li>
+</ul>
+<p class="sd-card-text">or:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ProcessActivityEnd</span></code> is <code class="docutils literal notranslate"><span class="pre">NULL</span></code></p></li>
+</ul>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">SamplingProcess</span></code> primary key contains:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ProcessId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ProcessActivityBegin</span></code></p></li>
+</ul>
+<p class="sd-card-text">The observation does not identify:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ProcessId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ProcessActivityBegin</span></code></p></li>
+</ul>
+<p class="sd-card-text">The applicable process must therefore be determined from the observation time and the process validity period.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingPointLocation and SamplingProcess ↔ ObservationMeasurementResultPNSD</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text">Similarly as observations, the PNSD observations must correspond to:</p>
+<ul class="simple">
+<li><p class="sd-card-text">an existing <code class="docutils literal notranslate"><span class="pre">SamplingPoint</span></code>;</p></li>
+<li><p class="sd-card-text">a valid <code class="docutils literal notranslate"><span class="pre">SamplingPointLocation</span></code>;</p></li>
+<li><p class="sd-card-text">an active <code class="docutils literal notranslate"><span class="pre">SamplingProcess</span></code>.</p></li>
+</ul>
+<p class="sd-card-text">The relationship to <code class="docutils literal notranslate"><span class="pre">SamplingPoint</span></code> can be implemented through a physical FK.</p>
+<p class="sd-card-text">The location and process relationships remain logical.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">Similarly as observations, the PNSD observations do not contain the complete primary key of the applicable location or process record.</p>
+<p class="sd-card-text">The correct record is selected using the PNSD observation timestamp.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">AssessmentRegimeZone → ZoneGeometry</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text">For assessment regimes represented by a reported AQ zone:</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AssessmentRegimeZone</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">ZoneId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">uses</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ZoneGeometry</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">ZoneId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The equality columns correspond to the documented <code class="docutils literal notranslate"><span class="pre">ZoneGeometry</span></code> key.</p>
+<p class="sd-card-text">However, a geometry record may not be required for every possible zone reference. An assessment-regime record may instead identify an area through a NUTS reference (<code class="docutils literal notranslate"><span class="pre">ZoneCategory</span> <span class="pre">=</span> <span class="pre">'nuts'</span></code>).</p>
+<p class="sd-card-text">A mandatory physical FK would reject such valid records.</p>
+<p class="sd-card-text">The relationship is therefore conditional on the zone type or zone category.</p>
+<p class="sd-card-text">The data types and lengths of <code class="docutils literal notranslate"><span class="pre">ZoneId</span></code> must also be compatible before a physical relationship could be considered.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ComplianceAssessmentMethod → SamplingPoint or ModelObjectiveEstimation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod.AssessmentMethodId</span></code> may identify either:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SamplingPoint.AssessmentMethodId</span></code></p></li>
+</ul>
+<p class="sd-card-text">or</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation.AssessmentMethodId</span></code></p></li>
+</ul>
+<p class="sd-card-text">For a model or objective-estimation method, <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> is also relevant.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">This is an <strong>alternative-parent relationship</strong>.</p>
+<p class="sd-card-text">A foreign key to <code class="docutils literal notranslate"><span class="pre">SamplingPoint</span></code> would reject model records.</p>
+<p class="sd-card-text">A foreign key to <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> would reject sampling-point records.</p>
+<p class="sd-card-text">Applying both would incorrectly require every assessment method to exist in both tables.</p>
+<p class="sd-card-text">The correct target table must be selected according to the assessment-method type.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ComplianceAssessmentMethod → SpatialRepresentativeness</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">SRSId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">uses one or more</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">SRSId</span><span class="p">,</span> <span class="n">SRSApplicationId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">One <code class="docutils literal notranslate"><span class="pre">SRSId</span></code> may have several applications.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code> does not contain <code class="docutils literal notranslate"><span class="pre">SRSApplicationId</span></code>, which forms part of the <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> primary key.</p>
+<p class="sd-card-text">The compliance record intentionally points to the complete SRS group rather than to one particular SRS application, as it may be related both:</p>
+<ul class="simple">
+<li><p class="sd-card-text">to the spatial representativeness area of a sampling point;</p></li>
+<li><p class="sd-card-text">to the exceedance extent (when the compliance record describes an exceedance).</p></li>
+</ul>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SpatialRepresentativeness ↔ SRSInline</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSInline</span></code> stores a potentially large inline spatial result dataset identified by:</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span> <span class="pre">+</span> <span class="pre">SRSApplicationId</span></code></p>
+<p class="sd-card-text">The same application dataset may be used by more than one <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> record.</p>
+<p class="sd-card-text">Example:</p>
+<p class="sd-card-text"><strong>SpatialRepresentativeness</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span> <span class="o">|</span> <span class="n">SRSId</span>   <span class="o">|</span> <span class="n">SRSApplicationId</span>
+<span class="o">------------+---------+-----------------</span>
+<span class="n">DK</span>          <span class="o">|</span> <span class="n">SRS</span><span class="o">-</span><span class="mi">001</span> <span class="o">|</span> <span class="n">APP</span><span class="o">-</span><span class="mi">01</span>
+<span class="n">DK</span>          <span class="o">|</span> <span class="n">SRS</span><span class="o">-</span><span class="mi">002</span> <span class="o">|</span> <span class="n">APP</span><span class="o">-</span><span class="mi">01</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The shared geometry or grid dataset is stored once:</p>
+<p class="sd-card-text"><strong>SRSInline</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span> <span class="o">|</span> <span class="n">SRSApplicationId</span> <span class="o">|</span> <span class="n">X</span>  <span class="o">|</span> <span class="n">Y</span>
+<span class="o">------------+------------------+----+----</span>
+<span class="n">DK</span>          <span class="o">|</span> <span class="n">APP</span><span class="o">-</span><span class="mi">01</span>           <span class="o">|</span> <span class="n">X1</span> <span class="o">|</span> <span class="n">Y1</span>
+<span class="n">DK</span>          <span class="o">|</span> <span class="n">APP</span><span class="o">-</span><span class="mi">01</span>           <span class="o">|</span> <span class="n">X2</span> <span class="o">|</span> <span class="n">Y2</span>
+<span class="n">DK</span>          <span class="o">|</span> <span class="n">APP</span><span class="o">-</span><span class="mi">01</span>           <span class="o">|</span> <span class="n">X3</span> <span class="o">|</span> <span class="n">Y3</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+<p class="sd-card-text">All rows belonging to application <code class="docutils literal notranslate"><span class="pre">APP-01</span></code> are used by both SRS records.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> primary key is:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSApplicationId</span></code></p></li>
+</ul>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSInline</span></code> contains only:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSApplicationId</span></code></p></li>
+</ul>
+<p class="sd-card-text">The shorter combination in <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> is intentionally not necessarily unique.</p>
+<p class="sd-card-text">The same application dataset may belong to several <code class="docutils literal notranslate"><span class="pre">SRSId</span></code> values.</p>
+<p class="sd-card-text">Repeating <code class="docutils literal notranslate"><span class="pre">SRSId</span></code> in every <code class="docutils literal notranslate"><span class="pre">SRSInline</span></code> geometry or grid-cell row would:</p>
+<ul class="simple">
+<li><p class="sd-card-text">duplicate the value over potentially thousands of rows;</p></li>
+<li><p class="sd-card-text">increase the amount of submitted data;</p></li>
+<li><p class="sd-card-text">incorrectly represent a shared application dataset as separate duplicated datasets.</p></li>
+</ul>
+<p class="sd-card-text">The logical rule is:</p>
+<blockquote>
+<div><p class="sd-card-text">Every <code class="docutils literal notranslate"><span class="pre">SRSInline</span></code> application dataset must be used by at least one <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> record with the same <code class="docutils literal notranslate"><span class="pre">CountryCode</span></code> and <code class="docutils literal notranslate"><span class="pre">SRSApplicationId</span></code>.</p>
+</div></blockquote>
+<p class="sd-card-text">Validation that the corresponding <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> record uses <strong>‘inline’</strong> result encoding remains a separate logical consistency rule.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SpatialRepresentativeness ↔ SRSExternal</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSExternal</span></code> stores an external spatial dataset identified by:</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span> <span class="pre">+</span> <span class="pre">SRSApplicationId</span></code></p>
+<p class="sd-card-text">The external result may be used by one or more <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> records.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SRSExternal</span></code> does not contain <code class="docutils literal notranslate"><span class="pre">SRSId</span></code>, while the complete <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> primary key does.</p>
+<p class="sd-card-text">The combination:</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span> <span class="pre">+</span> <span class="pre">SRSApplicationId</span></code></p>
+<p class="sd-card-text">may legitimately match several <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> records.</p>
+<p class="sd-card-text">The external result dataset is deliberately stored once and shared.</p>
+<p class="sd-card-text">Validation that the corresponding <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> record uses <strong>‘external’</strong> result encoding remains a separate logical consistency rule.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SpatialRepresentativeness → ModelObjectiveEstimation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness.RepresentativenessAssessmentMethodId</span></code></p>
+<p class="sd-card-text">identifies</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation.AssessmentMethodId</span></code></p>
+<p class="sd-card-text">The model or objective-estimation method is used for generating the spatial-representativeness result.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The complete <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> primary key also contains:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code></p></li>
+</ul>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> does not contain the complete parent key.</p>
+<p class="sd-card-text">The relationship identifies the assessment method generally, rather than one uniquely identified method-and-aggregation row.</p>
+<p class="sd-card-text"><strong>Derivation and Use of DataAggregationProcessId</strong></p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> corresponding to <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness.RepresentativenessAssessmentMethodId</span></code> may be derived indirectly through the associated <code class="docutils literal notranslate"><span class="pre">SRSId</span></code> in the <code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code> table.</p>
+<p class="sd-card-text">The relationship can be interpreted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>SpatialRepresentativeness.SRSId
+    → ComplianceAssessmentMethod.SRSId
+
+ComplianceAssessmentMethod.DataAggregationProcessId
+    → ModelObjectiveEstimation.DataAggregationProcessId
+</pre></div>
+</div>
+<p class="sd-card-text">This derived value may be useful for comparison with the <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> of the corresponding <code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code> in the <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> table.</p>
+<p class="sd-card-text">However, this comparison should <strong>not</strong> be interpreted as a mandatory equality rule.</p>
+<p class="sd-card-text">A spatial-representativeness area produced using modelling results for one aggregation type (for example an annual mean) may also be applicable to other aggregation types.</p>
+<p class="sd-card-text">Consequently, the derived <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> should be treated primarily as contextual or consistency information rather than as a required component of a physical PK–FK relationship or a strict validation condition.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ComplianceAssessmentMethod ↔ PollutionLevelAdjustment</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">PollutionLevelAdjustment</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">AttainmentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">corresponds to</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">AttainmentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The adjustment belongs to the compliance or attainment situation represented by <code class="docutils literal notranslate"><span class="pre">AttainmentId</span></code>.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AttainmentId</span></code> is not the complete primary key of <code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code>.</p>
+<p class="sd-card-text">The CAM primary key also includes:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ReportingYear</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AssessmentRegimeId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code></p></li>
+</ul>
+<p class="sd-card-text">The adjustment refers to the attainment context rather than to one complete CAM row.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">PollutionLevelAdjustment → ModelObjectiveEstimation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">PollutionLevelAdjustment.AdjustmentAssessmentMethodId</span></code></p>
+<p class="sd-card-text">identifies</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation.AssessmentMethodId</span></code></p>
+<p class="sd-card-text">The referenced model or objective-estimation method is used to calculate the adjustment.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text">The adjustment table does not contain:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code></p></li>
+</ul>
+<p class="sd-card-text">which forms part of the complete <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> primary key.</p>
+<p class="sd-card-text">The relationship is therefore at assessment-method level rather than at one specific model-and-aggregation record.</p>
+<p class="sd-card-text"><strong>Derivation and Use of DataAggregationProcessId</strong></p>
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> corresponding to <code class="docutils literal notranslate"><span class="pre">PollutionLevelAdjustment.AdjustmentAssessmentMethodId</span></code> may be derived indirectly through the associated <code class="docutils literal notranslate"><span class="pre">AttainmentId</span></code> in the <code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code> table.</p>
+<p class="sd-card-text">The relationship can be interpreted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>PollutionLevelAdjustment.AttainmentId
+    → ComplianceAssessmentMethod.AttainmentId
+
+ComplianceAssessmentMethod.DataAggregationProcessId
+    → ModelObjectiveEstimation.DataAggregationProcessId
+</pre></div>
+</div>
+<p class="sd-card-text">This derived value may be useful for comparison with the <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> of the corresponding <code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code> in the <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> table.</p>
+<p class="sd-card-text">However, this comparison should <strong>not</strong> be interpreted as a mandatory equality rule.</p>
+<p class="sd-card-text">The temporal resolution of the modelling results used to calculate an adjustment is expected to be finer than the target aggregation type to which the adjustment is applied.</p>
+<p class="sd-card-text">For example, daily adjustment values may be used to adjust an annual mean or to calculate an adjusted number of exceedance days.</p>
+<p class="sd-card-text">Consequently, the derived <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> should be treated primarily as contextual or comparison information rather than as a required component of a physical PK–FK relationship or a strict validation condition.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ComplianceAssessmentMethod ↔ CompliancePlanLink</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">AttainmentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">corresponds to</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">AttainmentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The plan link associates an attainment situation with:</p>
+<ul class="simple">
+<li><p class="sd-card-text">a plan;</p></li>
+<li><p class="sd-card-text">a scenario;</p></li>
+<li><p class="sd-card-text">a source-apportionment dataset.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AttainmentId</span></code> is not the complete <code class="docutils literal notranslate"><span class="pre">ComplianceAssessmentMethod</span></code> primary key.</p>
+<p class="sd-card-text">The relationship points to the attainment context, which may be represented by a wider set of CAM records (for example several assessment methods indicating exceedance under the same <code class="docutils literal notranslate"><span class="pre">AttainmentId</span></code>).</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CompliancePlanLink → PlanScenario</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">PlanId</span><span class="p">,</span> <span class="n">ScenarioId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">corresponds to</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">PlanScenario</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">PlanId</span><span class="p">,</span> <span class="n">ScenarioId</span><span class="p">,</span> <span class="n">ScenarioCategory</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code> does not contain <code class="docutils literal notranslate"><span class="pre">ScenarioCategory</span></code>, which forms part of the <code class="docutils literal notranslate"><span class="pre">PlanScenario</span></code> primary key.</p>
+<p class="sd-card-text">The link points to the plan-and-scenario context without identifying one scenario-category row.</p>
+<p class="sd-card-text">In other words, it points to the whole scenario-category set for each scenario.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">CompliancePlanLink → SourceApportionment</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">SourceApportionmentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">uses all <code class="docutils literal notranslate"><span class="pre">SourceApportionment</span></code> rows having the same</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">SourceApportionmentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>SourceApportionment Primary Key</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SourceApportionmentId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ContributionType</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SpatialScale</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SourceSector</span></code></p></li>
+</ul>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SourceApportionmentId</span></code> identifies an entire source-apportionment dataset containing several contribution rows.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code> does not identify one individual contribution row and therefore does not contain:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ContributionType</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SpatialScale</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">SourceSector</span></code></p></li>
+</ul>
+<p class="sd-card-text">This is a <strong>group relationship</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">PlanScenario ↔ ScenarioMeasure</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">ScenarioId</span><span class="p">,</span> <span class="n">ScenarioCategory</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">corresponds to</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">PlanScenario</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">PlanId</span><span class="p">,</span> <span class="n">ScenarioId</span><span class="p">,</span> <span class="n">ScenarioCategory</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code> does not contain <code class="docutils literal notranslate"><span class="pre">PlanId</span></code>, which forms part of the <code class="docutils literal notranslate"><span class="pre">PlanScenario</span></code> primary key.</p>
+<p class="sd-card-text">The scenario-measure record identifies the scenario context but without pointing directly to a plan.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ScenarioMeasure → Measure</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">MeasureGroupId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">uses all <code class="docutils literal notranslate"><span class="pre">Measure</span></code> records having the same</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">MeasureGroupId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Measure Primary Key</strong></p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">MeasureGroupId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">MeasureId</span></code></p></li>
+</ul>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code> points to a measure group included in a given scenario-category, not to one individual measure.</p>
+<p class="sd-card-text">It does not contain <code class="docutils literal notranslate"><span class="pre">MeasureId</span></code>.</p>
+<p class="sd-card-text">Conversely, <code class="docutils literal notranslate"><span class="pre">Measure</span></code> does not contain the scenario attributes required to refer to the complete <code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code> primary key.</p>
+<p class="sd-card-text">This is a <strong>group relationship</strong>.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ScenarioMeasure → ModelObjectiveEstimation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioMeasure.MeasureReductionAssessmentMethodId</span></code></p>
+<p class="sd-card-text">identifies</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation.AssessmentMethodId</span></code></p>
+<p class="sd-card-text">The method is used to estimate the reduction associated with the measure group.</p>
+<p class="sd-card-text"><strong>Why No Physical FK Can Be Defined</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code> does not contain <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code>, which forms part of the complete primary key of <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code>.</p>
+<p class="sd-card-text">Consequently, <code class="docutils literal notranslate"><span class="pre">ScenarioMeasure.MeasureReductionAssessmentMethodId</span></code> alone does not uniquely identify a corresponding <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> record, and a conventional SQL foreign key cannot be defined.</p>
+<p class="sd-card-text"><strong>Derivation and Use of DataAggregationProcessId</strong></p>
+<p class="sd-card-text">The missing <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> can be derived indirectly through the associated <code class="docutils literal notranslate"><span class="pre">ScenarioId</span></code> in the <code class="docutils literal notranslate"><span class="pre">PlanScenario</span></code> table.</p>
+<p class="sd-card-text">The relationship can be interpreted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>ScenarioMeasure.ScenarioId
+    → PlanScenario.ScenarioId
+
+PlanScenario.DataAggregationProcessId
+    → ModelObjectiveEstimation.DataAggregationProcessId
+</pre></div>
+</div>
+<p class="sd-card-text">The derived <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code>, together with <code class="docutils literal notranslate"><span class="pre">MeasureReductionAssessmentMethodId</span></code>, provides the complete identifier required to locate the corresponding <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> record.</p>
+<p class="sd-card-text">Unlike the relationships involving <code class="docutils literal notranslate"><span class="pre">SpatialRepresentativeness</span></code> and <code class="docutils literal notranslate"><span class="pre">PollutionLevelAdjustment</span></code>, the aggregation process is expected to be fully consistent throughout this relationship.</p>
+<p class="sd-card-text">Therefore, the <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> derived through <code class="docutils literal notranslate"><span class="pre">PlanScenario</span></code> <strong>should be identical</strong> to the <code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code> of the corresponding <code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code> in the <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> table.</p>
+<p class="sd-card-text">Any discrepancy should be considered an inconsistency in the reported data and should be reported as a validation error.</p>
+<p class="sd-card-text">Although the relationship cannot be implemented as a conventional physical foreign key because <code class="docutils literal notranslate"><span class="pre">ScenarioMeasure</span></code> does not directly contain the complete parent primary key, the derivation described above provides a deterministic mapping that can be used for validation purposes.</p>
+</div>
+</details></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="physical-pk-fk.html" class="btn btn-neutral float-left" title="Physical PK–FK Relationships" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="documentation-relationships.html" class="btn btn-neutral float-right" title="Documentation Relationships" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

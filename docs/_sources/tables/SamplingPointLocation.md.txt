@@ -60,19 +60,19 @@ In case where the LocationBegin was reported wrongly and/or the corresponding re
 
 ## Attribute details
 
-### SPL01 – CountryCode
+### SPL_01 – CountryCode
 
 **Content**
 
 Country or territory ISO2 code.
 
-### SPL02 – AssessmentMethodId
+### SPL_02 – AssessmentMethodId
 
 **Content**
 
 Identifier of the assessment method (sampling point), given by data provider.
 
-### SPL03 – LocationBegin
+### SPL_03 – LocationBegin
 
 **Content**
 
@@ -82,7 +82,7 @@ Start time of the location characteristic(s).
 
 The permissible modifications in the location characteristics will be verified by adequate QC.
 
-### SPL04 – LocationEnd
+### SPL_04 – LocationEnd
 
 **Content**
 
@@ -112,7 +112,7 @@ Code list to be developed.
 
 Potential categories: traffic, background, industrial, port, airport, residential heating, multisource.
 
-### SPL07 – Hotspot
+### SPL_07 – Hotspot
 
 **Content**
 
@@ -124,7 +124,7 @@ Y/N.
 
 Hotspot relates to the provisions of the recasted Air Quality Directive 2024/2881, Article 4(27) and others.
 
-### SPL08 – Supersite
+### SPL_08 – Supersite
 
 **Content**
 
@@ -134,43 +134,43 @@ Indicator if the measurement site is classified as a "Super Site" for advanced m
 
 Y/N.
 
-### SPL09 – Latitude
+### SPL_09 – Latitude
 
 **Content**
 
 Latitude coordinate of the air quality station location (decimal degrees).
 
-### SPL10 – Longitude
+### SPL_10 – Longitude
 
 **Content**
 
 Longitude coordinate of the air quality station location (decimal degrees).
 
-### SPL11 – Altitude
+### SPL_11 – Altitude
 
 **Content**
 
 Altitude of the air quality station location in meters above sea level.
 
-### SPL12 – InletHeight
+### SPL_12 – InletHeight
 
 **Content**
 
 Height of the sampling inlet where air quality measurements are taken, in meters.
 
-### SPL13 – BuildingDistance
+### SPL_13 – BuildingDistance
 
 **Content**
 
 Horizontal distance from the sampling inlet to the nearest building, in meters.
 
-### SPL14 – KerbDistance
+### SPL_14 – KerbDistance
 
 **Content**
 
 Horizontal distance from the sampling inlet to the nearest road kerb, in meters.
 
-### SPL15 – EmissionSourceDistance
+### SPL_15 – EmissionSourceDistance
 
 **Content**
 

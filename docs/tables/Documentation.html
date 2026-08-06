@@ -9,7 +9,8 @@
   <title>Documentation &mdash; AQ eReporting Guide 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=06540ad2" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f5f27675" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -17,6 +18,7 @@
       <script src="../_static/documentation_options.js?v=2709fde1"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -69,27 +71,20 @@
 <li class="toctree-l2"><a class="reference internal" href="SourceApportionment.html">SourceApportionment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ScenarioMeasure.html">ScenarioMeasure</a></li>
 <li class="toctree-l2"><a class="reference internal" href="Measure.html">Measure</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Documentation</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#doc-01-countrycode">DOC_01 – CountryCode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doc-02-datatable">DOC_02 – DataTable</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doc-03-documenttype">DOC_03 – DocumentType</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doc-04-documentid">DOC_04 – DocumentId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doc-05-documentattachment">DOC_05 – DocumentAttachment</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#doc-06-documentoriginalurl">DOC_06 – DocumentOriginalURL</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Documentation</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relationships/index.html">Table Relationships</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/physical-pk-fk.html">Physical PK–FK Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/logical-relationships.html">Logical Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/documentation-relationships.html">Documentation Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/physical-summary.html">Physical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/logical-summary.html">Logical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/summary.html">Summary</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -194,7 +189,7 @@ Data products for public and reporters will present the records with the latest 
 <td><p>varchar(50)</p></td>
 <td><p>string</p></td>
 <td><p>PK</p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/documentobject">documentobject</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/documenttype">documenttype</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>DOC_04</p></td>

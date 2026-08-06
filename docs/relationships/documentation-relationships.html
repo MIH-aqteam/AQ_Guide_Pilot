@@ -1,0 +1,510 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Documentation Relationships &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f5f27675" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Physical Relationship Summary" href="physical-summary.html" />
+    <link rel="prev" title="Logical Relationships" href="logical-relationships.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tables/index.html">Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Table Relationships</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="physical-pk-fk.html">Physical PK–FK Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logical-relationships.html">Logical Relationships</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Documentation Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-summary.html">Physical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logical-summary.html">Logical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Table Relationships</a></li>
+      <li class="breadcrumb-item active">Documentation Relationships</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/relationships/documentation-relationships.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="documentation-relationships">
+<h1>Documentation Relationships<a class="headerlink" href="#documentation-relationships" title="Link to this heading"></a></h1>
+<p>Documentation relationships are contextual relationships between the <code class="docutils literal notranslate"><span class="pre">Documentation</span></code> table and documentation-reference attributes contained in different reporting tables.</p>
+<p>The applicable reporting table and documentation-reference attribute are determined by the combination of:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">DataTable</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DocumentType</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DocumentId</span></code>;</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code>.</p></li>
+</ul>
+<hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Documentation Primary Key</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The <code class="docutils literal notranslate"><span class="pre">Documentation</span></code> table is identified by a contextual composite key.</p>
+<p class="sd-card-text"><strong>Documentation Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">Documentation</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_Documentation</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataTable</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DocumentType</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DocumentId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Meaning of DataTable</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Documentation.DataTable</span></code> indicates the reporting table in which a process must look for the documentation identifier.</p>
+<p class="sd-card-text">For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DataTable</span> <span class="o">=</span> <span class="s1">&#39;ModelObjectiveEstimation&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">means that the <code class="docutils literal notranslate"><span class="pre">DocumentId</span></code> must be found in a documentation-reference column in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">reporting</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">ModelObjectiveEstimation</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Similarly:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DataTable</span> <span class="o">=</span> <span class="s1">&#39;SamplingProcess&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">means that the document identifier must be looked up in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">reporting</span><span class="p">]</span><span class="o">.</span><span class="p">[</span><span class="n">SamplingProcess</span><span class="p">]</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataTable</span></code> therefore identifies the reporting-table context of the documentation reference.</p>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Meaning of DocumentType</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Documentation.DocumentType</span></code> identifies which documentation-reference attribute in the specified reporting table contains the <code class="docutils literal notranslate"><span class="pre">DocumentId</span></code>.</p>
+<p class="sd-card-text">For example, <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> may contain:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">MethodDocumentId</span></code>;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataQualityDocumentId</span></code>.</p></li>
+</ul>
+<p class="sd-card-text">A documentation row with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DataTable</span> <span class="o">=</span> <span class="s1">&#39;ModelObjectiveEstimation&#39;</span>
+<span class="n">DocumentType</span> <span class="o">=</span> <span class="s1">&#39;MethodDocument&#39;</span>
+<span class="n">DocumentId</span> <span class="o">=</span> <span class="s1">&#39;DOC-001&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">means that a process should search for <code class="docutils literal notranslate"><span class="pre">DOC-001</span></code> in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ModelObjectiveEstimation</span><span class="o">.</span><span class="n">MethodDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">A documentation row with:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DataTable</span> <span class="o">=</span> <span class="s1">&#39;ModelObjectiveEstimation&#39;</span>
+<span class="n">DocumentType</span> <span class="o">=</span> <span class="s1">&#39;DataQualityDocument&#39;</span>
+<span class="n">DocumentId</span> <span class="o">=</span> <span class="s1">&#39;DOC-002&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">means that a process should search for <code class="docutils literal notranslate"><span class="pre">DOC-002</span></code> in:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ModelObjectiveEstimation</span><span class="o">.</span><span class="n">DataQualityDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DocumentType</span></code> therefore distinguishes between different documentation-reference attributes within the same reporting table.</p>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Documentation Lookup Logic</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The relationship is not simply:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Child.DocumentId → Documentation.DocumentId
+</pre></div>
+</div>
+<p class="sd-card-text">Instead, the lookup works as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span><span class="o">.</span><span class="n">DataTable</span>
+    <span class="n">identifies</span> <span class="n">the</span> <span class="n">reporting</span> <span class="n">table</span>
+
+<span class="n">Documentation</span><span class="o">.</span><span class="n">DocumentType</span>
+    <span class="n">identifies</span> <span class="n">the</span> <span class="n">documentation</span><span class="o">-</span><span class="n">reference</span> <span class="n">attribute</span> <span class="ow">in</span> <span class="n">that</span> <span class="n">table</span>
+
+<span class="n">Documentation</span><span class="o">.</span><span class="n">DocumentId</span>
+    <span class="ow">is</span> <span class="n">matched</span> <span class="n">against</span> <span class="n">the</span> <span class="n">value</span> <span class="n">reported</span> <span class="ow">in</span> <span class="n">that</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Conceptually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span> <span class="n">row</span>
+    <span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">DataTable</span><span class="p">,</span> <span class="n">DocumentType</span><span class="p">,</span> <span class="n">DocumentId</span><span class="p">)</span>
+
+<span class="n">maps</span> <span class="n">to</span>
+
+<span class="n">the</span> <span class="n">row</span> <span class="ow">or</span> <span class="n">rows</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">indicated</span> <span class="n">reporting</span> <span class="n">table</span>
+<span class="n">where</span> <span class="n">the</span> <span class="n">documentation</span> <span class="n">column</span> <span class="n">selected</span> <span class="n">by</span> <span class="n">DocumentType</span>
+<span class="n">contains</span> <span class="n">the</span> <span class="n">same</span> <span class="n">DocumentId</span>
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example — ModelObjectiveEstimation Documentation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Assume that <code class="docutils literal notranslate"><span class="pre">ModelObjectiveEstimation</span></code> contains:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">MethodDocumentId</span></code>;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataQualityDocumentId</span></code>.</p></li>
+</ul>
+<p class="sd-card-text"><strong>Method Document</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span><span class="o">.</span><span class="n">DataTable</span>
+    <span class="o">=</span> <span class="s1">&#39;ModelObjectiveEstimation&#39;</span>
+
+<span class="n">Documentation</span><span class="o">.</span><span class="n">DocumentType</span>
+    <span class="o">=</span> <span class="s1">&#39;MethodDocument&#39;</span>
+
+<span class="n">Documentation</span><span class="o">.</span><span class="n">DocumentId</span>
+    <span class="ow">is</span> <span class="n">searched</span> <span class="ow">in</span>
+    <span class="n">ModelObjectiveEstimation</span><span class="o">.</span><span class="n">MethodDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Data-Quality Document</strong></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span><span class="o">.</span><span class="n">DataTable</span>
+    <span class="o">=</span> <span class="s1">&#39;ModelObjectiveEstimation&#39;</span>
+
+<span class="n">Documentation</span><span class="o">.</span><span class="n">DocumentType</span>
+    <span class="o">=</span> <span class="s1">&#39;DataQualityDocument&#39;</span>
+
+<span class="n">Documentation</span><span class="o">.</span><span class="n">DocumentId</span>
+    <span class="ow">is</span> <span class="n">searched</span> <span class="ow">in</span>
+    <span class="n">ModelObjectiveEstimation</span><span class="o">.</span><span class="n">DataQualityDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The combination of <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> and <code class="docutils literal notranslate"><span class="pre">DocumentType</span></code> determines which reporting table and which documentation-reference column must contain the identifier.</p>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example — SamplingProcess Documentation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Assume that <code class="docutils literal notranslate"><span class="pre">SamplingProcess</span></code> contains:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataQualityDocumentId</span></code>;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">EquivalenceDemonstrationDocumentId</span></code>;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ProcessDocumentId</span></code>.</p></li>
+</ul>
+<p class="sd-card-text">The corresponding mappings are conceptually:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DataTable = &#39;SamplingProcess&#39;
+DocumentType = &#39;DataQualityDocument&#39;
+    → SamplingProcess.DataQualityDocumentId
+
+DataTable = &#39;SamplingProcess&#39;
+DocumentType = &#39;EquivalenceDemonstrationDocument&#39;
+    → SamplingProcess.EquivalenceDemonstrationDocumentId
+
+DataTable = &#39;SamplingProcess&#39;
+DocumentType = &#39;ProcessDocument&#39;
+    → SamplingProcess.ProcessDocumentId
+</pre></div>
+</div>
+<p class="sd-card-text">Each <code class="docutils literal notranslate"><span class="pre">DocumentType</span></code> value selects a different documentation-reference attribute in the same reporting table.</p>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example — MeasurementStation Documentation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If <code class="docutils literal notranslate"><span class="pre">MeasurementStation</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">NetworkDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">the corresponding logical mapping is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DataTable = &#39;MeasurementStation&#39;
+DocumentType = &#39;NetworkDocument&#39;
+    → MeasurementStation.NetworkDocumentId
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example — PollutionLevelAdjustment Documentation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If <code class="docutils literal notranslate"><span class="pre">PollutionLevelAdjustment</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">AdjustmentDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">the corresponding mapping is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DataTable = &#39;PollutionLevelAdjustment&#39;
+DocumentType = &#39;AdjustmentDocument&#39;
+    → PollutionLevelAdjustment.AdjustmentDocumentId
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example — CompliancePlanLink Documentation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If <code class="docutils literal notranslate"><span class="pre">CompliancePlanLink</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">PlanDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">the corresponding mapping is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DataTable = &#39;CompliancePlanLink&#39;
+DocumentType = &#39;PlanDocument&#39;
+    → CompliancePlanLink.PlanDocumentId
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Example — SourceApportionment Documentation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">If <code class="docutils literal notranslate"><span class="pre">SourceApportionment</span></code> contains:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">SourceApportionmentDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">the corresponding mapping is:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>DataTable = &#39;SourceApportionment&#39;
+DocumentType = &#39;SourceApportionmentDocument&#39;
+    → SourceApportionment.SourceApportionmentDocumentId
+</pre></div>
+</div>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Direction of the Documentation Relationship</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">The documentation relationship can be interpreted from either direction.</p>
+<p class="sd-card-text"><strong>From a Reporting Table to Documentation</strong></p>
+<p class="sd-card-text">A process reads a documentation-reference attribute, for example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ModelObjectiveEstimation</span><span class="o">.</span><span class="n">MethodDocumentId</span> <span class="o">=</span> <span class="s1">&#39;DOC-001&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">It then expects a <code class="docutils literal notranslate"><span class="pre">Documentation</span></code> row containing:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span> <span class="o">=</span> <span class="n">the</span> <span class="n">same</span> <span class="n">country</span>
+<span class="n">DataTable</span> <span class="o">=</span> <span class="s1">&#39;ModelObjectiveEstimation&#39;</span>
+<span class="n">DocumentType</span> <span class="o">=</span> <span class="s1">&#39;MethodDocument&#39;</span>
+<span class="n">DocumentId</span> <span class="o">=</span> <span class="s1">&#39;DOC-001&#39;</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>From Documentation to a Reporting Table</strong></p>
+<p class="sd-card-text">A process reads the following values from the <code class="docutils literal notranslate"><span class="pre">Documentation</span></code> row:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span>
+<span class="n">DataTable</span>
+<span class="n">DocumentType</span>
+<span class="n">DocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">It then uses:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataTable</span></code> to select the reporting table;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DocumentType</span></code> to select the documentation-reference attribute;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DocumentId</span></code> to find the matching value;</p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code> to restrict the lookup to the appropriate country.</p></li>
+</ul>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Why Documentation Relationships Are Not Physical FKs</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">Reporting tables normally contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span>
+<span class="n">a</span> <span class="n">specific</span> <span class="n">document</span> <span class="n">identifier</span> <span class="n">attribute</span>
+</pre></div>
+</div>
+<p class="sd-card-text">For example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span>
+<span class="n">MethodDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">or:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span>
+<span class="n">DataQualityDocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">The reporting rows do not physically contain:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">DataTable</span>
+<span class="n">DocumentType</span>
+</pre></div>
+</div>
+<p class="sd-card-text">Those values are implied by:</p>
+<ul class="simple">
+<li><p class="sd-card-text">the reporting table in which the document identifier appears;</p></li>
+<li><p class="sd-card-text">the particular document-reference attribute being used.</p></li>
+</ul>
+<p class="sd-card-text">A normal FK from:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">ModelObjectiveEstimation</span>
+    <span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">MethodDocumentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">to:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Documentation</span>
+    <span class="p">(</span><span class="n">CountryCode</span><span class="p">,</span> <span class="n">DataTable</span><span class="p">,</span> <span class="n">DocumentType</span><span class="p">,</span> <span class="n">DocumentId</span><span class="p">)</span>
+</pre></div>
+</div>
+<p class="sd-card-text">cannot be defined because the child does not contain the complete <code class="docutils literal notranslate"><span class="pre">Documentation</span></code> PK.</p>
+<p class="sd-card-text">It would also be incorrect to reference only:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">CountryCode</span> <span class="o">+</span> <span class="n">DocumentId</span>
+</pre></div>
+</div>
+<p class="sd-card-text">because the same <code class="docutils literal notranslate"><span class="pre">DocumentId</span></code> could potentially occur in different:</p>
+<ul class="simple">
+<li><p class="sd-card-text">table contexts;</p></li>
+<li><p class="sd-card-text">document-type contexts.</p></li>
+</ul>
+<p class="sd-card-text">The relationship is therefore contextual and must be implemented through processing or QC validation.</p>
+</div>
+</details><hr class="docutils" />
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">Documentation Mapping Specification</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text">A mapping configuration may be used by the processing logic to define which <code class="docutils literal notranslate"><span class="pre">DocumentType</span></code> corresponds to which identifier attribute:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><strong>MeasurementStation</strong></p>
+<ul>
+<li><p class="sd-card-text">Network → <code class="docutils literal notranslate"><span class="pre">NetworkDocumentId</span></code></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>SamplingProcess</strong></p>
+<ul>
+<li><p class="sd-card-text">DataQuality → <code class="docutils literal notranslate"><span class="pre">DataQualityDocumentId</span></code></p></li>
+<li><p class="sd-card-text">EquivalenceDemonstration → <code class="docutils literal notranslate"><span class="pre">EquivalenceDemonstrationDocumentId</span></code></p></li>
+<li><p class="sd-card-text">Process → <code class="docutils literal notranslate"><span class="pre">ProcessDocumentId</span></code></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>ModelObjectiveEstimation</strong></p>
+<ul>
+<li><p class="sd-card-text">Method → <code class="docutils literal notranslate"><span class="pre">MethodDocumentId</span></code></p></li>
+<li><p class="sd-card-text">DataQuality → <code class="docutils literal notranslate"><span class="pre">DataQualityDocumentId</span></code></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>PollutionLevelAdjustment</strong></p>
+<ul>
+<li><p class="sd-card-text">Adjustment → <code class="docutils literal notranslate"><span class="pre">AdjustmentDocumentId</span></code></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>CompliancePlanLink</strong></p>
+<ul>
+<li><p class="sd-card-text">Plan → <code class="docutils literal notranslate"><span class="pre">PlanDocumentId</span></code></p></li>
+</ul>
+</li>
+<li><p class="sd-card-text"><strong>SourceApportionment</strong></p>
+<ul>
+<li><p class="sd-card-text">SourceApportionment → <code class="docutils literal notranslate"><span class="pre">SourceApportionmentDocumentId</span></code></p></li>
+</ul>
+</li>
+</ul>
+<p class="sd-card-text">The exact vocabulary values used in <code class="docutils literal notranslate"><span class="pre">DataTable</span></code> and <code class="docutils literal notranslate"><span class="pre">DocumentType</span></code> must correspond to the values defined in the reporting model.</p>
+<p class="sd-card-text">Any additional documentation-reference attributes should be added to the mapping using the same principle.</p>
+</div>
+</details></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="logical-relationships.html" class="btn btn-neutral float-left" title="Logical Relationships" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="physical-summary.html" class="btn btn-neutral float-right" title="Physical Relationship Summary" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

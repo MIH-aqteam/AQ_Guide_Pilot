@@ -1,0 +1,559 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Physical PK–FK Relationships &mdash; AQ eReporting Guide 0.1 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f5f27675" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=2709fde1"></script>
+      <script src="../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Logical Relationships" href="logical-relationships.html" />
+    <link rel="prev" title="Table Relationships" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            AQ eReporting Guide
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../introduction.html">Introduction</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../diagram.html">Data model diagram</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tables/index.html">Tables</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Authority.html">Authority</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MeasurementStation.html">MeasurementStation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingPoint.html">SamplingPoint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingPointLocation.html">SamplingPointLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SamplingProcess.html">SamplingProcess</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ModelObjectiveEstimation.html">ModelObjectiveEstimation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MOEResultInline.html">MOEResultInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/MOEResultExternal.html">MOEResultExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ZoneGeometry.html">ZoneGeometry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SRSInline.html">SRSInline</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SRSExternal.html">SRSExternal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/PollutionLevelAdjustment.html">PollutionLevelAdjustment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/CompliancePlanLink.html">CompliancePlanLink</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/PlanScenario.html">PlanScenario</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/SourceApportionment.html">SourceApportionment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ScenarioMeasure.html">ScenarioMeasure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Measure.html">Measure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/Documentation.html">Documentation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tables/ObservationMeasurementResultPNSD.html">ObservationMeasurementResultPNSD</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Table Relationships</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Physical PK–FK Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logical-relationships.html">Logical Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="documentation-relationships.html">Documentation Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="physical-summary.html">Physical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="logical-summary.html">Logical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="summary.html">Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AQ eReporting Guide</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Table Relationships</a></li>
+      <li class="breadcrumb-item active">Physical PK–FK Relationships</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/relationships/physical-pk-fk.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="physical-pkfk-relationships">
+<h1>Physical PK–FK Relationships<a class="headerlink" href="#physical-pkfk-relationships" title="Link to this heading"></a></h1>
+<details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">MeasurementStation ← SamplingPoint</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every <strong>SamplingPoint</strong> belongs to one <strong>MeasurementStation</strong>.</p>
+<p class="sd-card-text">The parent station is uniquely identified by:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">StationEoICode</span></code></p></li>
+</ul>
+<p class="sd-card-text">The child contains the complete documented primary key of the parent.</p>
+<p class="sd-card-text"><strong>MeasurementStation Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">MeasurementStation</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_MeasurementStation</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">StationEoICode</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>SamplingPoint Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPoint</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_SamplingPoint</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPoint</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_SamplingPoint_MeasurementStation</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">StationEoICode</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">MeasurementStation</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">StationEoICode</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingPoint ← SamplingPointLocation</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every <strong>SamplingPointLocation</strong> record belongs to one <strong>SamplingPoint</strong>.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">LocationBegin</span></code> distinguishes different location-validity periods for the same sampling point.</p>
+<p class="sd-card-text">It is part of the child primary key, but it is not required to identify the parent sampling point.</p>
+<p class="sd-card-text">A sampling point may have:</p>
+<ul class="simple">
+<li><p class="sd-card-text">several different sampling point locations;</p></li>
+<li><p class="sd-card-text">several successive validity periods for the same location.</p></li>
+</ul>
+<p class="sd-card-text"><strong>SamplingPointLocation Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPointLocation</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_SamplingPointLocation</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">LocationBegin</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPointLocation</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_SamplingPointLocation_SamplingPoint</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPoint</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingPoint ← SamplingProcess</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every <strong>SamplingProcess</strong> record belongs to one <strong>SamplingPoint</strong>.</p>
+<p class="sd-card-text">A sampling point may have:</p>
+<ul class="simple">
+<li><p class="sd-card-text">several different sampling processes;</p></li>
+<li><p class="sd-card-text">several successive validity periods for the same process.</p></li>
+</ul>
+<p class="sd-card-text"><strong>SamplingProcess Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingProcess</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_SamplingProcess</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ProcessId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ProcessActivityBegin</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingProcess</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_SamplingProcess_SamplingPoint</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPoint</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingPoint ← ObservationMeasurementResult</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every observation result belongs to an existing <strong>SamplingPoint</strong>.</p>
+<p class="sd-card-text">The physical foreign key confirms that the sampling point exists.</p>
+<p class="sd-card-text"><strong>ObservationMeasurementResult Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ObservationMeasurementResult</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_ObservationMeasurementResult</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="k">Start</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ObservationMeasurementResult</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_ObservationMeasurementResult_SamplingPoint</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPoint</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Additional Logical Relationships</strong></p>
+<p class="sd-card-text">The following observation relationships remain logical:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ObservationMeasurementResult
+    ↔ SamplingPointLocation through the observation validity period
+
+ObservationMeasurementResult
+    ↔ SamplingProcess through the observation validity period
+</pre></div>
+</div>
+<p class="sd-card-text">The correct location and process records are determined from the observation timestamp.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">SamplingPoint ← ObservationMeasurementResultPNSD</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every <strong>PNSD observation</strong> belongs to one existing <strong>SamplingPoint</strong>.</p>
+<p class="sd-card-text">The combination:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">AssessmentMethodId</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Start</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">LowerRange</span></code></p></li>
+</ul>
+<p class="sd-card-text">uniquely identifies an individual PNSD result row.</p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">LowerRange</span></code> distinguishes different particle-size intervals reported for the same sampling point and observation start time.</p>
+<p class="sd-card-text">It is part of the child primary key but is not needed to identify the parent <strong>SamplingPoint</strong>.</p>
+<p class="sd-card-text">The relationship to <strong>SamplingPoint</strong> therefore remains a proper physical PK–FK relationship.</p>
+<p class="sd-card-text"><strong>ObservationMeasurementResultPNSD Primary Key</strong></p>
+<p class="sd-card-text">The documented primary key includes <code class="docutils literal notranslate"><span class="pre">LowerRange</span></code>.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ObservationMeasurementResultPNSD</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_ObservationMeasurementResultPNSD</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="k">Start</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">LowerRange</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ObservationMeasurementResultPNSD</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_ObservationMeasurementResultPNSD_SamplingPoint</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">SamplingPoint</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Additional Logical Relationships</strong></p>
+<p class="sd-card-text">The following PNSD relationships remain logical:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>ObservationMeasurementResultPNSD
+    ↔ SamplingPointLocation through the observation validity period
+
+ObservationMeasurementResultPNSD
+    ↔ SamplingProcess through the observation validity period
+</pre></div>
+</div>
+<p class="sd-card-text">The correct location and process records are determined from the PNSD observation timestamp.</p>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ModelObjectiveEstimation ← MOEResultInline</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every inline model grid-cell result belongs to one model or objective-estimation definition and one aggregation process.</p>
+<p class="sd-card-text">The following child columns identify the individual result cell:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Start</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">X</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">Y</span></code></p></li>
+</ul>
+<p class="sd-card-text">They are not required to identify the parent method.</p>
+<p class="sd-card-text">Validation that the parent record uses <code class="docutils literal notranslate"><span class="pre">inline</span></code> result encoding remains a separate logical consistency rule.</p>
+<p class="sd-card-text"><strong>ModelObjectiveEstimation Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>MOEResultInline Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">MOEResultInline</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_MOEResultInline</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="k">Start</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">X</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">Y</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">MOEResultInline</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_MOEResultInline_ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ModelObjectiveEstimation ← MOEResultExternal</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every external model result belongs to one model or objective-estimation definition and one aggregation process.</p>
+<p class="sd-card-text">The physical FK establishes that the model definition exists.</p>
+<p class="sd-card-text">Validation that the parent record uses <strong>‘external’</strong> result encoding remains a separate logical consistency rule.</p>
+<p class="sd-card-text"><strong>MOEResultExternal Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">MOEResultExternal</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_MOEResultExternal</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="k">Start</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">MOEResultExternal</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_MOEResultExternal_ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">AssessmentRegimeZone ← ComplianceAssessmentMethod</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text">Every <strong>ComplianceAssessmentMethod</strong> record belongs to one assessment regime.</p>
+<p class="sd-card-text">The child contains the complete documented PK of <strong>AssessmentRegimeZone</strong>.</p>
+<p class="sd-card-text"><strong>AssessmentRegimeZone Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">AssessmentRegimeZone</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_AssessmentRegimeZone</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentRegimeId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>ComplianceAssessmentMethod Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ComplianceAssessmentMethod</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_ComplianceAssessmentMethod</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ReportingYear</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentRegimeId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ComplianceAssessmentMethod</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_ComplianceAssessmentMethod_AssessmentRegimeZone</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentRegimeId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">AssessmentRegimeZone</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentRegimeId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details><details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
+<summary class="sd-summary-title sd-card-header">
+<span class="sd-summary-text">ModelObjectiveEstimation ← PlanScenario</span><span class="sd-summary-state-marker sd-summary-chevron-right"><svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-right" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.72 18.78a.75.75 0 0 1 0-1.06L14.44 12 8.72 6.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018l6.25 6.25a.75.75 0 0 1 0 1.06l-6.25 6.25a.75.75 0 0 1-1.06 0Z"></path></svg></span></summary><div class="sd-summary-content sd-card-body docutils">
+<p class="sd-card-text"><strong>Relationship Description</strong></p>
+<p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">ScenarioAssessmentMethodId</span></code> identifies the model or objective-estimation method used for the scenario and scenario category within a plan.</p>
+<p class="sd-card-text">Together with:</p>
+<ul class="simple">
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">CountryCode</span></code></p></li>
+<li><p class="sd-card-text"><code class="docutils literal notranslate"><span class="pre">DataAggregationProcessId</span></code></p></li>
+</ul>
+<p class="sd-card-text">it resolves to the complete <strong>ModelObjectiveEstimation</strong> primary key.</p>
+<p class="sd-card-text">The corresponding parent and child column names do not need to be identical, but:</p>
+<ul class="simple">
+<li><p class="sd-card-text">their meaning must correspond;</p></li>
+<li><p class="sd-card-text">their SQL data types must be compatible;</p></li>
+<li><p class="sd-card-text">their lengths must be compatible.</p></li>
+</ul>
+<p class="sd-card-text">If <code class="docutils literal notranslate"><span class="pre">ScenarioAssessmentMethodId</span></code> is nullable, SQL Server permits a null FK value.</p>
+<p class="sd-card-text">Whether the model reference is mandatory must therefore be enforced through nullability or separate validation.</p>
+<p class="sd-card-text"><strong>PlanScenario Primary Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">PlanScenario</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">PK_PlanScenario</span><span class="p">]</span>
+<span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">PlanId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ScenarioId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ScenarioCategory</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+<p class="sd-card-text"><strong>Foreign Key</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">PlanScenario</span><span class="p">]</span>
+<span class="k">ADD</span><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="p">[</span><span class="n">FK_PlanScenario_ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="k">FOREIGN</span><span class="w"> </span><span class="k">KEY</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">ScenarioAssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="k">REFERENCES</span><span class="w"> </span><span class="p">[</span><span class="n">reporting</span><span class="p">].[</span><span class="n">ModelObjectiveEstimation</span><span class="p">]</span>
+<span class="p">(</span>
+<span class="w">    </span><span class="p">[</span><span class="n">CountryCode</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">AssessmentMethodId</span><span class="p">],</span>
+<span class="w">    </span><span class="p">[</span><span class="n">DataAggregationProcessId</span><span class="p">]</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</div>
+</details></section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Table Relationships" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="logical-relationships.html" class="btn btn-neutral float-right" title="Logical Relationships" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, EEA AQ Team.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

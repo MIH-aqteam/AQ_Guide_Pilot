@@ -9,7 +9,8 @@
   <title>ComplianceAssessmentMethod &mdash; AQ eReporting Guide 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=06540ad2" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f5f27675" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -17,6 +18,7 @@
       <script src="../_static/documentation_options.js?v=2709fde1"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -59,35 +61,7 @@
 <li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
 <li class="toctree-l2"><a class="reference internal" href="AssessmentRegimeZone.html">AssessmentRegimeZone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">ComplianceAssessmentMethod</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#cam-01-countrycode">CAM_01 – CountryCode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-02-reportingyear">CAM_02 – ReportingYear</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-03-assessmentregimeid">CAM_03 – AssessmentRegimeId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-04-dataaggregationprocessid">CAM_04 – DataAggregationProcessId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-05-assessmentmethodid">CAM_05 – AssessmentMethodId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-06-pollutantid">CAM_06 – PollutantId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-07-assessmenttype">CAM_07 – AssessmentType</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-08-isexceedance">CAM_08 – IsExceedance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-09-datacoverage">CAM_09 – DataCoverage</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-10-pollutionlevel">CAM_10 – PollutionLevel</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-11-pollutionleveladjusted">CAM_11 – PollutionLevelAdjusted</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-12-relativeuncertaintylimit">CAM_12 – RelativeUncertaintyLimit</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-13-assessmentmqi">CAM_13 – AssessmentMQI</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-14-correctionflag">CAM_14 – CorrectionFlag</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-15-attainmentid">CAM_15 – AttainmentId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-16-srsid">CAM_16 – SRSId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-17-preliminaryreason">CAM_17 – PreliminaryReason</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#cam-18-deletion">CAM_18 – Deletion</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ComplianceAssessmentMethod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SRSInline.html">SRSInline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SRSExternal.html">SRSExternal</a></li>
@@ -102,6 +76,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relationships/index.html">Table Relationships</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/physical-pk-fk.html">Physical PK–FK Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/logical-relationships.html">Logical Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/documentation-relationships.html">Documentation Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/physical-summary.html">Physical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/logical-summary.html">Logical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/summary.html">Summary</a></li>
+</ul>
+</li>
 </ul>
 
         </div>

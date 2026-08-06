@@ -1,18 +1,18 @@
 #!/bin/bash
 
-set -Eeuo pipefail
+set -e
 
 clear
 
-echo "=========================================================="
-echo "    AQ eREPORTING GUIDE - PUBLISH TO personal GITHUB"
-echo "=========================================================="
+echo "=================================================="
+echo "    AQ eREPORTING GUIDE - PUBLISH TO GITHUB"
+echo "=================================================="
 echo
 
-echo "Building local documentation..."
+echo "Building documentation into docs/..."
 echo
 
-rm -rf build/html
+rm -rf docs
 
 python3 -m sphinx \
     -W \
@@ -21,10 +21,10 @@ python3 -m sphinx \
     -a \
     -b html \
     source \
-    build/html
+    docs
 
 echo
-echo "✓ Local build completed successfully (no warnings)."
+echo "✓ Build completed successfully (no warnings)."
 echo
 
 git status --short
@@ -57,5 +57,5 @@ echo
 echo "Repository : https://github.com/MIH-aqteam/AQ_Guide_Pilot"
 echo "Website    : https://mih-aqteam.github.io/AQ_Guide_Pilot/"
 echo
-echo "GitHub Actions is now deploying the updated website."
+echo "GitHub Pages is now deploying the updated website."
 echo "=================================================="

@@ -9,7 +9,8 @@
   <title>AssessmentRegimeZone &mdash; AQ eReporting Guide 0.1 documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
       <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
-      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=06540ad2" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=f5f27675" />
 
   
       <script src="../_static/jquery.js?v=5d32c60e"></script>
@@ -17,6 +18,7 @@
       <script src="../_static/documentation_options.js?v=2709fde1"></script>
       <script src="../_static/doctools.js?v=9a2dae69"></script>
       <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -57,36 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="ObservationMeasurementResult.html">ObservationMeasurementResult</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MOEResultInline.html">MOEResultInline</a></li>
 <li class="toctree-l2"><a class="reference internal" href="MOEResultExternal.html">MOEResultExternal</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">AssessmentRegimeZone</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#description">Description</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#eea-extensions">EEA extensions</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#data-management-rules">Data management rules</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attributes">Attributes</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#attribute-details">Attribute details</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#arz-01-countrycode">ARZ_01 – CountryCode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-02-assessmentregimeid">ARZ_02 – AssessmentRegimeId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-03-zoneid">ARZ_03 – ZoneId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-04-zonenationalcode">ARZ_04 – ZoneNationalCode</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-05-zonearea">ARZ_05 – ZoneArea</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-06-zonecategory">ARZ_06 – ZoneCategory</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-07-zonetype">ARZ_07 – ZoneType</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-08-zonename">ARZ_08 – ZoneName</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-09-pollutantid">ARZ_09 – PollutantId</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-10-protectiontarget">ARZ_10 – ProtectionTarget</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-11-objectivetype">ARZ_11 – ObjectiveType</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-12-reportingmetric">ARZ_12 – ReportingMetric</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-13-assessmentthresholdexceedance">ARZ_13 – AssessmentThresholdExceedance</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-14-postponementyear">ARZ_14 – PostponementYear</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-15-fixedmeasurementreduction">ARZ_15 – FixedMeasurementReduction</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-16-zoneresidentpopulationyear">ARZ_16 – ZoneResidentPopulationYear</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-17-zoneresidentpopulation">ARZ_17 – ZoneResidentPopulation</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-18-classificationyear">ARZ_18 – ClassificationYear</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#arz-19-classificationdocumentid">ARZ_19 – ClassificationDocumentId</a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#example">Example</a></li>
-</ul>
-</li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">AssessmentRegimeZone</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ZoneGeometry.html">ZoneGeometry</a></li>
 <li class="toctree-l2"><a class="reference internal" href="ComplianceAssessmentMethod.html">ComplianceAssessmentMethod</a></li>
 <li class="toctree-l2"><a class="reference internal" href="SpatialRepresentativeness.html">SpatialRepresentativeness</a></li>
@@ -103,6 +76,15 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../identifiers.html">Identifiers</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../relationships/index.html">Table Relationships</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/physical-pk-fk.html">Physical PK–FK Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/logical-relationships.html">Logical Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/documentation-relationships.html">Documentation Relationships</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/physical-summary.html">Physical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/logical-summary.html">Logical Relationship Summary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../relationships/summary.html">Summary</a></li>
+</ul>
+</li>
 </ul>
 
         </div>
