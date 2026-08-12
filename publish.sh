@@ -156,7 +156,7 @@ echo "Files staged for the commit:"
 echo
 git status --short
 echo
-git diff --cached --stat
+git --no-pager diff --cached --stat
 
 if git diff --cached --quiet; then
     echo
