@@ -2,7 +2,7 @@
 
 The following diagram provides an overview of the Reportnet air quality reporting data model (v502).
 
-```{image} images/reportnet3_data_model.png
+```{image} images/r3_reporting_schema.png
 :alt: Reportnet 3 data model
 :align: center
 :width: 100%
