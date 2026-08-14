@@ -40,13 +40,13 @@ This guide provides structured documentation for the Reportnet 3 air quality rep
          <div class="landing-title">Identifiers</div>
          <div class="landing-text">Reference information on identifiers, keys and links.</div>
       </a>
-   </div>
 
-   <a class="landing-card" href="relationships/index.html">
-      <div class="landing-icon">🔄</div>
-      <div class="landing-title">Table relationships</div>
-      <div class="landing-text">Physical and logical relationships between reporting tables.</div>
-   </a>
+      <a class="landing-card" href="relationships/index.html">
+         <div class="landing-icon">🔄</div>
+         <div class="landing-title">Table relationships</div>
+         <div class="landing-text">Physical and logical relationships between reporting tables.</div>
+      </a>
+   </div>
 
 .. toctree::
    :maxdepth: 1
