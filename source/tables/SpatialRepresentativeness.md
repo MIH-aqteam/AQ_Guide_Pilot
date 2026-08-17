@@ -1,5 +1,11 @@
 # SpatialRepresentativeness
 
+```{image} ../_static/table-icons/SpatialRepresentativeness.png
+:alt: SpatialRepresentativeness
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

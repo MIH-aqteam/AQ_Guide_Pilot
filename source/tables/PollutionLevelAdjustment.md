@@ -1,5 +1,11 @@
 # PollutionLevelAdjustment
 
+```{image} ../_static/table-icons/PollutionLevelAdjustment.png
+:alt: PollutionLevelAdjustment
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

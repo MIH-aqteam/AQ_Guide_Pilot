@@ -1,5 +1,11 @@
 # MOEResultExternal
 
+```{image} ../_static/table-icons/ModelObjectiveEstimation.png
+:alt: ModelObjectiveEstimation
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

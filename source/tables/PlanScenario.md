@@ -1,5 +1,11 @@
 # PlanScenario
 
+```{image} ../_static/table-icons/PlanScenario.png
+:alt: PlanScenario
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

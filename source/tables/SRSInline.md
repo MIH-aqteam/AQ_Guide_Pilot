@@ -1,5 +1,11 @@
 # SRSInline
 
+```{image} ../_static/table-icons/SRSInline.png
+:alt: SRSInline
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

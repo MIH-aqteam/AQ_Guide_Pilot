@@ -1,5 +1,11 @@
 # CompliancePlanLink
 
+```{image} ../_static/table-icons/CompliancePlanLink.png
+:alt: CompliancePlanLink
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

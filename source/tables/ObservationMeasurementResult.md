@@ -1,5 +1,11 @@
 # ObservationMeasurementResult
 
+```{image} ../_static/table-icons/ObservationMeasurementResult.png
+:alt: ObservationMeasurementResult
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

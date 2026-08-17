@@ -1,5 +1,11 @@
 # SamplingPoint
 
+```{image} ../_static/table-icons/SamplingPoint.png
+:alt: SamplingPoint
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

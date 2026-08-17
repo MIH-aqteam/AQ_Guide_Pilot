@@ -1,5 +1,11 @@
 # Documentation
 
+```{image} ../_static/table-icons/Documentation.png
+:alt: Documentation
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

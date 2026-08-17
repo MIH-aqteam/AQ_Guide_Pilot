@@ -1,5 +1,11 @@
 # SamplingProcess
 
+```{image} ../_static/table-icons/SamplingProcess.png
+:alt: SamplingProcess
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

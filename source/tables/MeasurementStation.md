@@ -1,5 +1,11 @@
 # MeasurementStation
 
+```{image} ../_static/table-icons/MeasurementStation.png
+:alt: MeasurementStation
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

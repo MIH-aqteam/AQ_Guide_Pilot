@@ -1,5 +1,11 @@
 # ObservationMeasurementResultPNSD
 
+```{image} ../_static/table-icons/ObservationMeasurementResultPNSD.png
+:alt: ObservationMeasurementResultPNSD
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

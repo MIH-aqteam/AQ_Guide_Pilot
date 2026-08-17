@@ -1,5 +1,11 @@
 # ZoneGeometry
 
+```{image} ../_static/table-icons/ZoneGeometry.png
+:alt: ZoneGeometry
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

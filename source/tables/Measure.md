@@ -1,5 +1,11 @@
 # Measure
 
+```{image} ../_static/table-icons/Measure.png
+:alt: Measure
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

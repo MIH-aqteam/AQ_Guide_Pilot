@@ -1,5 +1,11 @@
 # ComplianceAssessmentMethod
 
+```{image} ../_static/table-icons/ComplianceAssessmentMethod.png
+:alt: ComplianceAssessmentMethod
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

@@ -1,5 +1,11 @@
 # ScenarioMeasure
 
+```{image} ../_static/table-icons/ScenarioMeasure.png
+:alt: ScenarioMeasure
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

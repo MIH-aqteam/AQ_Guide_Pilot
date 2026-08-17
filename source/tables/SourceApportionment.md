@@ -1,5 +1,11 @@
 # SourceApportionment
 
+```{image} ../_static/table-icons/SourceApportionment.png
+:alt: SourceApportionment
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2

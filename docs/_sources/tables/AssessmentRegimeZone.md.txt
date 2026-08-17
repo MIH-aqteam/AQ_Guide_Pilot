@@ -1,5 +1,11 @@
 # AssessmentRegimeZone
 
+```{image} ../_static/table-icons/AssessmentRegimeZone.png
+:alt: AssessmentRegimeZone
+:align: right
+:width: 200px
+```
+
 ```{contents}
 :local:
 :depth: 2
