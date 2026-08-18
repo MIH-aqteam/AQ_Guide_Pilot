@@ -1,0 +1,19 @@
+{% extends "!layout.html" %}
+
+{% block sidebartitle %}
+  <div class="aura-branding">
+    <a class="aura-eea-link" href="https://www.eea.europa.eu/" aria-label="European Environment Agency">
+      <img class="aura-eea-logo" src="{{ pathto('_static/EEA.png', 1) }}" alt="European Environment Agency">
+    </a>
+
+    <div class="aura-name">AURA</div>
+
+    <nav class="aura-sites" aria-label="AURA websites">
+      <a href="https://aqportal.discomap.eea.europa.eu/">portal</a>
+      <span class="aura-current" aria-current="page">reporting guide</span>
+      <a href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/">reference guide</a>
+    </nav>
+  </div>
+
+  {% include "searchbox.html" %}
+{% endblock %}

@@ -523,3 +523,82 @@ footer {
         height: 110px;
     }
 }
+
+/* =========================================================
+   AURA FAMILY NAVIGATION
+   ========================================================= */
+
+.aura-branding {
+    margin: 0 -12px 12px;
+    text-align: center;
+}
+
+.aura-branding::before {
+    content: "";
+    display: table;
+}
+
+.aura-eea-link {
+    display: inline-block;
+    vertical-align: middle;
+    width: 115px;
+    margin: 0 4px 0 0;
+    padding: 0;
+}
+
+.aura-eea-logo {
+    display: block !important;
+    width: 100px !important;
+    height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    transform: none !important;
+    object-fit: contain;
+}
+
+.aura-name {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 5px;
+    color: #FFFFFF;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.04em;
+}
+
+.aura-sites {
+    width: 100%;
+    font-size: 16px;
+    line-height: 1.2;
+    text-align: right;
+}
+
+.aura-sites a,
+.aura-sites .aura-current {
+    display: block;
+    min-height: 31px;
+    padding: 6px 18px 6px 10px;
+    color: #FFFFFF !important;
+    text-decoration: none;
+}
+
+.aura-sites a:hover,
+.aura-sites a:focus-visible {
+    background: rgba(255, 255, 255, 0.14);
+    color: #FFFFFF !important;
+}
+
+.aura-sites .aura-current {
+    background: #FFFFFF;
+    color: #202428 !important;
+    font-weight: 600;
+}
+
+.aura-sites + * {
+    margin-top: 12px;
+}
