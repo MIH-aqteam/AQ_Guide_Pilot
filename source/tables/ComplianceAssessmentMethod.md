@@ -13,10 +13,10 @@
 
 ## Description
 
-The purpose of the ComplianceAssessmentMethod table is to collect information about assessment regimes and compliance situations on assessment method level. It specifies measured and/or modelled air quality values, aggregated in the context of the assessment regimes and allowed limits, provides uncertainty estimations for these values, describes some additional features of the air quality values (such as 'hotspot' and 'correction flag'), links to spatial representativeness areas (for sampling points and possibly - exceedance values) and gives preliminary description of reason for exceedance (based on code listed values) if such occurs.
+The purpose of the ComplianceAssessmentMethod table is to collect information about assessment regimes and compliance situations on assessment method level. It specifies measured and/or modelled air quality values, aggregated in the context of the assessment regimes and allowed limits, provides uncertainty estimations for these values, describes some additional features of the air quality values (such as 'correction flag'), links to spatial representativeness areas (for sampling points and possibly - exceedance values) and gives preliminary description of reason for exceedance (based on code listed values) if such occurs.
 
 ComplianceAssessmentMethod table has to be reported every year.
-Attributes which create unique identifier of each record: CountryCode, ReportingYear, AssessmentRegimeId, AssessmentMethodId and DataAggregationProcessId.
+Attributes which create unique identifier of each record: CountryCode, AssessmentMethodId, DataAggregationProcessId and AttainmentId.
 
 Updates of the ComplianceAssessmentMethod table will not be time stamped, i.e. each update generates the only version of the compliance situation that is stored at the EEA:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
@@ -24,7 +24,7 @@ Updates of the ComplianceAssessmentMethod table will not be time stamped, i.e. e
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against aggregation code list, existing records in ModelObjectiveEstimation table, SamplingPoint table, SpatialRepresentativeness table and AssessmentRegimeZone table, as well as - indirectly - against ObservationMeasurementResult and MOEResult tables.
 
 Valid modifications of existing record: beside the attributes which create unique identifier, AttainmentId, PollutantId and SRSId, modifications of value are in principle allowed for all other attributes. However, the degree of freedom for such modifications will be different, depending on data type and impact of modification, e.g.:
-- CorrectionFlag, Hotspot - all changes may be allowed,
+- CorrectionFlag - all changes may be allowed,
 - Uncertainties - changes within certain numeric ranges,
 - PollutionLevel(s) - must agree with EEA's aggregations,
 - PreliminaryReason - all changes may be allowed within AttainmentId, but split into more compliance situation (> 1 of AttainmentId) will require additional rules (impact on PollutionLevelAdjustment, CompliancePlanLink), etc.
@@ -51,6 +51,8 @@ In case of reporting AEI, one record for each relevant AssessmentRegimeId should
 
 The values related to the new environmental objectives should be reported from the beginning of the new reporting in ReportNet3. Exceedances of the new thresholds should be indicated via IsExceedance attribute in the same way as exceedances of the currently used threshold values. They cannot and will not be handled as legally binding exceedances, i.e. will not determine compliance status of zones but they will be used for identification of needs for the roadmaps.
 
+In preliminary reporting attributes such as CountryCode, AttainmentId, AssessmentMethodId, DataAggregationProcessId (PKs), as well as ReportingYear, AssessmentRegimeId and PollutantId must be populated, while other attributes may be provided with null values. Single AttainmentId for each ReportingYear and AssessmentRegimeId should be constructed, following rules given in the  {doc}`Identifiers section <../identifiers>`.
+
 Deletion of an existing record is possible via the Deletion attribute (by reporting value = 1).
 
 ## Attributes
@@ -58,8 +60,8 @@ Deletion of an existing record is possible via the Deletion attribute (by report
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | CAM_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| CAM_02 | ReportingYear | int | numeric | PK |  |  |
-| CAM_03 | AssessmentRegimeId | varchar(100) | string | PK |  | [AssessmentRegimeZone](AssessmentRegimeZone.md) |
+| CAM_02 | ReportingYear | int | numeric |  |  |  |
+| CAM_03 | AssessmentRegimeId | varchar(100) | string |  |  | [AssessmentRegimeZone](AssessmentRegimeZone.md) |
 | CAM_04 | DataAggregationProcessId | varchar(50) | string | PK | [aggregationprocess](https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view) |  |
 | CAM_05 | AssessmentMethodId | varchar(100) | string | PK |  | [SamplingPoint](SamplingPoint.md)<br>[SamplingProcess](SamplingProcess.md)<br>[SamplingPointLocation](SamplingPointLocation.md)<br>[ObservationMeasurementResult](ObservationMeasurementResult.md)<br>[ModelObjectiveEstimation](ModelObjectiveEstimation.md)<br>[MOEResultInline](MOEResultInline.md)<br>[MOEResultExternal](MOEResultExternal.md) |
 | CAM_06 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
@@ -71,7 +73,7 @@ Deletion of an existing record is possible via the Deletion attribute (by report
 | CAM_12 | RelativeUncertaintyLimit | decimal(10,2) | numeric |  |  |  |
 | CAM_13 | AssessmentMQI | decimal(5,2) | numeric |  |  |  |
 | CAM_14 | CorrectionFlag | bit | boolean |  |  |  |
-| CAM_15 | AttainmentId | varchar(50) | string |  |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
+| CAM_15 | AttainmentId | varchar(50) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
 | CAM_16 | SRSId | varchar(50) | string |  |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
 | CAM_17 | PreliminaryReason | varchar(50) | string |  | [exceedancereason](https://dd.eionet.europa.eu/vocabulary/aq/exceedancereason/view) |  |
 | CAM_18 | Deletion | bit | boolean |  |  |  |
@@ -303,8 +305,8 @@ Y/N
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 CAM_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-CAM_02 | ReportingYear | 2024 | int | numeric | ✓ | 
-CAM_03 | AssessmentRegimeId | ARE_ZON_DU000A_0005_LV_H_aMean_2021_1 | varchar(50) | string | ✓ | 
+CAM_02 | ReportingYear | 2024 | int | numeric |  | 
+CAM_03 | AssessmentRegimeId | ARE_ZON_DU000A_0005_LV_H_aMean_2021_1 | varchar(50) | string |  | 
 CAM_04 | DataAggregationProcessId | P1Y | varchar(50) | string | ✓ | ✓
 CAM_05 | AssessmentMethodId | SPO_DU0001_0005_100 | varchar(100) | string | ✓ | 
 CAM_06 | PollutantId | 5 | int | numeric |  | ✓
@@ -316,13 +318,19 @@ CAM_11 | PollutionLevelAdjusted | null | decimal(10,3) | numeric |  |
 CAM_12 | RelativeUncertaintyLimit | 0.2 | decimal(10,2) | numeric |  | 
 CAM_13 | AssessmentMQI | null | decimal(5,2) | numeric |  | 
 CAM_14 | CorrectionFlag | Y | bit | boolean |  | 
-CAM_15 | AttainmentId | ATT_ZON_DU000A_00005_LV_H_aMean_2024_1 | varchar(50) | string |  | 
+CAM_15 | AttainmentId | ATT_ZON_DU000A_00005_LV_H_aMean_2024_1 | varchar(50) | string | ✓ | 
 CAM_16 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(50) | string |  | 
 CAM_17 | PreliminaryReason | null | varchar(50) | string |  | ✓
 CAM_18 | Deletion | 0 | bit | boolean |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 
-The complete set of examples is available in the Excel workbook, worksheet `ComplianceAssessmentMethod`.
+<!--
+The complete set of examples is available in the Excel workbook, worksheet `SamplingPoint`.
+-->
 
-[Download complete examples workbook](../_static/R3_v501_AQ_Reporting_guide_example.xlsx)
+> **Note:** The example file is temporarily unavailable while it is being updated. The updated version will be made available once the revision is complete.
+
+<!--
+<a href="../_static/R3_v501_AQ_Reporting_guide_example.xlsx" target="_blank" rel="noopener noreferrer">Open complete examples workbook</a>
+-->

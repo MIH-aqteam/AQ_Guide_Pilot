@@ -410,8 +410,7 @@ ADD CONSTRAINT [PK_ComplianceAssessmentMethod]
 PRIMARY KEY
 (
     [CountryCode],
-    [ReportingYear],
-    [AssessmentRegimeId],
+    [AttainmentId],
     [DataAggregationProcessId],
     [AssessmentMethodId]
 );

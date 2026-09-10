@@ -246,6 +246,12 @@ SPP_14 | ProcessDocumentId | DOC_PR_SPP_DU0005_1 | varchar(150) | string |  |
 
 **Legend:** PK = Primary Key; CL = Code List.
 
-The complete set of examples is available in the Excel workbook, worksheet `SamplingProcess`.
+<!--
+The complete set of examples is available in the Excel workbook, worksheet `SamplingPoint`.
+-->
 
-[Download complete examples workbook](../_static/R3_v501_AQ_Reporting_guide_example.xlsx)
+> **Note:** The example file is temporarily unavailable while it is being updated. The updated version will be made available once the revision is complete.
+
+<!--
+<a href="../_static/R3_v501_AQ_Reporting_guide_example.xlsx" target="_blank" rel="noopener noreferrer">Open complete examples workbook</a>
+-->

@@ -39,7 +39,8 @@ At the time of creating the first version of reference data, the EEA will establ
 'SPO' + EoI code + pollutant code + ordering index
 ```
 
-(see Identifiers worksheet).
+(see {doc}`Identifiers section <../identifiers>`).
+
 From that moment, countries should generate the SamplingPointReferenceId for all new sampling points/AssessmentMethodId.
 
 <b>SamplingPointReferenceId cannot be modified and cannot be re-used (e.g. after deletion of a sampling point).</b>
@@ -157,6 +158,12 @@ SPO_05 | StationEoICode | DU0001 | varchar(10) | string |  |
 
 **Legend:** PK = Primary Key; CL = Code List.
 
+<!--
 The complete set of examples is available in the Excel workbook, worksheet `SamplingPoint`.
+-->
 
-[Download complete examples workbook](../_static/R3_v501_AQ_Reporting_guide_example.xlsx)
+> **Note:** The example file is temporarily unavailable while it is being updated. The updated version will be made available once the revision is complete.
+
+<!--
+<a href="../_static/R3_v501_AQ_Reporting_guide_example.xlsx" target="_blank" rel="noopener noreferrer">Open complete examples workbook</a>
+-->

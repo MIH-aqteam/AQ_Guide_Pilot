@@ -370,8 +370,6 @@ The adjustment belongs to the compliance or attainment situation represented by 
 
 The CAM primary key also includes:
 
-- `ReportingYear`
-- `AssessmentRegimeId`
 - `DataAggregationProcessId`
 - `AssessmentMethodId`
 
