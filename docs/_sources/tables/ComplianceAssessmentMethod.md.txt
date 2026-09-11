@@ -23,7 +23,7 @@ Updates of the ComplianceAssessmentMethod table will not be time stamped, i.e. e
 - or modification of existing record, understood as modification of a value for any other attribute.
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against aggregation code list, existing records in ModelObjectiveEstimation table, SamplingPoint table, SpatialRepresentativeness table and AssessmentRegimeZone table, as well as - indirectly - against ObservationMeasurementResult and MOEResult tables.
 
-Valid modifications of existing record: beside the attributes which create unique identifier, AttainmentId, PollutantId and SRSId, modifications of value are in principle allowed for all other attributes. However, the degree of freedom for such modifications will be different, depending on data type and impact of modification, e.g.:
+Valid modifications of existing record: beside the attributes which create unique identifier, as well as ReportingYear, AssessmentRegimeId, PollutantId and SRSId, modifications of value are in principle allowed for all other attributes. However, the degree of freedom for such modifications will be different, depending on data type and impact of modification, e.g.:
 - CorrectionFlag - all changes may be allowed,
 - Uncertainties - changes within certain numeric ranges,
 - PollutionLevel(s) - must agree with EEA's aggregations,
