@@ -21,6 +21,7 @@ Attributes which create unique identifier of each record: CountryCode, Assessmen
 Updates of the ComplianceAssessmentMethod table will not be time stamped, i.e. each update generates the only version of the compliance situation that is stored at the EEA:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against aggregation code list, existing records in ModelObjectiveEstimation table, SamplingPoint table, SpatialRepresentativeness table and AssessmentRegimeZone table, as well as - indirectly - against ObservationMeasurementResult and MOEResult tables.
 
 Valid modifications of existing record: beside the attributes which create unique identifier, as well as ReportingYear, AssessmentRegimeId, PollutantId and SRSId, modifications of value are in principle allowed for all other attributes. However, the degree of freedom for such modifications will be different, depending on data type and impact of modification, e.g.:
@@ -40,10 +41,12 @@ Data products for reporters will present the records as reported recently, highl
 ComplianceAssessmentMethod table will be extended by EEA by several attributes:
 - Country (for convenience), based on ISO2 country codes,
 - Pollutant (for convenience), based on code list,
+- SamplingPointReferenceId,
 - DataAggregationProcess, based on DataAggregationProcessId,
 - EEAAdjustmentEstimation, based on EEA's processing of information included in the PollutionLevelAdjustment table,
 - EEAExceedanceAssessment, based on EEAAdjustmentEstimation and allowed limit values,
-- EEAMQIestimation, based on EEA's interpretation of MOEResults vs. ObservationMeasurementResult.
+- AbsoluteUncertaintyLimit,
+- EEAMQIEstimation, based on EEA's interpretation of MOEResults vs. ObservationMeasurementResult.
 
 ## Data management rules
 
@@ -83,29 +86,28 @@ Deletion of an existing record is possible via the Deletion attribute (by report
 ### CAM_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-01-countrycode)
+
 ### CAM_02 – ReportingYear
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-02-reportingyear)
 **Content**
 
 Year for which the data has been reported.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-02-reportingyear)
+
 ### CAM_03 – AssessmentRegimeId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-03-assessmentregimeid)
 **Content**
 
 Identifier of the air quality assessment regime, given by data provider.
@@ -114,66 +116,72 @@ Identifier of the air quality assessment regime, given by data provider.
 
 It will be cross-checked against the AssessmentRegimeZone table.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-03-assessmentregimeid)
+
 ### CAM_04 – DataAggregationProcessId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-04-dataaggregationprocessid)
 **Content**
 
 Identifier of the process used for aggregating air quality data into statistical values.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-04-dataaggregationprocessid)
+
 ### CAM_05 – AssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-05-assessmentmethodid)
 **Content**
 
 Identifier of the assessment method used for air quality evaluation, given by data provider.
 
 **Remarks**
 
-Either SamplingPoint or Model/OBE, it will be cross-checked against the SamplingPoint table or the Model table, also - indirectly - against the ObservationMeasurementResult table and/or the ModellingResult tables.
+Either SamplingPoint or Model/OBE, it will be cross-checked against the SamplingPoint table or the ModelObjectiveEstimation table, also - indirectly - against the ObservationMeasurementResult table and/or the ModellingResult tables.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-05-assessmentmethodid)
 
 ### CAM_06 – PollutantId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-06-pollutantid)
 **Content**
 
 Code of the air pollutant for which the assessment is being conducted.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-06-pollutantid)
+
 ### CAM_07 – AssessmentType
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-07-assessmenttype)
 **Content**
 
 Classification of assessment methods into common types.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-07-assessmenttype)
+
 ### CAM_08 – IsExceedance
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-08-isexceedance)
 **Content**
 
 Statement indicating whether pollution levels exceed environmental objectives.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-08-isexceedance)
+
 ### CAM_09 – DataCoverage
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-09-datacoverage)
 **Content**
 
 The proportion of the calendar year for which valid measurement data are available, expressed as a percentage.
@@ -182,12 +190,13 @@ The proportion of the calendar year for which valid measurement data are availab
 
 One element of DQO (see Directive 2024/2881 Section B.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-09-datacoverage)
+
 ### CAM_10 – PollutionLevel
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-10-pollutionlevel)
 **Content**
 
 Measured or modeled concentration level of the air pollutant.
@@ -196,22 +205,24 @@ Measured or modeled concentration level of the air pollutant.
 
 AirPollutionLevel must be reported for every AssessmentMethodId.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-10-pollutionlevel)
+
 ### CAM_11 – PollutionLevelAdjusted
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-11-pollutionleveladjusted)
 **Content**
 
 Adjusted concentration level of the air pollutant, accounting for specific corrections.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-11-pollutionleveladjusted)
+
 ### CAM_12 – RelativeUncertaintyLimit
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-12-relativeuncertaintylimit)
 **Content**
 
 The maximum relative uncertaintyfor assessment method (given for measurement).
@@ -220,22 +231,24 @@ The maximum relative uncertaintyfor assessment method (given for measurement).
 
 RelativeUncertaintyLimit must be reported for every AssessmentMethodId which refer to sampling points.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-12-relativeuncertaintylimit)
+
 ### CAM_13 – AssessmentMQI
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-13-assessmentmqi)
 **Content**
 
 Modelling Quality Indicator
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-13-assessmentmqi)
+
 ### CAM_14 – CorrectionFlag
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-14-correctionflag)
 **Content**
 
 Correction factor for measured values applied (Y/N)
@@ -244,12 +257,13 @@ Correction factor for measured values applied (Y/N)
 
 Y/N. Correction is a string/boolean to be used in order to certify that, in case the SamplingProcess is equivalent to the reference method, the values have been corrected adequately (e.g. PM but also ozone with the cross section).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-14-correctionflag)
+
 ### CAM_15 – AttainmentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-15-attainmentid)
 **Content**
 
 Identifier of the air quality compliance situation, given by data provider (preliminary reason level).
@@ -258,12 +272,13 @@ Identifier of the air quality compliance situation, given by data provider (prel
 
 AttainmentId distinguishes each compliance situation. If there is no exceedance in the zone/assessment regime, there will be only one AttainmentId. If exceedance occurs, if it is caused (most probably) by the same reason and its extent (delineated by sampling point SRAs or modelling results) covers the whole zone, there will be also only one AttainmentId. However, if single exceedance (caused by the same reason) does not cover the whole zone, there will be 2 AttainmentIds - one for the exceedance situation and one for the non-exceedance situation in the same zone/assessment regime. Also - if the exceedances in the same zone/assessment regime are caused by different reasons, there will be more than 1 AttainmentIds.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-15-attainmentid)
+
 ### CAM_16 – SRSId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-16-srsid)
 **Content**
 
 Identifier of the area representing spatial representativeness.
@@ -272,12 +287,13 @@ Identifier of the area representing spatial representativeness.
 
 Identifier linking to either SPO representativeness or to exceedance extent.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-16-srsid)
+
 ### CAM_17 – PreliminaryReason
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-17-preliminaryreason)
 **Content**
 
 Initial justification or reasoning for reported exceedance levels.
@@ -286,12 +302,13 @@ Initial justification or reasoning for reported exceedance levels.
 
 This is crucial for distinguishing between different compliance situations in the same zone/assessment regime and pointing the relevant actions (air quality plans). It does not have to be precise at the first assessment of new exceedance and it can be changed from one year to another.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-17-preliminaryreason)
+
 ### CAM_18 – Deletion
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-18-deletion)
 **Content**
 
 Flag to indicate that this element and all related information must be deleted.
@@ -299,6 +316,10 @@ Flag to indicate that this element and all related information must be deleted.
 **Remarks**
 
 Y/N
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-18-deletion)
 
 ## Example
 

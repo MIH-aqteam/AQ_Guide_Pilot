@@ -21,6 +21,7 @@ Attributes which create unique identifier of each record: CountryCode, Assessmen
 Updates of the SamplingLocation table will not be time stamped, i.e. each update generates the only version of the table in reference/legacy data:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute, e.g. entering end date.
+
 Validity of the new record will be tested using QC rules to be established, e.g. cross-checking relation between the code listed values.
 
 Valid modifications of existing record in this table are minor corrections, e.g. of building distance or coordinates, or altitude, which are not considered as SamplingPoint re-location into new conditions.
@@ -47,12 +48,12 @@ In case where the LocationBegin was reported wrongly and/or the corresponding re
 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
-| SPL_01 | CountryCode | varchar(2) | string | PK |  |  |
+| SPL_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | SPL_02 | AssessmentMethodId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[SamplingPoint](SamplingPoint.md)<br>[SamplingProcess](SamplingProcess.md)<br>[ObservationMeasurementResult](ObservationMeasurementResult.md) |
 | SPL_03 | LocationBegin | datetime | datetime | PK |  |  |
 | SPL_04 | LocationEnd | datetime | datetime |  |  |  |
 | SPL_05 | StationArea | varchar(100) | string |  | [areaclassification](https://dd.eionet.europa.eu/vocabulary/aq/areaclassification/view) |  |
-| SPL_06 | SamplingPointCategory | varchar(50) | string |  | Code list to be developed |  |
+| SPL_06 | SamplingPointCategory | varchar(50) | string |  | [samplingpointcategory](https://dd.eionet.europa.eu/vocabulary/aq/samplingpointcategory) |  |
 | SPL_07 | Hotspot | bit | boolean |  |  |  |
 | SPL_08 | Supersite | bit | boolean |  |  |  |
 | SPL_09 | Latitude | decimal(8,4) | numeric |  |  |  |
@@ -73,29 +74,28 @@ Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601
 ### SPL_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-01-countrycode)
+
 ### SPL_02 – AssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-02-assessmentmethodid)
 **Content**
 
 Identifier of the assessment method (sampling point), given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-02-assessmentmethodid)
+
 ### SPL_03 – LocationBegin
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-03-locationbegin)
 **Content**
 
 Start time of the location characteristic(s).
@@ -104,22 +104,24 @@ Start time of the location characteristic(s).
 
 The permissible modifications in the location characteristics will be verified by adequate QC.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-03-locationbegin)
+
 ### SPL_04 – LocationEnd
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-04-locationend)
 **Content**
 
 End time of the location characteristic(s).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-04-locationend)
+
 ### SPL_05 – StationArea
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-05-stationarea)
 **Content**
 
 Classification of the air quality measurement station’s area (urban, suburban, rural, etc.).
@@ -128,12 +130,13 @@ Classification of the air quality measurement station’s area (urban, suburban,
 
 A change in station area implies closing the associated sampling points by ending the SamplingProcess, declaring a new station and the associated new sampling points.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-05-stationarea)
+
 ### SPL_06 – SamplingPointCategory
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-06-samplingpointcategory)
 **Content**
 
 Intention or reason for placing sampling point.
@@ -146,12 +149,13 @@ Code list to be developed.
 
 Potential categories: traffic, background, industrial, port, airport, residential heating, multisource.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-06-samplingpointcategory)
+
 ### SPL_07 – Hotspot
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-07-hotspot)
 **Content**
 
 Indicator if the measurement site is considered as a hotspot.
@@ -162,12 +166,13 @@ Y/N.
 
 Hotspot relates to the provisions of the recasted Air Quality Directive 2024/2881, Article 4(27) and others.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-07-hotspot)
+
 ### SPL_08 – Supersite
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-08-supersite)
 **Content**
 
 Indicator if the measurement site is classified as a "Super Site" for advanced monitoring.
@@ -176,75 +181,86 @@ Indicator if the measurement site is classified as a "Super Site" for advanced m
 
 Y/N.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-08-supersite)
+
 ### SPL_09 – Latitude
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-09-latitude)
 **Content**
 
 Latitude coordinate of the air quality station location (decimal degrees).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-09-latitude)
+
 ### SPL_10 – Longitude
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-10-longitude)
 **Content**
 
 Longitude coordinate of the air quality station location (decimal degrees).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-10-longitude)
+
 ### SPL_11 – Altitude
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-11-altitude)
 **Content**
 
 Altitude of the air quality station location in meters above sea level.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-11-altitude)
+
 ### SPL_12 – InletHeight
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-12-inletheight)
 **Content**
 
 Height of the sampling inlet where air quality measurements are taken, in meters.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-12-inletheight)
+
 ### SPL_13 – BuildingDistance
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-13-buildingdistance)
 **Content**
 
 Horizontal distance from the sampling inlet to the nearest building, in meters.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-13-buildingdistance)
+
 ### SPL_14 – KerbDistance
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-14-kerbdistance)
 **Content**
 
 Horizontal distance from the sampling inlet to the nearest road kerb, in meters.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-14-kerbdistance)
+
 ### SPL_15 – EmissionSourceDistance
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-15-emissionsourcedistance)
 **Content**
 
 Horizontal distance from the main emission source, in meters.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPointLocation.html#spl-15-emissionsourcedistance)
 
 ## Example
 

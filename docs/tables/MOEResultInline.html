@@ -197,16 +197,16 @@ Attributes which create unique identifier of each record: CountryCode, Assessmen
 <p>Updates of the MOEResultInline table will not be time stamped - i.e. each update generates the only version of the (gridded) AQ values that is stored at the EEA, as well - the only version of the corresponding table in reference/legacy data:</p>
 <ul class="simple">
 <li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
-<li><p>or modification of existing record, understood as modification of a value for any other attribute.
-Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.</p></li>
 </ul>
+<p>Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.</p>
 <p>Valid modifications of existing record in this table are based on re-submission of the (gridded) AQ values for the existing set of attributes creating unique identifier:</p>
 <ul class="simple">
 <li><p>either to overwrite/correct the values of other attributes,</p></li>
-<li><p>or to modify Validity flag to -1 for deletion purpose.
-Validity of the modifications of existing record will be tested using QC (rules to be established).
-Allowed modifications may affect outcomes of compliance analysis and/or assessments, therefore re-submissions for past years, for which compliance reporting has been already done, will require additional tests vs reference/legacy data before official release of such data is granted.</p></li>
+<li><p>or to modify Validity flag to -1 for deletion purpose.</p></li>
 </ul>
+<p>Validity of the modifications of existing record will be tested using QC (rules to be established).
+Allowed modifications may affect outcomes of compliance analysis and/or assessments, therefore re-submissions for past years, for which compliance reporting has been already done, will require additional tests vs reference/legacy data before official release of such data is granted.</p>
 <p>Data products for public will present the records validated at the latest deadline.
 Data products for reporters will present the records as reported recently, highlighting the differences between validated reports and recent reports in case of re-submissions.</p>
 </section>
@@ -215,9 +215,9 @@ Data products for reporters will present the records as reported recently, highl
 <p>Reference data flow will have two tables representing reporting of model/OBE results:</p>
 <ul class="simple">
 <li><p>MOEResultInventory;</p></li>
-<li><p>MOEResultGrid.
-MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file.</p></li>
+<li><p>MOEResultGrid.</p></li>
 </ul>
+<p>MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file.</p>
 <p>MOEResultGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers:</p>
 <ul class="simple">
 <li><p>2 Very High Resolution layers (10 and 100m - depending on original resolutions) for populated areas, traffic links and areas with values above thresholds,</p></li>
@@ -327,7 +327,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>varchar(10)</p></td>
 <td><p>string</p></td>
 <td><p></p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/uom/concentration/">concentration</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/uom/concentration/">concentrationunits</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>MRI_11</p></td>
@@ -371,9 +371,10 @@ MOEResultInventory will collect information about count of values reported for e
 <section id="mri-02-assessmentmethodid">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">MRI_02 – AssessmentMethodId</a><a class="headerlink" href="#mri-02-assessmentmethodid" title="Link to this heading"></a></h3>
 <p><strong>Content</strong></p>
-<p>Identifier of the assessment method (model), given by provider.</p>
+<p>Identifier of the assessment method (model), given by provider.
+This attribute must follow a defined structure (see Identifiers section).</p>
 <p><strong>Remarks</strong></p>
-<p>It will be cross-checked against the Model table.</p>
+<p>It will be cross-checked against the ModelObjectiveEstimation table.</p>
 </section>
 <section id="mri-03-start">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">MRI_03 – Start</a><a class="headerlink" href="#mri-03-start" title="Link to this heading"></a></h3>

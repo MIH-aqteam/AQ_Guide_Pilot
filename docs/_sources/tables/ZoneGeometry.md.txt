@@ -21,6 +21,7 @@ Attributes which create unique identifier of each record: **CountryCode** and **
 Updates of the ZoneGeometry table will not be time stamped - i.e. each update generates the only version of the table in reference/legacy data:
 - either as addition of a new zone geometry;
 - or modification of an existing geometry.
+
 Validity of a new record will be tested using QC procedures (rules to be established), for example checking OGC compliance of the reported geometry.
 
 Validity of modifications of existing geometries will also be tested through QC procedures.
@@ -37,7 +38,7 @@ In addition, a gridded version of the zones will be generated:
 
 ### ZoneGeometryGrid
 
-ZoneGeometry table will be extended  by EEA in the reference/legacy data flow with a 'Country' attribute. However, another, gridded version of the zones will be generated in there - ZoneGeometryGrid, which will contain gridded AQ values in 2 layers: 
+ However, another gridded version of the zones will be generated in there - ZoneGeometryGrid, which will contain gridded AQ values in 2 layers: 
 - 1 Very High Resolution layer (100m) for populated areas, 
 - 1 High Resolution layer (1000m) for all areas. 
 
@@ -54,7 +55,7 @@ It is recommended to report the ZoneGeometry table only for new zone geometries.
 Zone geometries should be reported as geojson with SRID identifier and only the spatial data type "multipolygon" can be used. 
 Expected projections are: 
 - SRID3035, 
-- SRID4258 or 
+- SRID4258, 
 - SRID4326 (the only allowed for the French overseas areas).
 
 Records in the ZoneGeometry table (and subsequently in ZoneGeometryGrid) which do not have any correspondence to records in the AssessmentRegimeZone table will be flagged for deletion in the reference data flow.
@@ -72,29 +73,28 @@ Records in the ZoneGeometry table (and subsequently in ZoneGeometryGrid) which d
 ### ZGE_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-01-countrycode)
+
 ### ZGE_02 – ZoneId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-02-zoneid)
 **Content**
 
 Identifier of the air quality zone, given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-02-zoneid)
+
 ### ZGE_03 – ZoneGeometryGeoJson
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-03-zonegeometrygeojson)
 **Content**
 
 Geospatial representation of the air quality zone (e.g. polygon geometry).
@@ -102,9 +102,13 @@ Geospatial representation of the air quality zone (e.g. polygon geometry).
 **Remarks**
 
 It is allowed to report zone geometries in coordinate systems with the following EPSG codes:
-- 3035,
-- 4258,
-- 4326.
+- 3035
+- 4258
+- 4326
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-03-zonegeometrygeojson)
 
 ## Example
 

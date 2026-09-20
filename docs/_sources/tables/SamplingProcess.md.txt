@@ -21,12 +21,14 @@ Attributes which create unique identifier of each record: CountryCode, ProcessId
 Updates of the SamplingProcess table will not be time stamped, i.e. each update generates the only version of the table in reference/legacy data:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute, e.g. entering end date.
+
 Validity of the new record will be tested using QC rules to be established, e.g. cross-checking relation between the code listed values.
 
 Valid modifications of existing record in this table are:
 - inserting ProcessActivityEnd,
 - attaching new/different documentation,
 - minor corrections, e.g. of wrong code list values.
+
 Validity of the modifications of existing record will be tested using QC rules to be established.
 Allowed modifications are not supposed to affect outcomes of compliance analysis and/or assessments.
 
@@ -75,19 +77,17 @@ Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601
 ### SPP_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-01-countrycode)
+
 ### SPP_02 – ProcessId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-02-processid)
 **Content**
 
 Identifier of the sampling process, given by data provider.
@@ -96,12 +96,13 @@ Identifier of the sampling process, given by data provider.
 
 The same ProcessId can be re-used for the same equipment configurations under different sampling points (AssessmentMethodId).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-02-processid)
+
 ### SPP_03 – AssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-03-assessmentmethodid)
 **Content**
 
 Identifier of the assessment method (sampling point) given by data provider.
@@ -111,12 +112,13 @@ Identifier of the assessment method (sampling point) given by data provider.
 A sampling point (AssessmentMethodId) can be closed (set as inactive) by ending the ProcessId (specifying ProcessActivityEnd).
 The same sampling point can be re-opened, also with the same ProcessId, by adding new record with new ProcessActivityBegin.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-03-assessmentmethodid)
+
 ### SPP_04 – ProcessActivityBegin
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-04-processactivitybegin)
 **Content**
 
 Start time of the measurement process.
@@ -125,105 +127,119 @@ Start time of the measurement process.
 
 If there is more than one ProcessId within the same AssessmentMethodId, then ProcessActivityBegin - ProcessActivityEnd should not overlap within the same AssessmentMethodId.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-04-processactivitybegin)
+
 ### SPP_05 – ProcessActivityEnd
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-05-processactivityend)
 **Content**
 
 End time of the measurement process.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-05-processactivityend)
+
 ### SPP_06 – PollutantId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-06-pollutantid)
 **Content**
 
 Code of the air pollutant being measured, as per Data Dictionary standards.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-06-pollutantid)
+
 ### SPP_07 – MeasurementType
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-07-measurementtype)
 **Content**
 
 Classification of measurement methods into generic types.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-07-measurementtype)
+
 ### SPP_08 – Method
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-08-method)
 **Content**
 
 Specific method used for measuring air pollutants.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-08-method)
+
 ### SPP_09 – Equipment
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-09-equipment)
 **Content**
 
 Equipment used for air pollutant measurement.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-09-equipment)
+
 ### SPP_10 – AnalyticalTechnique
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-10-analyticaltechnique)
 **Content**
 
 Analytical technique used for measuring pollutants.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-10-analyticaltechnique)
+
 ### SPP_11 – EquivalenceDemonstrated
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-11-equivalencedemonstrated)
 **Content**
 
 Status of equivalence demonstration according to regulatory requirements.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-11-equivalencedemonstrated)
+
 ### SPP_12 – DataQualityDocumentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-12-dataqualitydocumentid)
 **Content**
 
 Identifier of the Quality Assurance report given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-12-dataqualitydocumentid)
+
 ### SPP_13 – EquivalenceDemonstrationDocumentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-13-equivalencedemonstrationdocumentid)
 **Content**
 
 Identifier of the Equivalence demonstration report given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-13-equivalencedemonstrationdocumentid)
+
 ### SPP_14 – ProcessDocumentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-14-processdocumentid)
 **Content**
 
 Identifier of the documentation on process and data quality given by data provider.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingProcess.html#spp-14-processdocumentid)
 
 ## Example
 

@@ -33,7 +33,7 @@ SpatialRepresentativeness table will be extended by EEA by:
 ## Data management rules
 
 It is allowed to reuse SRSId within the same AQ zone and across the years. However, it is strongly recommended to set a new SRSId in ComplianceAssessmentMethod table and new record in SpatialRepresentativeness table with SRSApplication = `exc_sr`, whenever a new exceedance is reported (also by model/OBE).
-This practice enables reporting of exceedance extents after relevant plans are in place, without re-submitting records for ComplianceAssessmentMethod table (but simply by using the SRSId which is already there). SRSAssessmentMethodId can be used for pointing to AssessmentMethodId in the ModelObjectiveEstimation table for definition of the modelling/OBE method which generated the SR areas (either for sampling point or as exceedance extents).
+This practice enables reporting of exceedance extents after relevant plans are in place, without re-submitting records for ComplianceAssessmentMethod table (but simply by using the SRSId which is already there). RepresentativenessAssessmentMethodId can be used for pointing to AssessmentMethodId in the ModelObjectiveEstimation table for definition of the modelling/OBE method which generated the SR areas (either for sampling point or as exceedance extents).
 It is expected that in case of exceedance extents, the value in RepresentativenessAssessmentMethodId will be the same as value in ScenarioAssessmentMethodId in PlanScenario record referring to the same AttainmentId (because it is the same model/OBE).
 
 Records in SpatialRepresentativeness table which do not have any correspondence to records in ComplianceAssessmentMethods table will be flagged for deletion in the reference data flow.
@@ -54,43 +54,43 @@ Records in SpatialRepresentativeness table which do not have any correspondence 
 ### SRS_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-01-countrycode)
+
 ### SRS_02 – SRSId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-02-srsid)
 **Content**
 
 Identifier of the area representing the sampling point’s measurement spatial coverage or the extent of the exceedance, given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-02-srsid)
+
 ### SRS_03 – SRSApplicationId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-03-srsapplicationid)
 **Content**
 
 Identifier pointing to the specific spatial representativeness given by data provider.
 
 **Remarks**
 
-The same SRSId can have several SRSApplication_Id (e.g. one for the SPO representativeness area and one for the exceedance extent).
+The same SRSId can have several SRSApplicationId (e.g. one for the SPO representativeness area and one for the exceedance extent).
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-03-srsapplicationid)
 
 ### SRS_04 – SRSApplication
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-04-srsapplication)
 **Content**
 
 Application of spatial representativeness (SPO representativeness or the exceedance extent).
@@ -99,29 +99,35 @@ Application of spatial representativeness (SPO representativeness or the exceeda
 
 New code list (SPO representativeness area, exceedance extent area).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-04-srsapplication)
+
 ### SRS_05 – ResultEncoding
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-05-resultencoding)
 **Content**
 
 Encoding method used for model results (`internal` or `external`).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-05-resultencoding)
+
 ### SRS_06 – RepresentativenessAssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-06-representativenessassessmentmethodid)
 **Content**
 
 Identifier of the assessment method (model) used for defining the area (either representativeness or extent), given by data provider.
 
 **Remarks**
 
-AssessmentMethodId is a model or OBE identifier that points to the method (model/OBE in the Model table) which was used for the assessments of the SPO representativeness area or the exceedance extent.
+AssessmentMethodId is a model or OBE identifier that points to the method (model/OBE in the ModelObjectiveEstimation table) which was used for the assessments of the SPO representativeness area or the exceedance extent.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SpatialRepresentativeness.html#srs-06-representativenessassessmentmethodid)
 
 ## Example
 

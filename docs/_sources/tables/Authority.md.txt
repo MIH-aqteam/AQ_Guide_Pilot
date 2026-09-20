@@ -22,6 +22,7 @@ Attributes which create unique identifier of each record: CountryCode, Authority
 Updates of the Authority table will be managed using reference/legacy data, where each addition and modification will be stamped with ReportingTime:
 - addition of new record is understood as addition of new combination of values for the attributes creating unique identifier,
 - modification of existing record is understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC rules to be established, e.g. cross-checking AuthorityInstanceId against Zone table or MeasurementStation table.
 
 Valid modifications of existing record in this table are almost all allowed, only correction of AuthorityInstance may be restricted as it depends on AuthorityInstanceId.
@@ -48,33 +49,31 @@ Records in Authority table which have AuthorityStatus as inactive for 3 consecut
 |---|---|---|---|---|---|---|
 | AUT_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | AUT_02 | AuthorityInstanceId | varchar(50) | string | PK |  |  |
-| AUT_03 | AuthorityRole | varchar(50) | string | PK | [authorityobject](https://dd.eionet.europa.eu/vocabulary/aq/authorityobject) |  |
+| AUT_03 | AuthorityRole | varchar(50) | string | PK | [authorityrole](https://dd.eionet.europa.eu/vocabulary/aq/authorityrole) |  |
 | AUT_04 | Email | varchar(50) | string | PK |  |  |
 | AUT_05 | AuthorityInstance | varchar(20) | string |  | [authorityinstance](https://dd.eionet.europa.eu/vocabulary/aq/authorityinstance) |  |
 | AUT_06 | AuthorityName | varchar(150) | string |  |  |  |
 | AUT_07 | AuthorityURL | varchar(150) | string |  |  |  |
 | AUT_08 | AuthorityAddress | varchar(150) | string |  |  |  |
 | AUT_09 | PersonName | varchar(150) | string |  |  |  |
-| AUT_10 | AuthorityStatus | varchar(10) | string |  | [aq/authoritystatus/](https://dd.eionet.europa.eu/vocabulary/aq/authoritystatus/) |  |
+| AUT_10 | AuthorityStatus | varchar(10) | string |  | [authoritystatus](https://dd.eionet.europa.eu/vocabulary/aq/authoritystatus) |  |
 
 ## Attribute details
 
 ### AUT_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-01-countrycode)
+
 ### AUT_02 – AuthorityInstanceId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-02-authorityinstanceid)
 **Content**
 
 Unique identifier depending on authority instance, e.g. ZoneId or NUTS code.
@@ -85,22 +84,24 @@ If AuthorityInstance is zone then AuthorityInstanceId is a ZoneId, if nuts then 
 
 It will be cross-checked against ARZ, STA, SPO or MOD table depending on the instance level.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-02-authorityinstanceid)
+
 ### AUT_03 – AuthorityRole
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-03-authorityrole)
 **Content**
 
 A general object identifier or classification (topic e.g. reporting, assessment etc.).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-03-authorityrole)
+
 ### AUT_04 – Email
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-04-email)
 **Content**
 
 Email address of the contact person.
@@ -113,73 +114,83 @@ An informed consent statement will be attached clarifying that this data will be
 
 In other cases the attribute should be filled in as "Not Reported" or with organisation generic email address.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-04-email)
+
 ### AUT_05 – AuthorityInstance
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-05-authorityinstance)
 **Content**
 
 Name of the authority instance: zone, network, nuts0, nuts1, nuts2, nuts3, station, SPO, etc.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-05-authorityinstance)
+
 ### AUT_06 – AuthorityName
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-06-authorityname)
 **Content**
 
 Name of the institute or organization.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-06-authorityname)
+
 ### AUT_07 – AuthorityURL
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-07-authorityurl)
 **Content**
 
 Website URL of the institute.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-07-authorityurl)
+
 ### AUT_08 – AuthorityAddress
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-08-authorityaddress)
 **Content**
 
 Address of the institute.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-08-authorityaddress)
+
 ### AUT_09 – PersonName
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-09-personname)
 **Content**
 
 Name of the contact person in the authority or institute.
 
 **Remarks**
 
-PersonName have to be filled in but reporting details on person’s name are necessary only for reporters who need access to the ReportNet3.
+PersonName has to be filled in but reporting details on person’s name are necessary only for reporters who need access to the ReportNet3.
 
 An informed consent statement will be attached clarifying that this data will be used for establishing access rights and filling it in means both access request and consent for data use.
 
 In other cases the attribute should be filled in as "Not Reported".
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-09-personname)
+
 ### AUT_10 – AuthorityStatus
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-10-authoritystatus)
 **Content**
 
 Status or classification of the authority (e.g. active/inactive).
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Authority.html#aut-10-authoritystatus)
 
 ## Example
 

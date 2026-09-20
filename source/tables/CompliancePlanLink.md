@@ -15,7 +15,7 @@
 
 The purpose of the CompliancePlanLink table is to ensure the link between the AttainmentId as reported in the ComplianceAssessmentMethod table with the plan developed to tackle the exceedance (with source apportionment and relevant scenario).
 
-CompliancePlanLink table has to be reported every year to maintaint the link between exceedance situations (evolving through years) and the relevant plans.
+CompliancePlanLink table has to be reported every year to maintain the link between exceedance situations (evolving through years) and the relevant plans.
 Attributes which create unique identifier of each record: CountryCode, AttainmentId, PlanId, ScenarioId and SourceApportionmentId.
 
 Updates of the CompliancePlanLink table will not be time stamped, i.e. each update generates the only version of the CompliancePlanLink that is stored at the EEA. Since all the attributes create unique identifier of each record, the only update possible for this table is addition of a new record.
@@ -26,9 +26,11 @@ Data products for reporters will present the records as reported recently, highl
 
 ## EEA extensions
 
-CompliancePlanLink table will be extended by:
+In the reference data flow, the CompliancePlanLink table will collect the attributes CountryCode, AttainmentId, PlanId, ScenarioId, SourceApportionmentID as well as Deletion. It will be extended be extended by:
 - Country (for convenience), based on ISO2 country codes,
 - ReportingYear (for convenience), based on ComplianceAssessmentMethod (year of AttainmentId).
+
+The attributes CountryCode,PlanCategory, PlanTitle, PlanAdoptionDate, PlanBeginDate, PlanEndDate, PlanDocumentID and Deletion will be collected in the separate table Plan (not existing in the Reporting flow) in which Country will be added for convenience.
 
 ## Data management rules
 
@@ -68,47 +70,49 @@ Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601
 ### CPL_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-01-countrycode)
+
 ### CPL_02 – AttainmentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-02-attainmentid)
 **Content**
 
 Identifier of the air quality compliance situation, given by data provider.
+This attribute must follow a defined structure (see Identifiers section). 
 
 **Remarks**
 
 Several AttainmentIds can point to the same PlanId (e.g. the plan covers different pollutants or successive years of exceedance for the same pollutant). Alternatively, there might be several plans applying to the same AttainmentId (e.g. different authority level, or successive plans). It will be cross-checked against the ComplianceAssessmentMethod table.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-02-attainmentid)
+
 ### CPL_03 – PlanId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-03-planid)
 **Content**
 
 Identifier of the air quality plan, given by data provider.
+This attribute must follow a defined structure (see Identifiers section). 
 
 **Remarks**
 
 It will be cross-checked against the PlanScenario table.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-03-planid)
+
 ### CPL_04 – ScenarioId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-04-scenarioid)
 **Content**
 
 Identifier of the scenario, given by data provider.
@@ -116,13 +120,15 @@ Identifier of the scenario, given by data provider.
 **Remarks**
 
 ScenarioId, several scenarios can apply to the same PlanId (e.g. different pollutant and/or data aggregation) and vice versa. It will be cross-checked against the PlanScenario table.
+This attribute must follow a defined structure (see Identifiers section). 
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-04-scenarioid)
 
 ### CPL_05 – SourceApportionmentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-05-sourceapportionmentid)
 **Content**
 
 Identifier of the source apportionment, given by data provider.
@@ -130,6 +136,10 @@ Identifier of the source apportionment, given by data provider.
 **Remarks**
 
 SourceApportionmentId, there might be only one SourceApportionment per ScenarioId but several per PlanId (e.g.: different pollutant and/or data aggregation). It will be cross-checked against the SourceApportionment table.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-05-sourceapportionmentid)
 
 ### CPL_06 – PlanCategory
 
@@ -186,9 +196,6 @@ Identifier of the air quality plan document given by data provider.
 ### CPL_12 – Deletion
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-12-deletion)
 **Content**
 
 Flag to indicate that this element must be deleted
@@ -196,6 +203,10 @@ Flag to indicate that this element must be deleted
 **Remarks**
 
 Y/N
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/CompliancePlanLink.html#cpl-12-deletion)
 
 ## Example
 

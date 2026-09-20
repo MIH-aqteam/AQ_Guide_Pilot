@@ -21,11 +21,13 @@ Attributes which create unique identifier of each record: CountryCode, Assessmen
 Updates of the ObservationMeasurementResult table will not be time stamped - i.e. each update generates the only version of the time series with AQ values that is stored at the EEA, as well as the only version of the AQ statistics stored in the reference/legacy data:
 - either as addition of a new record, understood as addition of a new combination of values for the attributes creating the unique identifier;
 - or modification of an existing record, understood as modification of a value for any other attribute.
+
 Validity of new records will be tested using QC procedures (rules to be established), including cross-checking against existing records in the SamplingPoint table.
 
 Valid modifications of existing records are based on re-submission of time series for the existing set of attributes creating the unique identifier:
 - either to overwrite or correct values of other attributes;
 - or to modify the Validity flag to `-1` for deletion purposes.
+
 Validity of modifications will be tested through QC procedures.
 Allowed modifications may affect outcomes of compliance analysis and/or assessments. Therefore, re-submissions for past years, for which compliance reporting has already been completed, will require additional tests against reference/legacy data before official release of such data is granted.
 
@@ -65,7 +67,7 @@ Deletion of records from ObservationMeasurementResult can be achieved by re-subm
 | OMP_05 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | OMP_06 | End | datetime | datetime |  |  |  |
 | OMP_07 | Value | decimal(10,2) | numeric |  |  |  |
-| OMP_08 | Unit | varchar(10) | string |  | [concentration](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
+| OMP_08 | Unit | varchar(10) | string |  | [concentrationunit](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | OMP_09 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | OMP_10 | Verification | int | numeric |  | [observationverification](https://dd.eionet.europa.eu/vocabulary/aq/observationverification/view) |  |
 | OMP_11 | TimeResolution | varchar(10) | string |  | [primaryObservation](https://dd.eionet.europa.eu/vocabulary/aq/primaryObservation/view) |  |

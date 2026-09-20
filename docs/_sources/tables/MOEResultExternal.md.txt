@@ -13,7 +13,7 @@
 
 ## Description
 
-The purpose of the MOEResultExternal table is to collect information on results from air quality modelling applications. It is similar to the table MREResultInline except that here the results are submitted in attached GEOTIFF file, following the common grid approach (see Introduction). 
+The purpose of the MOEResultExternal table is to collect information on results from air quality modelling applications. It is similar to the table MOEResultInline except that here the results are submitted in attached GEOTIFF file, following the common grid approach (see Introduction). 
 
 MOEResultExternal table has to be reported every year (if models/OBE are declared for compliance) because new information is expected at each reporting cycle.
 Attributes which create unique identifier of each record: CountryCode, AssessmentMethodId, Start and DataAggregationProcessId.
@@ -21,11 +21,13 @@ Attributes which create unique identifier of each record: CountryCode, Assessmen
 Updates of the MOEResultExternal table will not be time stamped - i.e. each update generates the only version of the (gridded) AQ values that is stored at the EEA, as well - the only version of the corresponding table in reference/legacy data:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.
 
 Valid modifications of existing record in this table are based on re-submission of a GEOTIFF file for the existing set of attributes creating unique identifier:
 - either to overwrite/correct the values of other attributes,
 - or to modify Validity flag to -1 for deletion purpose.
+
 Validity of the modifications will be tested using QC (rules to be established).
 Allowed modifications may affect outcomes of compliance analysis and/or assessments. Therefore, re-submissions for past years, for which compliance reporting has already been completed, will require additional tests against reference/legacy data before official release of such data is granted.
 
@@ -37,6 +39,7 @@ Data products for reporters will present records as most recently reported, high
 Reference data flow will have two tables representing reporting of model/OBE results:
 - MOEResultInventory;
 - MOEResultGrid.
+
 MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file. MOEResultGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers: 
 - 2 Very High Resolution layers (10 and 100m - depending on original resolutions) for populated areas, traffic links and areas with values above thresholds, 
 - 1 High Resolution layer (1000m) for all areas.
@@ -60,15 +63,15 @@ ResultEncoding = 'external'
 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
-| MRE_01 | CountryCode | varchar(2) | string | PK | [https://dd.eionet.europa.eu/vocabulary/common/countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
+| MRE_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | MRE_02 | AssessmentMethodId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
 | MRE_03 | Start | datetime | datetime | PK |  |  |
-| MRE_04 | DataAggregationProcessId | varchar(50) | string | PK | [https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view](https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view) | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
-| MRE_05 | PollutantId | int | numeric |  | [https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
+| MRE_04 | DataAggregationProcessId | varchar(50) | string | PK | [aggregationprocess](https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view) | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
+| MRE_05 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | MRE_06 | End | datetime | datetime |  |  |  |
-| MRE_07 | Unit | varchar(10) | string |  | [https://dd.eionet.europa.eu/vocabulary/uom/concentration/](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
-| MRE_08 | Validity | int | numeric |  | [https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
-| MRE_09 | SpatialResolution | int | numeric |  | [https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
+| MRE_07 | Unit | varchar(10) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
+| MRE_08 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
+| MRE_09 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
 | MRE_10 | ResultTime | datetime | datetime |  |  |  |
 | MRE_11 | GeoTiffAttachment | varchar(100) | attachment (R3 data type) |  |  |  |
 
@@ -92,7 +95,8 @@ Identifier of the assessment method (model), given by provider.
 
 **Remarks**
 
-It will be cross-checked against the Model table.
+It will be cross-checked against the ModelObjectiveEstimation table.
+This attribute must follow a defined structure (see Identifiers section). 
 
 ### MRE_03 – Start
 

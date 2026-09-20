@@ -21,11 +21,13 @@ Attributes which create unique identifier of each record: CountryCode, Assessmen
 Updates of the MOEResultInline table will not be time stamped - i.e. each update generates the only version of the (gridded) AQ values that is stored at the EEA, as well - the only version of the corresponding table in reference/legacy data:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.
 
 Valid modifications of existing record in this table are based on re-submission of the (gridded) AQ values for the existing set of attributes creating unique identifier:
 - either to overwrite/correct the values of other attributes,
 - or to modify Validity flag to -1 for deletion purpose.
+
 Validity of the modifications of existing record will be tested using QC (rules to be established).
 Allowed modifications may affect outcomes of compliance analysis and/or assessments, therefore re-submissions for past years, for which compliance reporting has been already done, will require additional tests vs reference/legacy data before official release of such data is granted.
 
@@ -34,9 +36,11 @@ Data products for reporters will present the records as reported recently, highl
 
 ## EEA extensions
 
+
 Reference data flow will have two tables representing reporting of model/OBE results:
 - MOEResultInventory;
 - MOEResultGrid.
+
 MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file.
 
 MOEResultGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers:
@@ -67,7 +71,7 @@ Results from modelling reported inline should point to record in ModelObjectiveE
 | MRI_07 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | MRI_08 | End | datetime | datetime |  |  |  |
 | MRI_09 | Value | decimal(10,2) | numeric |  |  |  |
-| MRI_10 | Unit | varchar(10) | string |  | [concentration](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
+| MRI_10 | Unit | varchar(10) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | MRI_11 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | MRI_12 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
 | MRI_13 | ResultTime | datetime | datetime |  |  |  |
@@ -89,10 +93,11 @@ Country or territory ISO2 code.
 **Content**
 
 Identifier of the assessment method (model), given by provider.
+This attribute must follow a defined structure (see Identifiers section). 
 
 **Remarks**
 
-It will be cross-checked against the Model table.
+It will be cross-checked against the ModelObjectiveEstimation table.
 
 ### MRI_03 – Start
 

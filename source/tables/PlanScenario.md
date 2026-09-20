@@ -21,10 +21,12 @@ Attributes which create unique identifier of each record: CountryCode, PlanId, S
 Updates of the PlanScenario table will not be time stamped i.e. each update generates the only version of the PlanScenario that is stored at the EEA:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against relevant code lists, it may be cross-checking against the Model table.
 
 Valid modifications of existing record in this table are:
 - almost all allowed (apart from ScenarioAssessmentMethodId which must agree with AssessmentMethodId in ModelObjectiveEstimation table) within the scope of the code lists and their potential interconnections.
+
 Validity of the modifications of existing record will be tested using QC (rules to be established).
 Allowed modifications may affect outcomes of scenario analysis and/or assessments of measures, therefore re-submissions for past years, for which plans reporting has been already done, will require additional tests vs reference/legacy data before official release of such data is granted.
 
@@ -72,39 +74,41 @@ Keep in mind that authorities responsible for establishing plans and for reporti
 ### PSC_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-01-countrycode)
+
 ### PSC_02 – PlanId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-02-planid)
 **Content**
 
 Identifier of the air quality plan, given by data provider.
+This attribute must follow a defined structure (see Identifiers section). 
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-02-planid)
 
 ### PSC_03 – ScenarioId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-03-scenarioid)
 **Content**
 
 Identifier of the scenario, given by data provider.
+This attribute must follow a defined structure (see Identifiers section). 
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-03-scenarioid)
 
 ### PSC_04 – ScenarioCategory
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-04-scenariocategory)
 **Content**
 
 Classification of the scenario (e.g., baseline, projection).
@@ -113,22 +117,24 @@ Classification of the scenario (e.g., baseline, projection).
 
 ScenarioCategory: reference, baseline or projection. It should be included in the composite PK in the next iteration of schema version.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-04-scenariocategory)
+
 ### PSC_05 – ScenarioNationalCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-05-scenarionationalcode)
 **Content**
 
 Unique local code assigned to the evaluation scenario by the data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-05-scenarionationalcode)
+
 ### PSC_06 – PollutantId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-06-pollutantid)
 **Content**
 
 Code of the air pollutant being considered in the scenario.
@@ -137,12 +143,13 @@ Code of the air pollutant being considered in the scenario.
 
 AirPollutantCode: must correspond to the AirPollutantCode of the AttainmentId.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-06-pollutantid)
+
 ### PSC_07 – DataAggregationProcessId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-07-dataaggregationprocessid)
 **Content**
 
 Identifier for the process used to aggregate air quality data in the scenario.
@@ -151,38 +158,41 @@ Identifier for the process used to aggregate air quality data in the scenario.
 
 DataAggregationProcessId: the data aggregation used for the scenario; it must correspond to the DataAggregationProcessId of the AttainmentId.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-07-dataaggregationprocessid)
+
 ### PSC_08 – ScenarioYear
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-08-scenarioyear)
 **Content**
 
 The calendar year for which the scenario has been modeled.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-08-scenarioyear)
+
 ### PSC_09 – ScenarioPollutionLevel
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-09-scenariopollutionlevel)
 **Content**
 
 Estimated air pollution level in the scenario year.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-09-scenariopollutionlevel)
+
 ### PSC_10 – ExposedPopulation
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-10-exposedpopulation)
 **Content**
 
 ### PSC_11 – ScenarioAssessmentMethodId
 
 
-**Reference**
+**In Reference**
 
 [View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-11-scenarioassessmentmethodid)
 **Content**
@@ -191,7 +201,11 @@ Identifier of the assessment method - model - used in the scenario, given by dat
 
 **Remarks**
 
-AssessmentMethodId: the model/OBE used for producing the scenario (also to be declared in the Model table). It may be cross-checked against Model table, also - indirectly - against ModellingResult table.
+AssessmentMethodId: the model/OBE used for producing the scenario (also to be declared in the ModelObjectiveEstimation table). It may be cross-checked against Model table, also - indirectly - against ModellingResult table.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-10-exposedpopulation)
 
 ## Example
 

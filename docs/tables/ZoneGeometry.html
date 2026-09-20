@@ -191,9 +191,9 @@ Attributes which create unique identifier of each record: <strong>CountryCode</s
 <p>Updates of the ZoneGeometry table will not be time stamped - i.e. each update generates the only version of the table in reference/legacy data:</p>
 <ul class="simple">
 <li><p>either as addition of a new zone geometry;</p></li>
-<li><p>or modification of an existing geometry.
-Validity of a new record will be tested using QC procedures (rules to be established), for example checking OGC compliance of the reported geometry.</p></li>
+<li><p>or modification of an existing geometry.</p></li>
 </ul>
+<p>Validity of a new record will be tested using QC procedures (rules to be established), for example checking OGC compliance of the reported geometry.</p>
 <p>Validity of modifications of existing geometries will also be tested through QC procedures.
 Allowed modifications are not supposed to affect outcomes of compliance analysis and/or assessments and will therefore be strictly limited to fulfil certain conditions (e.g. area difference thresholds).</p>
 <p>Data products for the public will present records validated at the latest deadline.
@@ -205,7 +205,7 @@ Data products for reporters will present records as most recently reported, high
 <p>In addition, a gridded version of the zones will be generated:</p>
 <section id="zonegeometrygrid">
 <h3><a class="toc-backref" href="#id3" role="doc-backlink">ZoneGeometryGrid</a><a class="headerlink" href="#zonegeometrygrid" title="Link to this heading"></a></h3>
-<p>ZoneGeometry table will be extended  by EEA in the reference/legacy data flow with a ‘Country’ attribute. However, another, gridded version of the zones will be generated in there - ZoneGeometryGrid, which will contain gridded AQ values in 2 layers:</p>
+<p>However, another gridded version of the zones will be generated in there - ZoneGeometryGrid, which will contain gridded AQ values in 2 layers:</p>
 <ul class="simple">
 <li><p>1 Very High Resolution layer (100m) for populated areas,</p></li>
 <li><p>1 High Resolution layer (1000m) for all areas.</p></li>
@@ -226,7 +226,7 @@ Data products for reporters will present records as most recently reported, high
 Expected projections are:</p>
 <ul class="simple">
 <li><p>SRID3035,</p></li>
-<li><p>SRID4258 or</p></li>
+<li><p>SRID4258,</p></li>
 <li><p>SRID4326 (the only allowed for the French overseas areas).</p></li>
 </ul>
 <p>Records in the ZoneGeometry table (and subsequently in ZoneGeometryGrid) which do not have any correspondence to records in the AssessmentRegimeZone table will be flagged for deletion in the reference data flow.</p>
@@ -276,34 +276,31 @@ Expected projections are:</p>
 <h2><a class="toc-backref" href="#id6" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
 <section id="zge-01-countrycode">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">ZGE_01 – CountryCode</a><a class="headerlink" href="#zge-01-countrycode" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-01-countrycode">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Country or territory ISO2 code.</p>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-01-countrycode">View reference attribute</a></p>
 </section>
 <section id="zge-02-zoneid">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">ZGE_02 – ZoneId</a><a class="headerlink" href="#zge-02-zoneid" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-02-zoneid">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Identifier of the air quality zone, given by data provider.</p>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-02-zoneid">View reference attribute</a></p>
 </section>
 <section id="zge-03-zonegeometrygeojson">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">ZGE_03 – ZoneGeometryGeoJson</a><a class="headerlink" href="#zge-03-zonegeometrygeojson" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-03-zonegeometrygeojson">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Geospatial representation of the air quality zone (e.g. polygon geometry).</p>
 <p><strong>Remarks</strong></p>
 <p>It is allowed to report zone geometries in coordinate systems with the following EPSG codes:</p>
 <ul class="simple">
-<li><p>3035,</p></li>
-<li><p>4258,</p></li>
-<li><ol class="arabic simple" start="4326">
-<li></li>
-</ol>
-</li>
+<li><p>3035</p></li>
+<li><p>4258</p></li>
+<li><p>4326</p></li>
 </ul>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ZoneGeometry.html#zge-03-zonegeometrygeojson">View reference attribute</a></p>
 </section>
 </section>
 <section id="example">

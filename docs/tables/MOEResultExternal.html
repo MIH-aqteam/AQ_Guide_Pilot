@@ -189,22 +189,22 @@
 </nav>
 <section id="description">
 <h2><a class="toc-backref" href="#id1" role="doc-backlink">Description</a><a class="headerlink" href="#description" title="Link to this heading"></a></h2>
-<p>The purpose of the MOEResultExternal table is to collect information on results from air quality modelling applications. It is similar to the table MREResultInline except that here the results are submitted in attached GEOTIFF file, following the common grid approach (see Introduction).</p>
+<p>The purpose of the MOEResultExternal table is to collect information on results from air quality modelling applications. It is similar to the table MOEResultInline except that here the results are submitted in attached GEOTIFF file, following the common grid approach (see Introduction).</p>
 <p>MOEResultExternal table has to be reported every year (if models/OBE are declared for compliance) because new information is expected at each reporting cycle.
 Attributes which create unique identifier of each record: CountryCode, AssessmentMethodId, Start and DataAggregationProcessId.</p>
 <p>Updates of the MOEResultExternal table will not be time stamped - i.e. each update generates the only version of the (gridded) AQ values that is stored at the EEA, as well - the only version of the corresponding table in reference/legacy data:</p>
 <ul class="simple">
 <li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
-<li><p>or modification of existing record, understood as modification of a value for any other attribute.
-Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.</p></li>
 </ul>
+<p>Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table.</p>
 <p>Valid modifications of existing record in this table are based on re-submission of a GEOTIFF file for the existing set of attributes creating unique identifier:</p>
 <ul class="simple">
 <li><p>either to overwrite/correct the values of other attributes,</p></li>
-<li><p>or to modify Validity flag to -1 for deletion purpose.
-Validity of the modifications will be tested using QC (rules to be established).
-Allowed modifications may affect outcomes of compliance analysis and/or assessments. Therefore, re-submissions for past years, for which compliance reporting has already been completed, will require additional tests against reference/legacy data before official release of such data is granted.</p></li>
+<li><p>or to modify Validity flag to -1 for deletion purpose.</p></li>
 </ul>
+<p>Validity of the modifications will be tested using QC (rules to be established).
+Allowed modifications may affect outcomes of compliance analysis and/or assessments. Therefore, re-submissions for past years, for which compliance reporting has already been completed, will require additional tests against reference/legacy data before official release of such data is granted.</p>
 <p>Data products for the public will present records validated at the latest deadline.
 Data products for reporters will present records as most recently reported, highlighting differences between validated reports and recent reports in case of re-submissions.</p>
 </section>
@@ -213,8 +213,10 @@ Data products for reporters will present records as most recently reported, high
 <p>Reference data flow will have two tables representing reporting of model/OBE results:</p>
 <ul class="simple">
 <li><p>MOEResultInventory;</p></li>
-<li><p>MOEResultGrid.
-MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file. MOEResultGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers:</p></li>
+<li><p>MOEResultGrid.</p></li>
+</ul>
+<p>MOEResultInventory will collect information about count of values reported for each model/OBE and year with certain settings (validity, verification, spatial resolution, etc.) and will contain a reference to raw data file. MOEResultGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers:</p>
+<ul class="simple">
 <li><p>2 Very High Resolution layers (10 and 100m - depending on original resolutions) for populated areas, traffic links and areas with values above thresholds,</p></li>
 <li><p>1 High Resolution layer (1000m) for all areas.</p></li>
 </ul>
@@ -253,7 +255,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>varchar(2)</p></td>
 <td><p>string</p></td>
 <td><p>PK</p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">https://dd.eionet.europa.eu/vocabulary/common/countries</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/common/countries">countries</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>MRE_02</p></td>
@@ -277,7 +279,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>varchar(50)</p></td>
 <td><p>string</p></td>
 <td><p>PK</p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view">https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view">aggregationprocess</a></p></td>
 <td><p><a class="reference internal" href="ModelObjectiveEstimation.html"><span class="std std-doc">ModelObjectiveEstimation</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>MRE_05</p></td>
@@ -285,7 +287,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>int</p></td>
 <td><p>numeric</p></td>
 <td><p></p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view">https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view">pollutant</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>MRE_06</p></td>
@@ -301,7 +303,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>varchar(10)</p></td>
 <td><p>string</p></td>
 <td><p></p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/uom/concentration/">https://dd.eionet.europa.eu/vocabulary/uom/concentration/</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/uom/concentration/">concentrationunits</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>MRE_08</p></td>
@@ -309,7 +311,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>int</p></td>
 <td><p>numeric</p></td>
 <td><p></p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view">https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view">observationvalidity</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>MRE_09</p></td>
@@ -317,7 +319,7 @@ MOEResultInventory will collect information about count of values reported for e
 <td><p>int</p></td>
 <td><p>numeric</p></td>
 <td><p></p></td>
-<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution">https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution</a></p></td>
+<td><p><a class="reference external" href="https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution">spatialresolution</a></p></td>
 <td><p></p></td>
 </tr>
 <tr class="row-odd"><td><p>MRE_10</p></td>
@@ -355,7 +357,8 @@ MOEResultInventory will collect information about count of values reported for e
 <p><strong>Content</strong></p>
 <p>Identifier of the assessment method (model), given by provider.</p>
 <p><strong>Remarks</strong></p>
-<p>It will be cross-checked against the Model table.</p>
+<p>It will be cross-checked against the ModelObjectiveEstimation table.
+This attribute must follow a defined structure (see Identifiers section).</p>
 </section>
 <section id="mre-03-start">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">MRE_03 – Start</a><a class="headerlink" href="#mre-03-start" title="Link to this heading"></a></h3>

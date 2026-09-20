@@ -21,6 +21,7 @@ Attributes which create unique identifier of each record: CountryCode and Statio
 Updates of the MeasurementStation table will be managed using reference/legacy data, where each addition and modification will be stamped with ReportingTime:
 - addition of new record is understood as addition of new combination of values for the attributes creating unique identifier,
 - modification of existing record is understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC rules to be established, e.g. testing validity of EoI codes.
 
 Valid modifications of existing record in this table are minor corrections, e.g. of NetworkName, StationNationalCode, StationName or Timezone, which are not considered as station re-location into new conditions.
@@ -64,26 +65,24 @@ Station without active sampling points will be flagged for deletion in the refer
 ### STA_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-01-countrycode)
+
 ### STA_02 – StationEoICode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-02-stationeoicode)
 **Content**
 
 EoI (Exchange of Information) code of the air quality measurement station, as in AirBase, either re-used or given by data provider following strict rules.
 
 **Code list / reference**
 
-There will be no specific code list in Data Dictionary but the Station table in reference data flow will serve as code list for AirQualityStationEoICode values.
+There will be no specific code list in Data Dictionary but the MeasurementStation table in reference data flow will serve as code list for StationEoICode values.
 
 **Remarks**
 
@@ -93,42 +92,46 @@ Station will become inactive if all sampling points in that station are inactive
 
 The same Station can become active again if there are new active sampling points or existing sampling points become active again.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-02-stationeoicode)
+
 ### STA_03 – NetworkId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-03-networkid)
 **Content**
 
 Identifier of the air quality network, given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-03-networkid)
+
 ### STA_04 – NetworkName
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-04-networkname)
 **Content**
 
 Name of the air quality measurement network, given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-04-networkname)
+
 ### STA_05 – NetworkOrganisationalLevel
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-05-networkorganisationallevel)
 **Content**
 
 Level of administration or organization responsible for the air quality network (national, regional, local).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-05-networkorganisationallevel)
+
 ### STA_06 – Timezone
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-06-timezone)
 **Content**
 
 Time zone in which air quality measurements and statistics are recorded.
@@ -139,35 +142,42 @@ TimeZone must be provided and will be used for calculations of AQ statistics.
 
 If TimeZone is modified, all statistics will be recalculated accordingly.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-06-timezone)
+
 ### STA_07 – StationNationalCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-07-stationnationalcode)
 **Content**
 
 National code of the air quality measurement station, given by data provider.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-07-stationnationalcode)
+
 ### STA_08 – StationName
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-08-stationname)
 **Content**
 
 Name of the air quality measurement station.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-08-stationname)
+
 ### STA_09 – NetworkDocumentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-09-networkdocumentid)
 **Content**
 
 Identifier of the documentation on network and station.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/MeasurementStation.html#sta-09-networkdocumentid)
 
 ## Example
 
@@ -178,7 +188,7 @@ STA_02 | StationEoICode | DU0001 | varchar(10) | string | ✓ |
 STA_03 | NetworkId | NET_DU01 | varchar(50) | string |  | 
 STA_04 | NetworkName | Dustovia Capital | varchar(150) | string |  | 
 STA_05 | NetworkOrganisationalLevel | regional | varchar(20) | string |  | ✓
-STA_06 | Timezone | UTC-1 | varchar(20) | string |  | ✓
+STA_06 | Timezone | UTC-01 | varchar(20) | string |  | ✓
 STA_07 | StationNationalCode | DU01_01 | varchar(50) | string |  | 
 STA_08 | StationName | Rivny-Suburb-A | varchar(50) | string |  | 
 STA_09 | NetworkDocumentId | DOC_NET_DU01 | varchar(150) | string |  | 

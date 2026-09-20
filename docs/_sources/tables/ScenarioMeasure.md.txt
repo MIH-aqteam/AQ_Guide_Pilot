@@ -13,7 +13,7 @@
 
 ## Description
 
-The purpose of the ScenarioMeasures table is to define the group(s) of measures (MeasureGroupId) associated to a scenario, as well as the total (by group of measures) reduction of pollution level which can be expected. It also points to model/OBE which was used for generating the results for the group of measures.
+The purpose of the ScenarioMeasure table is to define the group(s) of measures (MeasureGroupId) associated to a scenario, as well as the total (by group of measures) reduction of pollution level which can be expected. It also points to model/OBE which was used for generating the results for the group of measures.
 
 ScenarioMeasure (record) table has to be reported whenever a new information or an update of existing information is available.
 Attributes which create unique identifier of each record: CountryCode, ScenarioId, MeasureGroupId and ScenarioCategory.
@@ -21,6 +21,7 @@ Attributes which create unique identifier of each record: CountryCode, ScenarioI
 Updates of the ScenarioMeasure table will not be time stamped, i.e. each update generates the only version of the ScenarioMeasure that is stored at the EEA:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against PlanScenario table and Measure table, it may be cross-checking against the ModelObjectiveEstimation table.
 
 There are no valid modifications of existing record in this table.
@@ -67,33 +68,33 @@ Records in ScenarioMeasure table which do not have any correspondence to records
 ### SME_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-01-countrycode)
+
 ### SME_02 – ScenarioId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-02-scenarioid)
 **Content**
 
 Identifier of the scenario, given by data provider.
+This attribute must follow a defined structure (see Identifiers section). 
 
 **Remarks**
 
 It will be cross-checked against PlanScenario table.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-02-scenarioid)
+
 ### SME_03 – ScenarioCategory
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-03-scenariocategory)
 **Content**
 
 Classification of the scenario (e.g., baseline, projection).
@@ -102,12 +103,13 @@ Classification of the scenario (e.g., baseline, projection).
 
 ScenarioCategory: baseline or projection. It should be included in the composite PK in the next iteration of schema version.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-03-scenariocategory)
+
 ### SME_04 – MeasureGroupId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-04-measuregroupid)
 **Content**
 
 Identifier of the pollution reduction for measure group, given by data provider.
@@ -118,12 +120,13 @@ MeasureGroupId: distinct groups might contain one or more measures. For example,
 
 It will be cross-checked against Measure table.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-04-measuregroupid)
+
 ### SME_05 – MeasureGroupPollutionReduction
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-05-measuregrouppollutionreduction)
 **Content**
 
 Reduction in air pollution concentration levels due to the applied group of measures.
@@ -132,19 +135,24 @@ Reduction in air pollution concentration levels due to the applied group of meas
 
 Sum of MeasureGroupAirPollutionReduction within ScenarioId should agree with the difference between value of AirPollutionLevel in the first AttainmentId and the value reported in PlanScenario as ScenarioAirPollutionLevel.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-05-measuregrouppollutionreduction)
+
 ### SME_06 – MeasureReductionAssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-06-measurereductionassessmentmethodid)
 **Content**
 
 Identifier of the assessment method - model - used in the scenario, given by data provider.
 
 **Remarks**
 
-AssessmentMethodId: the model/OBE used for producing the results for the measure group (also to be declared in the Model table). It may be cross-checked against Model table, also - indirectly - against ModellingResult table.
+AssessmentMethodId: the model/OBE used for producing the results for the measure group (also to be declared in the ModelObjectiveEstimation table). It may be cross-checked against Model table, also - indirectly - against ModellingResult table.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ScenarioMeasure.html#sme-06-measurereductionassessmentmethodid)
 
 ## Example
 

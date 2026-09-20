@@ -20,6 +20,7 @@ Attributes which create unique identifier of each record: CountryCode and Assess
 Updates of the SamplingPoint table will be managed using reference/legacy data, where each addition and modification will be stamped with ReportingTime:
 - addition of new record is understood as addition of new combination of values for the attributes creating unique identifier,
 - modification of existing record is understood as modification of a value for any other attribute.
+
 Validity of the new record and modifications will be tested using QC (rules to be established) - e.g. cross checking against existing records in Station table.
 Allowed modifications are not supposed to affect outcomes of compliance analysis and/or assessments.
 
@@ -59,7 +60,7 @@ SamplingPoint without both active SamplingProcess active SamplingPointLocation a
 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
-| SPO_01 | CountryCode | varchar(2) | string | PK | [](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
+| SPO_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | SPO_02 | AssessmentMethodId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[SamplingProcess](SamplingProcess.md)<br>[SamplingPointLocation](SamplingPointLocation.md)<br>[ObservationMeasurementResult](ObservationMeasurementResult.md) |
 | SPO_03 | SamplingPointReferenceId | varchar(32) | string |  |  |  |
 | SPO_04 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
@@ -70,20 +71,18 @@ SamplingPoint without both active SamplingProcess active SamplingPointLocation a
 ### SPO_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-01-countrycode)
+
 ### SPO_02 – AssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-02-assessmentmethodid)
 **Content**
 
 Identifier of the assessment method (sampling point), given by data provider.
@@ -94,12 +93,13 @@ A sampling point (AssessmentMethodId) can be closed (set as inactive) by ending 
 
 The same sampling point (AssessmentMethodId) can be re-open (also with the same ProcessId) by adding new record with new ProcessActivityBegin.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-02-assessmentmethodid)
+
 ### SPO_03 – SamplingPointReferenceId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-03-samplingpointreferenceid)
 **Content**
 
 Reference identifier of the assessment method (sampling point), either re-used or given by data provider following strict rules.
@@ -108,12 +108,13 @@ Reference identifier of the assessment method (sampling point), either re-used o
 
 Following rules of SPO reference code, unique within CountryCode reported and it can serve as reference code list.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-03-samplingpointreferenceid)
+
 ### SPO_04 – PollutantId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-04-pollutantid)
 **Content**
 
 Code of the air pollutant being measured, as per Data Dictionary standards.
@@ -122,19 +123,20 @@ Code of the air pollutant being measured, as per Data Dictionary standards.
 
 Only one for the same AssessmentMethodId/SamplingPointReferenceId.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-04-pollutantid)
+
 ### SPO_05 – StationEoICode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-05-stationeoicode)
 **Content**
 
 EoI (Exchange of Information) code of the air quality measurement station, as in AirBase, either re-used or given by data provider following strict rules.
 
 **Code list / reference**
 
-There will be no specific code list in Data Dictionary but the Station table in reference data flow will serve as code list for AirQualityStationEoICode values.
+There will be no specific code list in Data Dictionary but the MeasurementStation table in reference data flow will serve as code list for StationEoICode values.
 
 **Remarks**
 
@@ -144,7 +146,11 @@ Station will become inactive if all sampling points in that station are inactive
 
 The same Station can become active again if there are new active sampling points or existing sampling points become active again.
 
-It will be cross-checked against Station table.
+It will be cross-checked against MeasurementStation table.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SamplingPoint.html#spo-05-stationeoicode)
 
 ## Example
 

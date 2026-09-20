@@ -189,9 +189,9 @@ Attributes which create unique identifier of each record: CountryCode, Attainmen
 <p>Updates of the PollutionLevelAdjustment table will not be time stamped - i.e. each update generates the only version of the table in reference/legacy data:</p>
 <ul class="simple">
 <li><p>either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,</p></li>
-<li><p>or modification of existing record, understood as modification of a value for any other attribute.
-Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table and ComplianceAssessmentMethod table, as well as - indirectly - against MOEResult tables.</p></li>
+<li><p>or modification of existing record, understood as modification of a value for any other attribute.</p></li>
 </ul>
+<p>Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table and ComplianceAssessmentMethod table, as well as - indirectly - against MOEResult tables.</p>
 <p>Valid modifications of existing record in this table are: minor corrections e.g. of wrong code list values.
 Validity of the modifications of existing record will be tested using QC (rules to be established).
 Allowed modifications are not supposed to directly affect outcomes of compliance analysis and/or assessments.</p>
@@ -272,41 +272,42 @@ Data products for reporters will present the records as reported recently, highl
 <h2><a class="toc-backref" href="#id5" role="doc-backlink">Attribute details</a><a class="headerlink" href="#attribute-details" title="Link to this heading"></a></h2>
 <section id="adj-01-countrycode">
 <h3><a class="toc-backref" href="#id6" role="doc-backlink">ADJ_01 – CountryCode</a><a class="headerlink" href="#adj-01-countrycode" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-01-countrycode">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Country or territory ISO2 code.</p>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-01-countrycode">View reference attribute</a></p>
 </section>
 <section id="adj-02-attainmentid">
 <h3><a class="toc-backref" href="#id7" role="doc-backlink">ADJ_02 – AttainmentId</a><a class="headerlink" href="#adj-02-attainmentid" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-02-attainmentid">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Identifier of the air quality compliance situation, given by data provider.</p>
 <p><strong>Remarks</strong></p>
-<p>It will be cross-checked against the ComplianceAssessmentMethod table.</p>
+<p>It will be cross-checked against the ComplianceAssessmentMethod table.
+This attribute must follow a defined structure (see Identifiers section).</p>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-02-attainmentid">View reference attribute</a></p>
 </section>
 <section id="adj-03-adjustmentsource">
 <h3><a class="toc-backref" href="#id8" role="doc-backlink">ADJ_03 – AdjustmentSource</a><a class="headerlink" href="#adj-03-adjustmentsource" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-03-adjustmentsource">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Description of the source being adjusted (e.g., sea spray, volcanic activity).</p>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-03-adjustmentsource">View reference attribute</a></p>
 </section>
 <section id="adj-04-adjustmentassessmentmethodid">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">ADJ_04 – AdjustmentAssessmentMethodId</a><a class="headerlink" href="#adj-04-adjustmentassessmentmethodid" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-04-adjustmentassessmentmethodid">View reference attribute</a>
-<strong>Content</strong></p>
+<p><strong>Content</strong></p>
 <p>Identifier of the method - model - used for deduction assessment, given by data provider.</p>
 <p><strong>Remarks</strong></p>
-<p>AdjAssessmentMethodId is a model or OBE identifier that points to the method (model/OBE in the Model table) which was used for the assessments of the deduction.
+<p>AdjAssessmentMethodId is a model or OBE identifier that points to the method (model/OBE in the ModelObjectiveEstimation table) which was used for the assessments of the deduction.
 If there are several different adjustment types/sources, different AdjAssessmentMethodIds must be used, so that it is possible to distinguish between corresponding adjustment values reported in the ModellingResult (Inline or External) table.
 It will be cross-checked against the Model table, also - indirectly - against the ModellingResult tables.</p>
+<p><strong>In Reference</strong></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-04-adjustmentassessmentmethodid">View reference attribute</a></p>
 </section>
 <section id="adj-05-adjustmentdocumentid">
 <h3><a class="toc-backref" href="#id10" role="doc-backlink">ADJ_05 – AdjustmentDocumentId</a><a class="headerlink" href="#adj-05-adjustmentdocumentid" title="Link to this heading"></a></h3>
-<p><strong>Reference</strong></p>
+<p><strong>In Reference</strong></p>
 <p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-05-adjustmentdocumentid">View reference attribute</a></p>
 </section>
 </section>

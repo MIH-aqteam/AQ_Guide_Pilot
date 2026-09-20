@@ -28,6 +28,7 @@ Data products for reporters will present the records as reported the most recent
 Reference data flow will have two tables representing reporting of SR areas:
 - SRSInventory;
 - SRSGrid.
+
 SRSInventory will collect information about count of values reported for each SR area and will contain a reference to raw data file.
 SRSGrid table will differ from the reporting data flow however it will contain gridded AQ values in 3 layers:
 - 2 Very High Resolution layers (10 and 100m - depending on original resolutions) for populated areas and traffic links;

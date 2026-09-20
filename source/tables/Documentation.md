@@ -26,7 +26,8 @@ Data products for public and reporters will present the records with the latest 
 Documentation table will be extended by EEA by:
 
 - Country (for convenience), based on ISO2 country codes;
-- ReportingTime, registering time of the latest reporting or modification for each record.
+- ReportingTime, registering time of the latest reporting or modification for each record;
+- DocumentURL where the document is stored.
 
 ## Data management rules
 
@@ -50,42 +51,46 @@ Records in Document table which do not have any correspondence (via DocumentId) 
 ### DOC_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-01-countrycode)
+
 ### DOC_02 – DataTable
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-02-datatable)
 **Content**
 
 Table name of origin.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-02-datatable)
+
 ### DOC_03 – DocumentType
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-03-documenttype)
 **Content**
 
 Document content type.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-03-documenttype)
+
 ### DOC_04 – DocumentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-04-documentid)
 **Content**
 
 Identifier of the document given by data provider.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-04-documentid)
 
 ### DOC_05 – DocumentAttachment
 
@@ -96,12 +101,13 @@ Attached document PDF.
 ### DOC_06 – DocumentOriginalURL
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-06-documentoriginalurl)
 **Content**
 
 URL of the attached document PDF.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/Documentation.html#doc-06-documentoriginalurl)
 
 ## Example
 

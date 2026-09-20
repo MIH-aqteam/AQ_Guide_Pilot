@@ -21,6 +21,7 @@ Attributes which create unique identifier of each record: CountryCode, Attainmen
 Updates of the PollutionLevelAdjustment table will not be time stamped - i.e. each update generates the only version of the table in reference/legacy data:
 - either as addition of new record, understood as addition of new combination of values for the attributes creating unique identifier,
 - or modification of existing record, understood as modification of a value for any other attribute.
+
 Validity of the new record will be tested using QC (rules to be established) - e.g. cross checking against existing records in ModelObjectiveEstimation table and ComplianceAssessmentMethod table, as well as - indirectly - against MOEResult tables.
 
 Valid modifications of existing record in this table are: minor corrections e.g. of wrong code list values.
@@ -58,19 +59,17 @@ Records in PollutionLevelAdjustment table which do not have any correspondence t
 ### ADJ_01 – CountryCode
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-01-countrycode)
 **Content**
 
 Country or territory ISO2 code.
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-01-countrycode)
+
 ### ADJ_02 – AttainmentId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-02-attainmentid)
 **Content**
 
 Identifier of the air quality compliance situation, given by data provider.
@@ -78,37 +77,44 @@ Identifier of the air quality compliance situation, given by data provider.
 **Remarks**
 
 It will be cross-checked against the ComplianceAssessmentMethod table.
+This attribute must follow a defined structure (see Identifiers section). 
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-02-attainmentid)
 
 ### ADJ_03 – AdjustmentSource
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-03-adjustmentsource)
 **Content**
 
 Description of the source being adjusted (e.g., sea spray, volcanic activity).
 
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-03-adjustmentsource)
+
 ### ADJ_04 – AdjustmentAssessmentMethodId
 
 
-**Reference**
-
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-04-adjustmentassessmentmethodid)
 **Content**
 
 Identifier of the method - model - used for deduction assessment, given by data provider.
 
 **Remarks**
 
-AdjAssessmentMethodId is a model or OBE identifier that points to the method (model/OBE in the Model table) which was used for the assessments of the deduction.
+AdjAssessmentMethodId is a model or OBE identifier that points to the method (model/OBE in the ModelObjectiveEstimation table) which was used for the assessments of the deduction.
 If there are several different adjustment types/sources, different AdjAssessmentMethodIds must be used, so that it is possible to distinguish between corresponding adjustment values reported in the ModellingResult (Inline or External) table.
 It will be cross-checked against the Model table, also - indirectly - against the ModellingResult tables.
+
+**In Reference**
+
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-04-adjustmentassessmentmethodid)
 
 ### ADJ_05 – AdjustmentDocumentId
 
 
-**Reference**
+**In Reference**
 
 [View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PollutionLevelAdjustment.html#adj-05-adjustmentdocumentid)
 ## Example
