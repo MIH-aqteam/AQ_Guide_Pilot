@@ -2,13 +2,31 @@
 set -e
 
 ROOT="$(cd "$(dirname "$0")" && pwd)"
-DOCS="$ROOT/docs"
+DOCS="$ROOT/build/html"
 OUT="$ROOT/AQ_eReporting_Guide.pdf"
 COMBINED="$DOCS/_pdf_reporting_guide.html"
 CHROME="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
 
+echo "============================================================"
+echo "        AQ REPORTING GUIDE - PDF GENERATION"
+echo "============================================================"
+echo
+echo "Refreshing the local HTML build..."
+echo
+
+if [ ! -x "$ROOT/local.sh" ]; then
+  echo "ERROR: local.sh not found or not executable."
+  exit 1
+fi
+
+"$ROOT/local.sh"
+
+echo
+echo "Local HTML build completed."
+echo
+
 if [ ! -d "$DOCS" ]; then
-  echo "ERROR: docs/ folder not found next to this script."
+  echo "ERROR: build/html folder was not created by the local build."
   exit 1
 fi
 if [ ! -x "$CHROME" ]; then
@@ -88,7 +106,7 @@ if missing:
 first = (docs / "index.html").read_text(encoding="utf-8")
 head = re.search(r"<head\b[^>]*>(.*?)</head>", first, re.I | re.S)
 if not head:
-    raise SystemExit("ERROR: Could not read the HTML <head> from docs/index.html")
+    raise SystemExit("ERROR: Could not read the HTML <head> from build/html/index.html")
 
 
 def extract_main(text: str, rel: str) -> str:
@@ -110,7 +128,7 @@ def extract_main(text: str, rel: str) -> str:
 
 
 def normalize_target(current_rel: str, href_path: str):
-    """Return target path relative to docs/, or None if it escapes docs/."""
+    """Return target path relative to build/html/, or None if it escapes docs/."""
     if not href_path:
         return current_rel
     base = posixpath.dirname(current_rel)
@@ -155,7 +173,7 @@ for i, (rel, short, label) in enumerate(pages):
     body = extract_main(text, rel)
 
     # v1's small path correction, required because all content is now hosted in
-    # docs/_pdf_test_v8.html rather than in docs/tables/*.html.
+    # build/html/_pdf_reporting_guide.html rather than in build/html/tables/*.html.
     if rel.startswith("tables/"):
         body = body.replace('src="../', 'src="').replace("src='../", "src='")
         body = body.replace('href="../', 'href="').replace("href='../", "href='")
@@ -520,8 +538,20 @@ echo "Creating AQ eReporting Guide TEST v4 PDF with Chrome..."
   --print-to-pdf="$OUT" \
 "$COMBINED" \
 2>/dev/null
+if [ ! -f "$OUT" ] || [ ! -s "$OUT" ]; then
+  echo
+  echo "ERROR: PDF was not generated or is empty."
+  exit 1
+fi
+
+STATIC_PDF="$ROOT/source/_static/AQ_eReporting_Guide.pdf"
+cp "$OUT" "$STATIC_PDF"
+
 echo
 echo "SUCCESS"
 echo "PDF created at:"
 echo "$OUT"
+echo
+echo "Website PDF updated at:"
+echo "$STATIC_PDF"
 echo "The guide source files were not modified."
