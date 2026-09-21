@@ -34,8 +34,6 @@ Data products will present all records related to SamplingPoints reported recent
 
 SamplingPointLocation table will be extended by EEA by several attributes:
 - Country, for convenience, based on ISO2 country codes,
-- Pollutant, for convenience, based on code list,
-- SamplingPointStatus, based on values in SamplingLocation.LocationEnd  (if all AssessmentMethodId have LocationEnd populated the SamplingPointStatus is 'inactive', otherwise it is 'active'),,
 - X and Y, based on coordinates re-projected to SRID3035,
 - grid number identifiers, based on X and Y in SRID3035,
 - SamplingPointType, following the previous version of sampling point type classification (traffic, background,industrial); the new type SamplingPointCategory for closed/inactive sampling points will be mapped to the older types using road traffic, background and industry categories, unless countries re-submit meta-data for these sampling points and set their own values; countries should set their own values of SamplingPointCategory for all active sampling points.

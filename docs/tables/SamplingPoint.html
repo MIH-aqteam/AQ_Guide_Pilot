@@ -199,7 +199,7 @@ Allowed modifications are not supposed to affect outcomes of compliance analysis
 <ul class="simple">
 <li><p>Country (for convenience), based on ISO2 country codes,</p></li>
 <li><p>Pollutant (for convenience), based on code list,</p></li>
-<li><p>SamplingPointStatus, based on values in SamplingProcess.ProcessActivityEnd (if all ProcessId have ProcessActivityEnd populated the SamplingPointStatus is ‘inactive’, otherwise it is ‘active’),</p></li>
+<li><p>SamplingPointStatus (coming from SamplingPointLocation table), based on values in SamplingProcess.ProcessActivityEnd (if all ProcessId have ProcessActivityEnd populated the SamplingPointStatus is ‘inactive’, otherwise it is ‘active’),</p></li>
 <li><p>ReportingTime, registering time of the latest reporting or modification for each record.</p></li>
 </ul>
 </section>

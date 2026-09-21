@@ -212,8 +212,6 @@ Allowed modifications are not supposed to affect outcomes of compliance analysis
 <p>SamplingPointLocation table will be extended by EEA by several attributes:</p>
 <ul class="simple">
 <li><p>Country, for convenience, based on ISO2 country codes,</p></li>
-<li><p>Pollutant, for convenience, based on code list,</p></li>
-<li><p>SamplingPointStatus, based on values in SamplingLocation.LocationEnd  (if all AssessmentMethodId have LocationEnd populated the SamplingPointStatus is ‘inactive’, otherwise it is ‘active’),,</p></li>
 <li><p>X and Y, based on coordinates re-projected to SRID3035,</p></li>
 <li><p>grid number identifiers, based on X and Y in SRID3035,</p></li>
 <li><p>SamplingPointType, following the previous version of sampling point type classification (traffic, background,industrial); the new type SamplingPointCategory for closed/inactive sampling points will be mapped to the older types using road traffic, background and industry categories, unless countries re-submit meta-data for these sampling points and set their own values; countries should set their own values of SamplingPointCategory for all active sampling points.</p></li>

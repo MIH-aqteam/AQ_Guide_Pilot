@@ -29,7 +29,7 @@ Allowed modifications are not supposed to affect outcomes of compliance analysis
 SamplingPoint table will be extended by EEA by several attributes:
 - Country (for convenience), based on ISO2 country codes,
 - Pollutant (for convenience), based on code list,
-- SamplingPointStatus, based on values in SamplingProcess.ProcessActivityEnd (if all ProcessId have ProcessActivityEnd populated the SamplingPointStatus is 'inactive', otherwise it is 'active'),
+- SamplingPointStatus (coming from SamplingPointLocation table), based on values in SamplingProcess.ProcessActivityEnd (if all ProcessId have ProcessActivityEnd populated the SamplingPointStatus is 'inactive', otherwise it is 'active'),
 - ReportingTime, registering time of the latest reporting or modification for each record.
 
 ## Data management rules
