@@ -79,7 +79,7 @@ Records in AssessmentRegimeZone table which do not have any correspondence to re
 | ARZ_12 | ReportingMetric | varchar(50) | string |  | [reportingmetric](https://dd.eionet.europa.eu/vocabulary/aq/reportingmetric/view) |  |
 | ARZ_13 | AssessmentThresholdExceedance | varchar(20) | string |  | [assessmentthresholdexceedance](https://dd.eionet.europa.eu/vocabulary/aq/assessmentthresholdexceedance/view) |  |
 | ARZ_14 | PostponementYear | int | numeric |  |  |  |
-| ARZ_15 | FixedMeasurementReduction | bit | boolean |  |  |  |
+| ARZ_15 | FixedMeasurementReduction | char(1) | boolean |  |  |  |
 | ARZ_16 | ZoneResidentPopulationYear | int | numeric |  |  |  |
 | ARZ_17 | ZoneResidentPopulation | int | numeric |  |  |  |
 | ARZ_18 | ClassificationYear | int | numeric |  |  |  |
@@ -333,7 +333,7 @@ ARZ_11 | ObjectiveType | LV | varchar(50) | string |  | ✓
 ARZ_12 | ReportingMetric | aMean | varchar(50) | string |  | ✓
 ARZ_13 | AssessmentThresholdExceedance | aboveUAT | varchar(20) | string |  | ✓
 ARZ_14 | PostponementYear | null | int | numeric |  | 
-ARZ_15 | FixedMeasurementReduction | N | bit | boolean |  | 
+ARZ_15 | FixedMeasurementReduction | N | char(1) | boolean |  | 
 ARZ_16 | ZoneResidentPopulationYear | 2020 | int | numeric |  | 
 ARZ_17 | ZoneResidentPopulation | 599159 | int | numeric |  | 
 ARZ_18 | ClassificationYear | 2021 | int | numeric |  | 

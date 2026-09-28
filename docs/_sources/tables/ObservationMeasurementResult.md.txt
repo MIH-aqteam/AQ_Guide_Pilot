@@ -66,7 +66,7 @@ Deletion of records from ObservationMeasurementResult can be achieved by re-subm
 | OMR_04 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | OMR_05 | End | datetime | datetime |  |  |  |
 | OMR_06 | Value | decimal(10,2) | numeric |  |  |  |
-| OMR_07 | Unit | varchar(10) | string |  | [concentrationunit](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
+| OMR_07 | Unit | varchar(20) | string |  | [concentrationunit](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | OMR_08 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | OMR_09 | Verification | int | numeric |  | [observationverification](https://dd.eionet.europa.eu/vocabulary/aq/observationverification/view) |  |
 | OMR_10 | DataCapture | decimal(5,2) | numeric |  |  |  |
@@ -183,7 +183,7 @@ OMR_03 | Start | 2024-01-01T00:00:00 | datetime | datetime | ✓ |
 OMR_04 | PollutantId | 5 | int | numeric |  | ✓
 OMR_05 | End | 2024-01-01T01:00:00 | datetime | datetime |  |
 OMR_06 | Value | 16.4 | decimal(10,2) | numeric |  | 
-OMR_07 | Unit | ug/m3 | varchar(10) | string |  | ✓
+OMR_07 | Unit | ug/m3 | varchar(20) | string |  | ✓
 OMR_08 | Validity | 1 | int | numeric |  | ✓
 OMR_09 | Verification | 1 | int | numeric |  | ✓
 OMR_10 | DataCapture |  | decimal(5,2) | numeric |  | 

@@ -67,7 +67,7 @@ Deletion of an existing record will be possible via the Deletion attribute (by r
 | MEA_13 | FullEffectDate | date | date |  |  |  |
 | MEA_14 | MeasureStatus | varchar(50) | string |  | [measureimplementationstatus](https://dd.eionet.europa.eu/vocabulary/aq/measureimplementationstatus/view) |  |
 | MEA_15 | ReasonIfMeasureNotUsed | varchar(50) | string |  | [reasonifmeasurenotused](https://dd.eionet.europa.eu/vocabulary/aq/reasonifmeasurenotused) |  |
-| MEA_16 | Deletion | bit | boolean |  |  |  |
+| MEA_16 | Deletion | char(1) | boolean |  |  |  |
 
 ```{note}
 Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601 format. Date-time values may include a local UTC offset.
@@ -282,7 +282,7 @@ MEA_12 | MeasureCost | null | decimal(18,2) | numeric |  |
 MEA_13 | FullEffectDate | null | date | date |  |
 MEA_14 | MeasureStatus | implementation | varchar(50) | string |  | ✓
 MEA_15 | ReasonIfMeasureNotUsed | null | varchar(50) | string |  | ✓
-MEA_16 | Deletion | 0 | bit | boolean |  | 
+MEA_16 | Deletion | N | char(1) | boolean |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

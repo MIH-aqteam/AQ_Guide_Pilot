@@ -52,8 +52,8 @@ In case where the LocationBegin was reported wrongly and/or the corresponding re
 | SPL_04 | LocationEnd | datetime | datetime |  |  |  |
 | SPL_05 | StationArea | varchar(100) | string |  | [areaclassification](https://dd.eionet.europa.eu/vocabulary/aq/areaclassification/view) |  |
 | SPL_06 | SamplingPointCategory | varchar(50) | string |  | [samplingpointcategory](https://dd.eionet.europa.eu/vocabulary/aq/samplingpointcategory) |  |
-| SPL_07 | Hotspot | bit | boolean |  |  |  |
-| SPL_08 | Supersite | bit | boolean |  |  |  |
+| SPL_07 | Hotspot | char(1) | boolean |  |  |  |
+| SPL_08 | Supersite | char(1) | boolean |  |  |  |
 | SPL_09 | Latitude | decimal(8,4) | numeric |  |  |  |
 | SPL_10 | Longitude | decimal(8,4) | numeric |  |  |  |
 | SPL_11 | Altitude | decimal(10,1) | numeric |  |  |  |
@@ -270,8 +270,8 @@ SPL_03 | LocationBegin | 2013-06-25T00:00 | datetime | datetime | ✓ |
 SPL_04 | LocationEnd | null | datetime | datetime |  | 
 SPL_05 | StationArea | urban | varchar(100) | string |  | ✓
 SPL_06 | SamplingPointCategory | background | varchar(50) | string |  | ✓
-SPL_07 | Hotspot | N | bit | boolean |  | 
-SPL_08 | Supersite | N | bit | boolean |  | 
+SPL_07 | Hotspot | N | char(1) | boolean |  | 
+SPL_08 | Supersite | N | char(1) | boolean |  | 
 SPL_09 | Latitude | 43.60625 | decimal(8,4) | numeric |  | 
 SPL_10 | Longitude | 33.093242 | decimal(8,4) | numeric |  | 
 SPL_11 | Altitude | 21 | decimal(10,1) | numeric |  | 

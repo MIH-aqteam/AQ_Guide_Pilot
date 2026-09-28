@@ -69,17 +69,17 @@ Deletion of an existing record is possible via the Deletion attribute (by report
 | CAM_05 | AssessmentMethodId | varchar(100) | string | PK |  | [SamplingPoint](SamplingPoint.md)<br>[SamplingProcess](SamplingProcess.md)<br>[SamplingPointLocation](SamplingPointLocation.md)<br>[ObservationMeasurementResult](ObservationMeasurementResult.md)<br>[ModelObjectiveEstimation](ModelObjectiveEstimation.md)<br>[MOEResultInline](MOEResultInline.md)<br>[MOEResultExternal](MOEResultExternal.md) |
 | CAM_06 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | CAM_07 | AssessmentType | varchar(50) | string |  | [assessmenttype](https://dd.eionet.europa.eu/vocabulary/aq/assessmenttype/view) |  |
-| CAM_08 | IsExceedance | varchar(5) | string |  |  |  |
+| CAM_08 | IsExceedance | char(1) | string |  |  |  |
 | CAM_09 | DataCoverage | decimal(5,2) | numeric |  |  |  |
 | CAM_10 | PollutionLevel | decimal(10,3) | numeric |  |  |  |
 | CAM_11 | PollutionLevelAdjusted | decimal(10,3) | numeric |  |  |  |
 | CAM_12 | RelativeUncertaintyLimit | decimal(10,2) | numeric |  |  |  |
 | CAM_13 | AssessmentMQI | decimal(5,2) | numeric |  |  |  |
-| CAM_14 | CorrectionFlag | bit | boolean |  |  |  |
+| CAM_14 | CorrectionFlag | char(1) | boolean |  |  |  |
 | CAM_15 | AttainmentId | varchar(50) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
 | CAM_16 | SRSId | varchar(50) | string |  |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
 | CAM_17 | PreliminaryReason | varchar(50) | string |  | [exceedancereason](https://dd.eionet.europa.eu/vocabulary/aq/exceedancereason/view) |  |
-| CAM_18 | Deletion | bit | boolean |  |  |  |
+| CAM_18 | Deletion | char(1) | boolean |  |  |  |
 
 ## Attribute details
 
@@ -332,17 +332,17 @@ CAM_04 | DataAggregationProcessId | P1Y | varchar(50) | string | ✓ | ✓
 CAM_05 | AssessmentMethodId | SPO_DU0001_0005_100 | varchar(100) | string | ✓ | 
 CAM_06 | PollutantId | 5 | int | numeric |  | ✓
 CAM_07 | AssessmentType | fixed | varchar(50) | string |  | ✓
-CAM_08 | IsExceedance | FALSE | varchar(5) | string |  | 
+CAM_08 | IsExceedance | N | char(1) | string |  | 
 CAM_09 | DataCoverage | 85.78 | decimal(5,2) | numeric |  | 
 CAM_10 | PollutionLevel | 21 | decimal(10,3) | numeric |  | 
 CAM_11 | PollutionLevelAdjusted | null | decimal(10,3) | numeric |  | 
 CAM_12 | RelativeUncertaintyLimit | 0.2 | decimal(10,2) | numeric |  | 
 CAM_13 | AssessmentMQI | null | decimal(5,2) | numeric |  | 
-CAM_14 | CorrectionFlag | Y | bit | boolean |  | 
+CAM_14 | CorrectionFlag | Y | char(1) | boolean |  | 
 CAM_15 | AttainmentId | ATT_ZON_DU000A_00005_LV_H_aMean_2024_1 | varchar(50) | string | ✓ | 
 CAM_16 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(50) | string |  | 
 CAM_17 | PreliminaryReason | null | varchar(50) | string |  | ✓
-CAM_18 | Deletion | 0 | bit | boolean |  | 
+CAM_18 | Deletion | N | char(1) | boolean |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

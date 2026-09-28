@@ -69,7 +69,7 @@ ResultEncoding = 'external'
 | MRE_04 | DataAggregationProcessId | varchar(50) | string | PK | [aggregationprocess](https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view) | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
 | MRE_05 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | MRE_06 | End | datetime | datetime |  |  |  |
-| MRE_07 | Unit | varchar(10) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
+| MRE_07 | Unit | varchar(20) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | MRE_08 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | MRE_09 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
 | MRE_10 | ResultTime | datetime | datetime |  |  |  |
@@ -180,7 +180,7 @@ MRE_03 | Start | 2021-01-01T00:00:00 | datetime | datetime | ✓ |
 MRE_04 | DataAggregationProcessId | P1Y | varchar(50) | string | ✓ | ✓
 MRE_05 | PollutantId | 5 | int | numeric |  | ✓
 MRE_06 | End | 2022-01-01T00:00:00 | datetime | datetime |  |
-MRE_07 | Unit | ug/m3 | varchar(10) | string |  | ✓
+MRE_07 | Unit | ug/m3 | varchar(20) | string |  | ✓
 MRE_08 | Validity | 1 | int | numeric |  | ✓
 MRE_09 | SpatialResolution | 1000 | int | numeric |  | ✓
 MRE_10 | ResultTime | 2023-04-14T10:19:44 | datetime | datetime |  |

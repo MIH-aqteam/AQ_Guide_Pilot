@@ -71,7 +71,7 @@ Results from modelling reported inline should point to record in ModelObjectiveE
 | MRI_07 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | MRI_08 | End | datetime | datetime |  |  |  |
 | MRI_09 | Value | decimal(10,2) | numeric |  |  |  |
-| MRI_10 | Unit | varchar(10) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
+| MRI_10 | Unit | varchar(20) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | MRI_11 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | MRI_12 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
 | MRI_13 | ResultTime | datetime | datetime |  |  |  |
@@ -204,7 +204,7 @@ MRI_06 | Y | 2245000 | bigint | numeric | ✓ |
 MRI_07 | PollutantId | 5 | int | numeric |  | ✓
 MRI_08 | End | 2024-01-02T00:00:00 | datetime | datetime |  |
 MRI_09 | Value | 1 | decimal(10,2) | numeric |  | 
-MRI_10 | Unit | ug/m3 | varchar(10) | string |  | ✓
+MRI_10 | Unit | ug/m3 | varchar(20) | string |  | ✓
 MRI_11 | Validity | 1 | int | numeric |  | ✓
 MRI_12 | SpatialResolution | 1000 | int | numeric |  | ✓
 MRI_13 | ResultTime | 2025-09-14T10:19:44 | datetime | datetime |  |
