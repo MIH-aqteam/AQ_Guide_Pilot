@@ -50,11 +50,11 @@ Records in Authority table which have AuthorityStatus as inactive for 3 consecut
 | AUT_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | AUT_02 | AuthorityInstanceId | varchar(50) | string | PK |  |  |
 | AUT_03 | AuthorityRole | varchar(50) | string | PK | [authorityrole](https://dd.eionet.europa.eu/vocabulary/aq/authorityrole) |  |
-| AUT_04 | Email | varchar(50) | string | PK |  |  |
+| AUT_04 | Email | varchar(150) | string | PK |  |  |
 | AUT_05 | AuthorityInstance | varchar(20) | string |  | [authorityinstance](https://dd.eionet.europa.eu/vocabulary/aq/authorityinstance) |  |
-| AUT_06 | AuthorityName | varchar(150) | string |  |  |  |
-| AUT_07 | AuthorityURL | varchar(150) | string |  |  |  |
-| AUT_08 | AuthorityAddress | varchar(150) | string |  |  |  |
+| AUT_06 | AuthorityName | varchar(250) | string |  |  |  |
+| AUT_07 | AuthorityURL | varchar(250) | string |  |  |  |
+| AUT_08 | AuthorityAddress | varchar(500) | string |  |  |  |
 | AUT_09 | PersonName | varchar(150) | string |  |  |  |
 | AUT_10 | AuthorityStatus | varchar(10) | string |  | [authoritystatus](https://dd.eionet.europa.eu/vocabulary/aq/authoritystatus) |  |
 
@@ -199,11 +199,11 @@ Status or classification of the authority (e.g. active/inactive).
 AUT_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
 AUT_02 | AuthorityInstanceId | DU | varchar(50) | string | ✓ | 
 AUT_03 | AuthorityRole | 1 | varchar(50) | string | ✓ | ✓
-AUT_04 | Email | eve.bot@dema.dus | varchar(50) | string | ✓ | 
+AUT_04 | Email | eve.bot@dema.dus | varchar(150) | string | ✓ | 
 AUT_05 | AuthorityInstance | nuts0 | varchar(20) | string |  | ✓
-AUT_06 | AuthorityName | Dustovia Environmental Agency (DEA) – Air Quality Division | varchar(150) | string |  | 
-AUT_07 | AuthorityURL | www.dea.dustovia.dus | varchar(150) | string |  | 
-AUT_08 | AuthorityAddress | 42 CleanAir St, Terminalgrad, Dustovia (DUS-4242) | varchar(150) | string |  | 
+AUT_06 | AuthorityName | Dustovia Environmental Agency (DEA) – Air Quality Division | varchar(250) | string |  | 
+AUT_07 | AuthorityURL | www.dea.dustovia.dus | varchar(250) | string |  | 
+AUT_08 | AuthorityAddress | 42 CleanAir St, Terminalgrad, Dustovia (DUS-4242) | varchar(500) | string |  | 
 AUT_09 | PersonName | E.V.E. Bot | varchar(150) | string |  | 
 AUT_10 | AuthorityStatus | active | varchar(10) | string |  | ✓
 

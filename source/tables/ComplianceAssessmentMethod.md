@@ -45,7 +45,7 @@ ComplianceAssessmentMethod table will be extended by EEA by several attributes:
 - DataAggregationProcess, based on DataAggregationProcessId,
 - EEAAdjustmentEstimation, based on EEA's processing of information included in the PollutionLevelAdjustment table,
 - EEAExceedanceAssessment, based on EEAAdjustmentEstimation and allowed limit values,
-- AbsoluteUncertaintyLimit,
+- AbsoluteUncertaintyValue,
 - EEAMQIEstimation, based on EEA's interpretation of MOEResults vs. ObservationMeasurementResult.
 
 ## Data management rules
@@ -73,12 +73,12 @@ Deletion of an existing record is possible via the Deletion attribute (by report
 | CAM_09 | DataCoverage | decimal(5,2) | numeric |  |  |  |
 | CAM_10 | PollutionLevel | decimal(10,3) | numeric |  |  |  |
 | CAM_11 | PollutionLevelAdjusted | decimal(10,3) | numeric |  |  |  |
-| CAM_12 | RelativeUncertaintyLimit | decimal(10,2) | numeric |  |  |  |
-| CAM_13 | AssessmentMQI | decimal(5,2) | numeric |  |  |  |
+| CAM_12 | RelativeUncertaintyValue | decimal(5,2) | numeric |  |  |  |
+| CAM_13 | AssessmentMQI | decimal(5,3) | numeric |  |  |  |
 | CAM_14 | CorrectionFlag | char(1) | boolean |  |  |  |
-| CAM_15 | AttainmentId | varchar(50) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
-| CAM_16 | SRSId | varchar(50) | string |  |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
-| CAM_17 | PreliminaryReason | varchar(50) | string |  | [exceedancereason](https://dd.eionet.europa.eu/vocabulary/aq/exceedancereason/view) |  |
+| CAM_15 | AttainmentId | varchar(100) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
+| CAM_16 | SRSId | varchar(100) | string |  |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
+| CAM_17 | PreliminaryReason | varchar(5) | string |  | [exceedancereason](https://dd.eionet.europa.eu/vocabulary/aq/exceedancereason/view) |  |
 | CAM_18 | Deletion | char(1) | boolean |  |  |  |
 
 ## Attribute details
@@ -220,7 +220,7 @@ Adjusted concentration level of the air pollutant, accounting for specific corre
 
 [View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-11-pollutionleveladjusted)
 
-### CAM_12 – RelativeUncertaintyLimit
+### CAM_12 – RelativeUncertaintyValue
 
 
 **Content**
@@ -229,11 +229,11 @@ The maximum relative uncertaintyfor assessment method (given for measurement).
 
 **Remarks**
 
-RelativeUncertaintyLimit must be reported for every AssessmentMethodId which refer to sampling points.
+RelativeUncertaintyValue must be reported for every AssessmentMethodId which refer to sampling points.
 
 **In Reference**
 
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-12-relativeuncertaintylimit)
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/ComplianceAssessmentMethod.html#cam-12-relativeuncertaintyvalue)
 
 ### CAM_13 – AssessmentMQI
 
@@ -327,7 +327,7 @@ Y/N
 | --- | --- | --- | --- | --- | --- | --- |
 CAM_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
 CAM_02 | ReportingYear | 2024 | int | numeric |  | 
-CAM_03 | AssessmentRegimeId | ARE_ZON_DU000A_0005_LV_H_aMean_2021_1 | varchar(50) | string |  | 
+CAM_03 | AssessmentRegimeId | ARE_ZON_DU000A_0005_LV_H_aMean_2021_1 | varchar(100) | string |  | 
 CAM_04 | DataAggregationProcessId | P1Y | varchar(50) | string | ✓ | ✓
 CAM_05 | AssessmentMethodId | SPO_DU0001_0005_100 | varchar(100) | string | ✓ | 
 CAM_06 | PollutantId | 5 | int | numeric |  | ✓
@@ -336,12 +336,12 @@ CAM_08 | IsExceedance | N | char(1) | string |  |
 CAM_09 | DataCoverage | 85.78 | decimal(5,2) | numeric |  | 
 CAM_10 | PollutionLevel | 21 | decimal(10,3) | numeric |  | 
 CAM_11 | PollutionLevelAdjusted | null | decimal(10,3) | numeric |  | 
-CAM_12 | RelativeUncertaintyLimit | 0.2 | decimal(10,2) | numeric |  | 
-CAM_13 | AssessmentMQI | null | decimal(5,2) | numeric |  | 
+CAM_12 | RelativeUncertaintyValue | 0.2 | decimal(5,2) | numeric |  | 
+CAM_13 | AssessmentMQI | null | decimal(5,3) | numeric |  | 
 CAM_14 | CorrectionFlag | Y | char(1) | boolean |  | 
-CAM_15 | AttainmentId | ATT_ZON_DU000A_00005_LV_H_aMean_2024_1 | varchar(50) | string | ✓ | 
-CAM_16 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(50) | string |  | 
-CAM_17 | PreliminaryReason | null | varchar(50) | string |  | ✓
+CAM_15 | AttainmentId | ATT_ZON_DU000A_00005_LV_H_aMean_2024_1 | varchar(100) | string | ✓ | 
+CAM_16 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(100) | string |  | 
+CAM_17 | PreliminaryReason | null | varchar(5) | string |  | ✓
 CAM_18 | Deletion | N | char(1) | boolean |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.

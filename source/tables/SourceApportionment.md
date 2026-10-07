@@ -53,11 +53,11 @@ Records in SourceApportionment table which do not have any correspondence to Pla
 |---|---|---|---|---|---|---|
 | SAP_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
 | SAP_02 | SourceApportionmentId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
-| SAP_03 | ContributionType | varchar(20) | string | PK | [contributiontype](https://dd.eionet.europa.eu/vocabulary/aq/contributiontype/view) |  |
+| SAP_03 | ComponentType | varchar(20) | string | PK | [contributiontype](https://dd.eionet.europa.eu/vocabulary/aq/contributiontype/view) |  |
 | SAP_04 | SpatialScale | varchar(50) | string | PK | [spatialscale](https://dd.eionet.europa.eu/vocabulary/aq/spatialscale) |  |
 | SAP_05 | SourceSector | varchar(50) | string | PK | [sourcesectors](https://dd.eionet.europa.eu/vocabulary/aq/sourcesectors) |  |
 | SAP_06 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
-| SAP_07 | Contribution | decimal(8,2) | numeric |  |  |  |
+| SAP_07 | ComponentValue | decimal(8,2) | numeric |  |  |  |
 | SAP_08 | SourceApportionmentDocumentId | varchar(150) | string |  |  | [Documentation](Documentation.md) |
 
 ## Attribute details
@@ -84,7 +84,7 @@ Identifier of the source apportionment, given by data provider.
 
 [View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-02-sourceapportionmentid)
 
-### SAP_03 – Contribution Type
+### SAP_03 – Component Type
 
 
 **Content**
@@ -93,7 +93,7 @@ Type of contribution (e.g. background, increment).
 
 **In Reference**
 
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-03-contributiontype)
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-03-componenttype)
 
 ### SAP_04 – SpatialScale 
 
@@ -132,7 +132,7 @@ AirPollutantCode: must correspond to the AirPollutantCode of the AttainmentId.
 
 [View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-06-pollutantid)
 
-### SAP_07 – Contribution
+### SAP_07 – ComponentValue
 
 
 **Content**
@@ -145,7 +145,7 @@ The value is understood as applicable to AirPollutionLevel adjusted for natural 
 
 **In Reference**
 
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-07-contribution)
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-07-componentvalue)
 
 ### SAP_08 – SourceApportionmentDocumentId
 
@@ -164,11 +164,11 @@ Identifier of the documentation on source apportionment.
 | --- | --- | --- | --- | --- | --- | --- |
 SAP_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
 SAP_02 | SourceApportionmentId | SAP_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
-SAP_03 | ContributionType | background | varchar(20) | string | ✓ | ✓
+SAP_03 | ComponentType | background | varchar(20) | string | ✓ | ✓
 SAP_04 | SpatialScale | regional | varchar(50) | string | ✓ | ✓
 SAP_05 | SourceSector | other | varchar(50) | string | ✓ | ✓
 SAP_06 | PollutantId | 5 | int | numeric |  | ✓
-SAP_07 | Contribution | 9 | decimal(8,2) | numeric |  | 
+SAP_07 | ComponentValue | 9 | decimal(8,2) | numeric |  | 
 SAP_08 | SourceApportionmentDocumentId | DOC_SAP_ZON_DU000B_00005_LV_H_daysAbove | varchar(150) | string |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.

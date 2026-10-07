@@ -173,11 +173,11 @@
 <ul>
 <li><p><a class="reference internal" href="#sap-01-countrycode" id="id6">SAP_01 – CountryCode</a></p></li>
 <li><p><a class="reference internal" href="#sap-02-sourceapportionmentid" id="id7">SAP_02 – SourceApportionmentId</a></p></li>
-<li><p><a class="reference internal" href="#sap-03-contribution-type" id="id8">SAP_03 – Contribution Type</a></p></li>
+<li><p><a class="reference internal" href="#sap-03-component-type" id="id8">SAP_03 – Component Type</a></p></li>
 <li><p><a class="reference internal" href="#sap-04-spatialscale" id="id9">SAP_04 – SpatialScale</a></p></li>
 <li><p><a class="reference internal" href="#sap-05-sourcesector" id="id10">SAP_05 – SourceSector</a></p></li>
 <li><p><a class="reference internal" href="#sap-06-pollutantid" id="id11">SAP_06 – PollutantId</a></p></li>
-<li><p><a class="reference internal" href="#sap-07-contribution" id="id12">SAP_07 – Contribution</a></p></li>
+<li><p><a class="reference internal" href="#sap-07-componentvalue" id="id12">SAP_07 – ComponentValue</a></p></li>
 <li><p><a class="reference internal" href="#sap-08-sourceapportionmentdocumentid" id="id13">SAP_08 – SourceApportionmentDocumentId</a></p></li>
 </ul>
 </li>
@@ -248,7 +248,7 @@ Data products for reporters will present the records as reported recently, highl
 <td><p><a class="reference internal" href="ComplianceAssessmentMethod.html"><span class="std std-doc">ComplianceAssessmentMethod</span></a></p></td>
 </tr>
 <tr class="row-even"><td><p>SAP_03</p></td>
-<td><p>ContributionType</p></td>
+<td><p>ComponentType</p></td>
 <td><p>varchar(20)</p></td>
 <td><p>string</p></td>
 <td><p>PK</p></td>
@@ -280,7 +280,7 @@ Data products for reporters will present the records as reported recently, highl
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>SAP_07</p></td>
-<td><p>Contribution</p></td>
+<td><p>ComponentValue</p></td>
 <td><p>decimal(8,2)</p></td>
 <td><p>numeric</p></td>
 <td><p></p></td>
@@ -314,12 +314,12 @@ Data products for reporters will present the records as reported recently, highl
 <p><strong>In Reference</strong></p>
 <p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-02-sourceapportionmentid">View reference attribute</a></p>
 </section>
-<section id="sap-03-contribution-type">
-<h3><a class="toc-backref" href="#id8" role="doc-backlink">SAP_03 – Contribution Type</a><a class="headerlink" href="#sap-03-contribution-type" title="Link to this heading"></a></h3>
+<section id="sap-03-component-type">
+<h3><a class="toc-backref" href="#id8" role="doc-backlink">SAP_03 – Component Type</a><a class="headerlink" href="#sap-03-component-type" title="Link to this heading"></a></h3>
 <p><strong>Content</strong></p>
 <p>Type of contribution (e.g. background, increment).</p>
 <p><strong>In Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-03-contributiontype">View reference attribute</a></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-03-componenttype">View reference attribute</a></p>
 </section>
 <section id="sap-04-spatialscale">
 <h3><a class="toc-backref" href="#id9" role="doc-backlink">SAP_04 – SpatialScale</a><a class="headerlink" href="#sap-04-spatialscale" title="Link to this heading"></a></h3>
@@ -344,14 +344,14 @@ Data products for reporters will present the records as reported recently, highl
 <p><strong>In Reference</strong></p>
 <p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-06-pollutantid">View reference attribute</a></p>
 </section>
-<section id="sap-07-contribution">
-<h3><a class="toc-backref" href="#id12" role="doc-backlink">SAP_07 – Contribution</a><a class="headerlink" href="#sap-07-contribution" title="Link to this heading"></a></h3>
+<section id="sap-07-componentvalue">
+<h3><a class="toc-backref" href="#id12" role="doc-backlink">SAP_07 – ComponentValue</a><a class="headerlink" href="#sap-07-componentvalue" title="Link to this heading"></a></h3>
 <p><strong>Content</strong></p>
 <p>Estimated contribution of the specified source sector to air pollution levels [%].</p>
 <p><strong>Remarks</strong></p>
 <p>The value is understood as applicable to AirPollutionLevel adjusted for natural sources. Therefore contributions should not include the natural sources, should be given as % and sum up to 100% within SourceAppId.</p>
 <p><strong>In Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-07-contribution">View reference attribute</a></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/SourceApportionment.html#sap-07-componentvalue">View reference attribute</a></p>
 </section>
 <section id="sap-08-sourceapportionmentdocumentid">
 <h3><a class="toc-backref" href="#id13" role="doc-backlink">SAP_08 – SourceApportionmentDocumentId</a><a class="headerlink" href="#sap-08-sourceapportionmentdocumentid" title="Link to this heading"></a></h3>
@@ -392,7 +392,7 @@ Data products for reporters will present the records as reported recently, highl
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>SAP_03</p></td>
-<td><p>ContributionType</p></td>
+<td><p>ComponentType</p></td>
 <td><p>background</p></td>
 <td><p>varchar(20)</p></td>
 <td><p>string</p></td>
@@ -424,7 +424,7 @@ Data products for reporters will present the records as reported recently, highl
 <td><p>✓</p></td>
 </tr>
 <tr class="row-even"><td><p>SAP_07</p></td>
-<td><p>Contribution</p></td>
+<td><p>ComponentValue</p></td>
 <td><p>9</p></td>
 <td><p>decimal(8,2)</p></td>
 <td><p>numeric</p></td>

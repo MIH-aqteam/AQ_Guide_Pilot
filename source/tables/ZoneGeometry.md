@@ -65,8 +65,8 @@ Records in the ZoneGeometry table (and subsequently in ZoneGeometryGrid) which d
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | ZGE_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| ZGE_02 | ZoneId | varchar(20) | string | PK |  | [AssessmentRegimeZone](AssessmentRegimeZone.md) |
-| ZGE_03 | ZoneGeometryGeoJson | varbinary | geometry |  |  |  |
+| ZGE_02 | ZoneId | varchar(50) | string | PK |  | [AssessmentRegimeZone](AssessmentRegimeZone.md) |
+| ZGE_03 | ZoneGeometryGeoJson | nvarchar(max) | geometry |  |  |  |
 
 ## Attribute details
 
@@ -115,8 +115,8 @@ It is allowed to report zone geometries in coordinate systems with the following
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 ZGE_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-ZGE_02 | ZoneId | ZON_DU000A | varchar(20) | string | ✓ | 
-ZGE_03 | ZoneGeometryGeoJson | {"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[4.419074,51.3040095],[4.4181004999999995,51.305457],...,[4.3362534,51.1730749],[4.3367638,51.1732234]]]]},"properties":{"srid":"4326"}} | varbinary | geometry |  | 
+ZGE_02 | ZoneId | ZON_DU000A | varchar(50) | string | ✓ | 
+ZGE_03 | ZoneGeometryGeoJson | {"type":"Feature","geometry":{"type":"MultiPolygon","coordinates":[[[[4.419074,51.3040095],[4.4181004999999995,51.305457],...,[4.3362534,51.1730749],[4.3367638,51.1732234]]]]},"properties":{"srid":"4326"}} | nvarchar(max) | geometry |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

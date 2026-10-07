@@ -43,9 +43,9 @@ Records in SpatialRepresentativeness table which do not have any correspondence 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | SRS_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| SRS_02 | SRSId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
-| SRS_03 | SRSApplicationId | varchar(50) | string | PK |  | [SRSInline](SRSInline.md)<br>[SRSExternal](SRSExternal.md) |
-| SRS_04 | SRSApplication | varchar(50) | string |  | [SRapplication](https://dd.eionet.europa.eu/vocabulary/aq/SRapplication) |  |
+| SRS_02 | SRSId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
+| SRS_03 | SRSApplicationId | varchar(100) | string | PK |  | [SRSInline](SRSInline.md)<br>[SRSExternal](SRSExternal.md) |
+| SRS_04 | SRSApplication | varchar(10) | string |  | [SRapplication](https://dd.eionet.europa.eu/vocabulary/aq/SRapplication) |  |
 | SRS_05 | ResultEncoding | varchar(10) | string |  | [resultencoding](https://dd.eionet.europa.eu/vocabulary/aq/resultencoding/view) |  |
 | SRS_06 | RepresentativenessAssessmentMethodId | varchar(100) | string |  |  | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
 
@@ -134,9 +134,9 @@ AssessmentMethodId is a model or OBE identifier that points to the method (model
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 SRS_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-SRS_02 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(50) | string | ✓ | 
-SRS_03 | SRSApplicationId | SRS_SPO_DU0001_0005_100 | varchar(50) | string | ✓ | 
-SRS_04 | SRSApplication | spo_sr | varchar(50) | string |  | ✓
+SRS_02 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(100) | string | ✓ | 
+SRS_03 | SRSApplicationId | SRS_SPO_DU0001_0005_100 | varchar(100) | string | ✓ | 
+SRS_04 | SRSApplication | spo_sr | varchar(10) | string |  | ✓
 SRS_05 | ResultEncoding | inline | varchar(10) | string |  | ✓
 SRS_06 | RepresentativenessAssessmentMethodId | MOD_DU_PM10_NAT_SR | varchar(100) | string |  | 
 

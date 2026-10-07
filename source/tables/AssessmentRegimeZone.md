@@ -66,7 +66,7 @@ Records in AssessmentRegimeZone table which do not have any correspondence to re
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | ARZ_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| ARZ_02 | AssessmentRegimeId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
+| ARZ_02 | AssessmentRegimeId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
 | ARZ_03 | ZoneId | varchar(50) | string |  |  | [ZoneGeometry](ZoneGeometry.md) |
 | ARZ_04 | ZoneNationalCode | varchar(50) | string |  |  |  |
 | ARZ_05 | ZoneArea | decimal(10,2) | numeric |  |  |  |
@@ -320,7 +320,7 @@ Identifier of the report detailing the classification procedure given by data pr
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 ARZ_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-ARZ_02 | AssessmentRegimeId | ARE_ZON_DU000A_0005_LV_H_aMean_2021_1 | varchar(50) | string | ✓ | 
+ARZ_02 | AssessmentRegimeId | ARE_ZON_DU000A_0005_LV_H_aMean_2021_1 | varchar(100) | string | ✓ | 
 ARZ_03 | ZoneId | ZON_DU000A | varchar(50) | string |  | 
 ARZ_04 | ZoneNationalCode | DU000A | varchar(50) | string |  | 
 ARZ_05 | ZoneArea | 442.31 | decimal(10,2) | numeric |  | 

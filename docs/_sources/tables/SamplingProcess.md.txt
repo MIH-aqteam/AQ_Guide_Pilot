@@ -63,7 +63,7 @@ In case where the same, e.g. DataQualityDocumentId, was used for all records and
 | SPP_08 | Method | varchar(50) | string |  | [measurementmethod](https://dd.eionet.europa.eu/vocabulary/aq/measurementmethod/view) |  |
 | SPP_09 | Equipment | varchar(50) | string |  | [measurementequipment](https://dd.eionet.europa.eu/vocabulary/aq/measurementequipment/view) |  |
 | SPP_10 | AnalyticalTechnique | varchar(50) | string |  | [analyticaltechnique](https://dd.eionet.europa.eu/vocabulary/aq/analyticaltechnique/view) |  |
-| SPP_11 | EquivalenceDemonstrated | varchar(50) | string |  | [equivalencedemonstrated](https://dd.eionet.europa.eu/vocabulary/aq/equivalencedemonstrated) |  |
+| SPP_11 | EquivalenceDemonstrated | varchar(20) | string |  | [equivalencedemonstrated](https://dd.eionet.europa.eu/vocabulary/aq/equivalencedemonstrated) |  |
 | SPP_12 | DataQualityDocumentId | varchar(150) | string |  |  | [Documentation](Documentation.md) |
 | SPP_13 | EquivalenceDemonstrationDocumentId | varchar(150) | string |  |  | [Documentation](Documentation.md) |
 | SPP_14 | ProcessDocumentId | varchar(150) | string |  |  | [Documentation](Documentation.md) |
@@ -255,7 +255,7 @@ SPP_07 | MeasurementType | automatic | varchar(50) | string |  | ✓
 SPP_08 | Method | BETA | varchar(50) | string |  | ✓
 SPP_09 | Equipment | BETA1020 | varchar(50) | string |  | ✓
 SPP_10 | AnalyticalTechnique | null | varchar(50) | string |  | ✓
-SPP_11 | EquivalenceDemonstrated | yes | varchar(50) | string |  | ✓
+SPP_11 | EquivalenceDemonstrated | yes | varchar(20) | string |  | ✓
 SPP_12 | DataQualityDocumentId | DOC_DQ_SPP_DU0005_1 | varchar(150) | string |  | 
 SPP_13 | EquivalenceDemonstrationDocumentId | DOC_EQ_SPP_DU0005_1 | varchar(150) | string |  | 
 SPP_14 | ProcessDocumentId | DOC_PR_SPP_DU0005_1 | varchar(150) | string |  | 
