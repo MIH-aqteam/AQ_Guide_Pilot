@@ -66,11 +66,11 @@ Results from modelling reported inline should point to record in ModelObjectiveE
 | MRI_02 | AssessmentMethodId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
 | MRI_03 | Start | datetime | datetime | PK |  |  |
 | MRI_04 | DataAggregationProcessId | varchar(50) | string | PK | [aggregationprocess](https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view) | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
-| MRI_05 | X | bigint | numeric | PK |  |  |
-| MRI_06 | Y | bigint | numeric | PK |  |  |
+| MRI_05 | X | int | numeric | PK |  |  |
+| MRI_06 | Y | int | numeric | PK |  |  |
 | MRI_07 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | MRI_08 | End | datetime | datetime |  |  |  |
-| MRI_09 | Value | decimal(10,2) | numeric |  |  |  |
+| MRI_09 | Value | decimal(10,3) | numeric |  |  |  |
 | MRI_10 | Unit | varchar(20) | string |  | [concentrationunits](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | MRI_11 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | MRI_12 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
@@ -199,11 +199,11 @@ MRI_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
 MRI_02 | AssessmentMethodId | OBE_DU_SEASALT_PM10_H_LV_ADJ | varchar(100) | string | ✓ | 
 MRI_03 | Start | 2024-01-01T00:00:00 | datetime | datetime | ✓ |
 MRI_04 | DataAggregationProcessId | P1D | varchar(50) | string | ✓ | ✓
-MRI_05 | X | 3463000 | bigint | numeric | ✓ | 
-MRI_06 | Y | 2245000 | bigint | numeric | ✓ | 
+MRI_05 | X | 3463000 | int | numeric | ✓ | 
+MRI_06 | Y | 2245000 | int | numeric | ✓ | 
 MRI_07 | PollutantId | 5 | int | numeric |  | ✓
 MRI_08 | End | 2024-01-02T00:00:00 | datetime | datetime |  |
-MRI_09 | Value | 1 | decimal(10,2) | numeric |  | 
+MRI_09 | Value | 1 | decimal(10,3) | numeric |  | 
 MRI_10 | Unit | ug/m3 | varchar(20) | string |  | ✓
 MRI_11 | Validity | 1 | int | numeric |  | ✓
 MRI_12 | SpatialResolution | 1000 | int | numeric |  | ✓

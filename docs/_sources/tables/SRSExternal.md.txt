@@ -51,9 +51,9 @@ Records in SRSExternal table which do not have any correspondence to records in 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | SRE_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| SRE_02 | SRSApplicationId | varchar(50) | string | PK |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
+| SRE_02 | SRSApplicationId | varchar(100) | string | PK |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
 | SRE_03 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
-| SRE_04 | GeoTiffAttachment | varchar(100) | attachment (R3 data type) |  |  |  |
+| SRE_04 | GeoTiffAttachment | varchar(250) | attachment (R3 data type) |  |  |  |
 
 ## Attribute details
 
@@ -96,9 +96,9 @@ The attachment contains either:
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 SRE_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-SRE_02 | SRSApplicationId | SRS_SPO_DU0001_0008_100 | varchar(50) | string | ✓ | 
+SRE_02 | SRSApplicationId | SRS_SPO_DU0001_0008_100 | varchar(100) | string | ✓ | 
 SRE_03 | SpatialResolution | 100 | int | numeric |  | ✓
-SRE_04 | GeoTiffAttachment |  | varchar(100) | attachment (R3 data type) |  | 
+SRE_04 | GeoTiffAttachment |  | varchar(250) | attachment (R3 data type) |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

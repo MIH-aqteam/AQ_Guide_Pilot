@@ -49,17 +49,17 @@ Deletion of an existing record will be also possible via the Deletion attribute 
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | CPL_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| CPL_02 | AttainmentId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
-| CPL_03 | PlanId | varchar(50) | string | PK |  | [PlanScenario](PlanScenario.md) |
-| CPL_04 | ScenarioId | varchar(50) | string | PK |  | [PlanScenario](PlanScenario.md) |
-| CPL_05 | SourceApportionmentId | varchar(50) | string | PK |  | [SourceApportionment](SourceApportionment.md) |
+| CPL_02 | AttainmentId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
+| CPL_03 | PlanId | varchar(100) | string | PK |  | [PlanScenario](PlanScenario.md) |
+| CPL_04 | ScenarioId | varchar(100) | string | PK |  | [PlanScenario](PlanScenario.md) |
+| CPL_05 | SourceApportionmentId | varchar(100) | string | PK |  | [SourceApportionment](SourceApportionment.md) |
 | CPL_06 | PlanCategory | varchar(20) | string |  | [plancategory](https://dd.eionet.europa.eu/vocabulary/aq/plancategory/view) |  |
-| CPL_07 | PlanTitle | nvarchar(1000) | string |  |  |  |
+| CPL_07 | PlanTitle | varchar(1000) | string |  |  |  |
 | CPL_08 | PlanAdoptionDate | date | date |  |  |  |
 | CPL_09 | PlanBeginDate | date | date |  |  |  |
 | CPL_10 | PlanEndDate | date | date |  |  |  |
 | CPL_11 | PlanDocumentId | varchar(150) | string |  |  | [Documentation](Documentation.md) |
-| CPL_12 | Deletion | char(1) | boolean |  |  |  |
+| CPL_12 | Deletion | char(1) | string |  |  |  |
 
 ```{note}
 Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601 format. Date-time values may include a local UTC offset.
@@ -213,17 +213,17 @@ Y/N
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 CPL_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-CPL_02 | AttainmentId | ATT_ZON_DU000B_00005_LV_H_daysAbove_2024_1 | varchar(50) | string | ✓ | 
-CPL_03 | PlanId | PLA_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
-CPL_04 | ScenarioId | SCE_ZON_DU000B_00005_LV_H_daysAbove_1 | varchar(50) | string | ✓ | 
-CPL_05 | SourceApportionmentId | SAP_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
+CPL_02 | AttainmentId | ATT_ZON_DU000B_00005_LV_H_daysAbove_2024_1 | varchar(100) | string | ✓ | 
+CPL_03 | PlanId | PLA_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
+CPL_04 | ScenarioId | SCE_ZON_DU000B_00005_LV_H_daysAbove_1 | varchar(100) | string | ✓ | 
+CPL_05 | SourceApportionmentId | SAP_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
 CPL_06 | PlanCategory | plan | varchar(20) | string |  | ✓
-CPL_07 | PlanTitle | აირე კალიტატე პროგрама გენერალა, კლიმა ბაბეს ე ემისა ულიე პლანა პორ ურბა-იუგ დუსტოვა რეჟიონ, მე ვეპრიმ პლანა, ტრეგუეს ე ნდიეკიე მეხანიზამ 2028–2035 | nvarchar(1000) | string |  | 
+CPL_07 | PlanTitle | აირე კალიტატე პროგрама გენერალა, კლიმა ბაბეს ე ემისა ულიე პლანა პორ ურბა-იუგ დუსტოვა რეჟიონ, მე ვეპრიმ პლანა, ტრეგუეს ე ნდიეკიე მეხანიზამ 2028–2035 | varchar(1000) | string |  | 
 CPL_08 | PlanAdoptionDate | 2025-11-28 | date | date |  |
 CPL_09 | PlanBeginDate | 2026-01-01 | date | date |  |
 CPL_10 | PlanEndDate | 2030-12-31 | date | date |  |
 CPL_11 | PlanDocumentId | DOC_ZON_DU000B_00005_LV_H_daysAbove | varchar(150) | string |  | 
-CPL_12 | Deletion | N | char(1) | boolean |  | 
+CPL_12 | Deletion | N | char(1) | string |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

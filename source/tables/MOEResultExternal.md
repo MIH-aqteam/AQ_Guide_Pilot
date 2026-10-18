@@ -73,7 +73,7 @@ ResultEncoding = 'external'
 | MRE_08 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | MRE_09 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
 | MRE_10 | ResultTime | datetime | datetime |  |  |  |
-| MRE_11 | GeoTiffAttachment | varchar(100) | attachment (R3 data type) |  |  |  |
+| MRE_11 | GeoTiffAttachment | varchar(250) | attachment (R3 data type) |  |  |  |
 
 ```{note}
 Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601 format. Date-time values may include a local UTC offset.
@@ -184,7 +184,7 @@ MRE_07 | Unit | ug/m3 | varchar(20) | string |  | ✓
 MRE_08 | Validity | 1 | int | numeric |  | ✓
 MRE_09 | SpatialResolution | 1000 | int | numeric |  | ✓
 MRE_10 | ResultTime | 2023-04-14T10:19:44 | datetime | datetime |  |
-MRE_11 | GeoTiffAttachment |  | varchar(100) | attachment (R3 data type) |  | 
+MRE_11 | GeoTiffAttachment |  | varchar(250) | attachment (R3 data type) |  | 
 
 **Legend:** PK = Primary Key; FK = Foreign Key; CL = Code List.
 

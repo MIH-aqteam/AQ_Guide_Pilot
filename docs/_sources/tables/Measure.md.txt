@@ -53,9 +53,9 @@ Deletion of an existing record will be possible via the Deletion attribute (by r
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | MEA_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| MEA_02 | MeasureGroupId | varchar(50) | string | PK |  | [ScenarioMeasure](ScenarioMeasure.md) |
-| MEA_03 | MeasureId | varchar(50) | string | PK |  |  |
-| MEA_04 | MeasureNationalCode | varchar(50) | string |  |  |  |
+| MEA_02 | MeasureGroupId | varchar(100) | string | PK |  | [ScenarioMeasure](ScenarioMeasure.md) |
+| MEA_03 | MeasureId | varchar(200) | string | PK |  |  |
+| MEA_04 | MeasureNationalCode | varchar(100) | string |  |  |  |
 | MEA_05 | MeasureName | varchar(150) | string |  |  |  |
 | MEA_06 | MeasureClassification | varchar(50) | string |  | [measureclassification](https://dd.eionet.europa.eu/vocabulary/aq/measureclassification/view) |  |
 | MEA_07 | MeasureType | varchar(50) | string |  | [measuretype](https://dd.eionet.europa.eu/vocabulary/aq/measuretype/view) |  |
@@ -63,11 +63,11 @@ Deletion of an existing record will be possible via the Deletion attribute (by r
 | MEA_09 | SpatialScale | varchar(50) | string |  | [spatialscale](https://dd.eionet.europa.eu/vocabulary/aq/spatialscale/view) |  |
 | MEA_10 | ImplementationBegin | date | date |  |  |  |
 | MEA_11 | ImplementationEnd | date | date |  |  |  |
-| MEA_12 | MeasureCost | decimal(18,2) | numeric |  |  |  |
+| MEA_12 | MeasureCost | bigint | numeric |  |  |  |
 | MEA_13 | FullEffectDate | date | date |  |  |  |
 | MEA_14 | MeasureStatus | varchar(50) | string |  | [measureimplementationstatus](https://dd.eionet.europa.eu/vocabulary/aq/measureimplementationstatus/view) |  |
 | MEA_15 | ReasonIfMeasureNotUsed | varchar(50) | string |  | [reasonifmeasurenotused](https://dd.eionet.europa.eu/vocabulary/aq/reasonifmeasurenotused) |  |
-| MEA_16 | Deletion | char(1) | boolean |  |  |  |
+| MEA_16 | Deletion | char(1) | string |  |  |  |
 
 ```{note}
 Attributes with ReportNet3 data type `date` or `datetime` shall use the ISO 8601 format. Date-time values may include a local UTC offset.
@@ -268,9 +268,9 @@ Y/N
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 MEA_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-MEA_02 | MeasureGroupId | MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
-MEA_03 | MeasureId | Measure_1256 | varchar(50) | string | ✓ | 
-MEA_04 | MeasureNationalCode | Measure_1256 | varchar(50) | string |  | 
+MEA_02 | MeasureGroupId | MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
+MEA_03 | MeasureId | Measure_1256 | varchar(200) | string | ✓ | 
+MEA_04 | MeasureNationalCode | Measure_1256 | varchar(100) | string |  | 
 MEA_05 | MeasureName | Industrial Emission Control | varchar(150) | string |  | 
 MEA_06 | MeasureClassification | emissioncontrol | varchar(50) | string |  | ✓
 MEA_07 | MeasureType | outside | varchar(50) | string |  | ✓
@@ -278,11 +278,11 @@ MEA_08 | SourceSector | industry | varchar(50) | string |  | ✓
 MEA_09 | SpatialScale | local | varchar(50) | string |  | ✓
 MEA_10 | ImplementationBegin | 2025-02-01 | date | date |  |
 MEA_11 | ImplementationEnd | 2027-12-31 | date | date |  |
-MEA_12 | MeasureCost | null | decimal(18,2) | numeric |  | 
+MEA_12 | MeasureCost | null | bigint | numeric |  | 
 MEA_13 | FullEffectDate | null | date | date |  |
 MEA_14 | MeasureStatus | implementation | varchar(50) | string |  | ✓
 MEA_15 | ReasonIfMeasureNotUsed | null | varchar(50) | string |  | ✓
-MEA_16 | Deletion | N | char(1) | boolean |  | 
+MEA_16 | Deletion | N | char(1) | string |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

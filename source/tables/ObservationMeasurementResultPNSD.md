@@ -66,7 +66,7 @@ Deletion of records from ObservationMeasurementResult can be achieved by re-subm
 | OMP_04 | LowerRange | int | numeric | PK |  |  |
 | OMP_05 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | OMP_06 | End | datetime | datetime |  |  |  |
-| OMP_07 | Value | decimal(10,2) | numeric |  |  |  |
+| OMP_07 | Value | decimal(10,3) | numeric |  |  |  |
 | OMP_08 | Unit | varchar(20) | string |  | [concentrationunit](https://dd.eionet.europa.eu/vocabulary/uom/concentration/) |  |
 | OMP_09 | Validity | int | numeric |  | [observationvalidity](https://dd.eionet.europa.eu/vocabulary/aq/observationvalidity/view) |  |
 | OMP_10 | Verification | int | numeric |  | [observationverification](https://dd.eionet.europa.eu/vocabulary/aq/observationverification/view) |  |
@@ -75,7 +75,7 @@ Deletion of records from ObservationMeasurementResult can be achieved by re-subm
 | OMP_13 | UpperRange | int | numeric |  |  |  |
 | OMP_14 | Temperature | decimal(5,2) | numeric |  |  |  |
 | OMP_15 | RelativeHumidity | decimal(5,2) | numeric |  |  |  |
-| OMP_16 | Pressure | decimal(5,2) | numeric |  |  |  |
+| OMP_16 | Pressure | decimal(10,3) | numeric |  |  |  |
 | OMP_17 | Inversion | varchar(20) | string |  | [PNSDinversion](https://dd.eionet.europa.eu/vocabulary/aq/PNSDinversion) |  |
 
 ```{note}

@@ -179,7 +179,7 @@
 <li><p><a class="reference internal" href="#psc-06-pollutantid" id="id11">PSC_06 – PollutantId</a></p></li>
 <li><p><a class="reference internal" href="#psc-07-dataaggregationprocessid" id="id12">PSC_07 – DataAggregationProcessId</a></p></li>
 <li><p><a class="reference internal" href="#psc-08-scenarioyear" id="id13">PSC_08 – ScenarioYear</a></p></li>
-<li><p><a class="reference internal" href="#psc-09-scenariopollutionlevel" id="id14">PSC_09 – ScenarioPollutionLevel</a></p></li>
+<li><p><a class="reference internal" href="#psc-09-scenarioairpollutionlevel" id="id14">PSC_09 – ScenarioAirPollutionLevel</a></p></li>
 <li><p><a class="reference internal" href="#psc-10-exposedpopulation" id="id15">PSC_10 – ExposedPopulation</a></p></li>
 <li><p><a class="reference internal" href="#psc-11-scenarioassessmentmethodid" id="id16">PSC_11 – ScenarioAssessmentMethodId</a></p></li>
 </ul>
@@ -222,7 +222,7 @@ Data products for reporters will present the records as reported recently, highl
 <p>ScenarioAssessmentMethodId must be used for pointing to AssessmentMethodId in the ModelObjectiveEstimation table for definition of the modelling/OBE method which generated the scenario values. ScenarioAssessmentMethodId must be different for each ScenarioId and ScenarioCategory so that it is possible to report values for each of them in the MOEResult tables.
 One of the MOEResult tables (inline or external) must be populated for each ScenarioAssessmentMethodId but the results may be reported just for the grid cells corresponding to the sampling point locations.</p>
 <p>It is expected that modelling will be used for delineation of exceedance extents, including the ‘reference’ scenario category. However, if exceedance was reported based on sampling point measurements, the values reported in MOEResult tables for the ‘reference’ scenario should equal the measured values in the grid cells corresponding to the sampling point locations.
-ScenarioPollutionLevel must agree with the maximum value reported in MOEResult tables under model/OBE declared as ScenarioAssessmentMethodId.</p>
+ScenarioAirPollutionLevel must agree with the maximum value reported in MOEResult tables under model/OBE declared as ScenarioAssessmentMethodId.</p>
 <p>Records in PlanScenario table which do not have any correspondence to records in CompliancePlanLink table or ScenarioMeasure table will be flagged for deletion in the reference data flow.</p>
 <p>Keep in mind that authorities responsible for establishing plans and for reporting the plans to the EU should be reported using Authority table.</p>
 </section>
@@ -250,7 +250,7 @@ ScenarioPollutionLevel must agree with the maximum value reported in MOEResult t
 </tr>
 <tr class="row-odd"><td><p>PSC_02</p></td>
 <td><p>PlanId</p></td>
-<td><p>varchar(50)</p></td>
+<td><p>varchar(100)</p></td>
 <td><p>string</p></td>
 <td><p>PK</p></td>
 <td><p></p></td>
@@ -258,7 +258,7 @@ ScenarioPollutionLevel must agree with the maximum value reported in MOEResult t
 </tr>
 <tr class="row-even"><td><p>PSC_03</p></td>
 <td><p>ScenarioId</p></td>
-<td><p>varchar(50)</p></td>
+<td><p>varchar(100)</p></td>
 <td><p>string</p></td>
 <td><p>PK</p></td>
 <td><p></p></td>
@@ -274,7 +274,7 @@ ScenarioPollutionLevel must agree with the maximum value reported in MOEResult t
 </tr>
 <tr class="row-even"><td><p>PSC_05</p></td>
 <td><p>ScenarioNationalCode</p></td>
-<td><p>varchar(50)</p></td>
+<td><p>varchar(100)</p></td>
 <td><p>string</p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -305,8 +305,8 @@ ScenarioPollutionLevel must agree with the maximum value reported in MOEResult t
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>PSC_09</p></td>
-<td><p>ScenarioPollutionLevel</p></td>
-<td><p>decimal(10,2)</p></td>
+<td><p>ScenarioAirPollutionLevel</p></td>
+<td><p>decimal(10,3)</p></td>
 <td><p>numeric</p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -397,12 +397,12 @@ This attribute must follow a defined structure (see Identifiers section).</p>
 <p><strong>In Reference</strong></p>
 <p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-08-scenarioyear">View reference attribute</a></p>
 </section>
-<section id="psc-09-scenariopollutionlevel">
-<h3><a class="toc-backref" href="#id14" role="doc-backlink">PSC_09 – ScenarioPollutionLevel</a><a class="headerlink" href="#psc-09-scenariopollutionlevel" title="Link to this heading"></a></h3>
+<section id="psc-09-scenarioairpollutionlevel">
+<h3><a class="toc-backref" href="#id14" role="doc-backlink">PSC_09 – ScenarioAirPollutionLevel</a><a class="headerlink" href="#psc-09-scenarioairpollutionlevel" title="Link to this heading"></a></h3>
 <p><strong>Content</strong></p>
 <p>Estimated air pollution level in the scenario year.</p>
 <p><strong>In Reference</strong></p>
-<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-09-scenariopollutionlevel">View reference attribute</a></p>
+<p><a class="reference external" href="https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-09-scenarioairpollutionlevel">View reference attribute</a></p>
 </section>
 <section id="psc-10-exposedpopulation">
 <h3><a class="toc-backref" href="#id15" role="doc-backlink">PSC_10 – ExposedPopulation</a><a class="headerlink" href="#psc-10-exposedpopulation" title="Link to this heading"></a></h3>
@@ -445,7 +445,7 @@ This attribute must follow a defined structure (see Identifiers section).</p>
 <tr class="row-odd"><td><p>PSC_02</p></td>
 <td><p>PlanId</p></td>
 <td><p>PLA_ZON_DU000B_00005_LV_H_daysAbove</p></td>
-<td><p>varchar(50)</p></td>
+<td><p>varchar(100)</p></td>
 <td><p>string</p></td>
 <td><p>✓</p></td>
 <td><p></p></td>
@@ -453,7 +453,7 @@ This attribute must follow a defined structure (see Identifiers section).</p>
 <tr class="row-even"><td><p>PSC_03</p></td>
 <td><p>ScenarioId</p></td>
 <td><p>SCE_ZON_DU000B_00005_LV_H_daysAbove</p></td>
-<td><p>varchar(50)</p></td>
+<td><p>varchar(100)</p></td>
 <td><p>string</p></td>
 <td><p>✓</p></td>
 <td><p></p></td>
@@ -469,7 +469,7 @@ This attribute must follow a defined structure (see Identifiers section).</p>
 <tr class="row-even"><td><p>PSC_05</p></td>
 <td><p>ScenarioNationalCode</p></td>
 <td><p>PLA_another_scenario</p></td>
-<td><p>varchar(50)</p></td>
+<td><p>varchar(100)</p></td>
 <td><p>string</p></td>
 <td><p></p></td>
 <td><p></p></td>
@@ -499,9 +499,9 @@ This attribute must follow a defined structure (see Identifiers section).</p>
 <td><p></p></td>
 </tr>
 <tr class="row-even"><td><p>PSC_09</p></td>
-<td><p>ScenarioPollutionLevel</p></td>
+<td><p>ScenarioAirPollutionLevel</p></td>
 <td><p>43</p></td>
-<td><p>decimal(10,2)</p></td>
+<td><p>decimal(10,3)</p></td>
 <td><p>numeric</p></td>
 <td><p></p></td>
 <td><p></p></td>

@@ -75,11 +75,11 @@ Deletion of an existing record is possible via the Deletion attribute (by report
 | CAM_11 | PollutionLevelAdjusted | decimal(10,3) | numeric |  |  |  |
 | CAM_12 | RelativeUncertaintyValue | decimal(5,2) | numeric |  |  |  |
 | CAM_13 | AssessmentMQI | decimal(5,3) | numeric |  |  |  |
-| CAM_14 | CorrectionFlag | char(1) | boolean |  |  |  |
+| CAM_14 | CorrectionFlag | char(1) | string |  |  |  |
 | CAM_15 | AttainmentId | varchar(100) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[PollutionLevelAdjustment](PollutionLevelAdjustment.md) |
 | CAM_16 | SRSId | varchar(100) | string |  |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
 | CAM_17 | PreliminaryReason | varchar(5) | string |  | [exceedancereason](https://dd.eionet.europa.eu/vocabulary/aq/exceedancereason/view) |  |
-| CAM_18 | Deletion | char(1) | boolean |  |  |  |
+| CAM_18 | Deletion | char(1) | string |  |  |  |
 
 ## Attribute details
 
@@ -338,11 +338,11 @@ CAM_10 | PollutionLevel | 21 | decimal(10,3) | numeric |  |
 CAM_11 | PollutionLevelAdjusted | null | decimal(10,3) | numeric |  | 
 CAM_12 | RelativeUncertaintyValue | 0.2 | decimal(5,2) | numeric |  | 
 CAM_13 | AssessmentMQI | null | decimal(5,3) | numeric |  | 
-CAM_14 | CorrectionFlag | Y | char(1) | boolean |  | 
+CAM_14 | CorrectionFlag | Y | char(1) | string |  | 
 CAM_15 | AttainmentId | ATT_ZON_DU000A_00005_LV_H_aMean_2024_1 | varchar(100) | string | ✓ | 
 CAM_16 | SRSId | SRS_ZON_DU000A_00005_1 | varchar(100) | string |  | 
 CAM_17 | PreliminaryReason | null | varchar(5) | string |  | ✓
-CAM_18 | Deletion | N | char(1) | boolean |  | 
+CAM_18 | Deletion | N | char(1) | string |  | 
 
 **Legend:** PK = Primary Key; CL = Code List.
 

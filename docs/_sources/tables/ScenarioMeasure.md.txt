@@ -47,7 +47,7 @@ Also, one of the MOEResult tables must be populated for each reported MeasureRed
 
 There is no need to report records for 'reference' scenario category in ScenarioMeasure table.
 
-If MeasureGroupPollutionReduction is reported - the sum for specific scenario category within ScenarioId must be =< the difference between the values of ScenarioPollutionLevel reported for 'reference' and that ScenarioId and ScenarioCategory in PlanScenario table.
+If MeasureGroupPollutionReduction is reported - the sum for specific scenario category within ScenarioId must be =< the difference between the values of ScenarioAirPollutionLevel reported for 'reference' and that ScenarioId and ScenarioCategory in PlanScenario table.
 It is not allowed to re-use MeasureGroupId in different ScenarioId (to avoid complications in deletion procedures).
 
 Records in ScenarioMeasure table which do not have any correspondence to records in PlanScenario table or Measure table will be flagged for deletion in the reference data flow.
@@ -57,9 +57,9 @@ Records in ScenarioMeasure table which do not have any correspondence to records
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | SME_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| SME_02 | ScenarioId | varchar(50) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[PlanScenario](PlanScenario.md) |
+| SME_02 | ScenarioId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md)<br>[PlanScenario](PlanScenario.md) |
 | SME_03 | ScenarioCategory | varchar(20) | string | PK | [scenariocategory](https://dd.eionet.europa.eu/vocabulary/aq/scenariocategory) |  |
-| SME_04 | MeasureGroupId | varchar(50) | string | PK |  | [MeasurementStation](MeasurementStation.md) |
+| SME_04 | MeasureGroupId | varchar(100) | string | PK |  | [MeasurementStation](MeasurementStation.md) |
 | SME_05 | MeasureGroupPollutionReduction | decimal(10,2) | numeric |  |  |  |
 | SME_06 | MeasureReductionAssessmentMethodId | varchar(100) | string |  |  | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
 
@@ -159,9 +159,9 @@ AssessmentMethodId: the model/OBE used for producing the results for the measure
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 SME_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-SME_02 | ScenarioId | SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
+SME_02 | ScenarioId | SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
 SME_03 | ScenarioCategory | baseline | varchar(20) | string | ✓ | ✓
-SME_04 | MeasureGroupId | MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
+SME_04 | MeasureGroupId | MG1_SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
 SME_05 | MeasureGroupPollutionReduction | null | decimal(10,2) | numeric |  | 
 SME_06 | MeasureReductionAssessmentMethodId | null | varchar(100) | string |  | 
 

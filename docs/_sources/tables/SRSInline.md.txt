@@ -50,9 +50,9 @@ Records in SRSInline table which do not have any correspondence to records in Sp
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | SRI_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| SRI_02 | SRSApplicationId | varchar(50) | string | PK |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
-| SRI_03 | X | bigint | numeric | PK |  |  |
-| SRI_04 | Y | bigint | numeric | PK |  |  |
+| SRI_02 | SRSApplicationId | varchar(100) | string | PK |  | [SpatialRepresentativeness](SpatialRepresentativeness.md) |
+| SRI_03 | X | int | numeric | PK |  |  |
+| SRI_04 | Y | int | numeric | PK |  |  |
 | SRI_05 | SpatialResolution | int | numeric |  | [spatialresolution](https://dd.eionet.europa.eu/vocabulary/aq/spatialresolution) |  |
 
 ## Attribute details
@@ -104,9 +104,9 @@ SpatialResolution will be tested against the code list for allowed values.
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 SRI_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-SRI_02 | SRSApplicationId | SRS_SPO_DU0001_0005_100 | varchar(50) | string | ✓ | 
-SRI_03 | X | 3825000 | bigint | numeric | ✓ | 
-SRI_04 | Y | 2274000 | bigint | numeric | ✓ | 
+SRI_02 | SRSApplicationId | SRS_SPO_DU0001_0005_100 | varchar(100) | string | ✓ | 
+SRI_03 | X | 3825000 | int | numeric | ✓ | 
+SRI_04 | Y | 2274000 | int | numeric | ✓ | 
 SRI_05 | SpatialResolution | 1000 | int | numeric |  | ✓
 
 **Legend:** PK = Primary Key; CL = Code List.

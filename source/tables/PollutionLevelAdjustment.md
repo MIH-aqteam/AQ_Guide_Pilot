@@ -52,7 +52,7 @@ Records in PollutionLevelAdjustment table which do not have any correspondence t
 | ADJ_02 | AttainmentId | varchar(100) | string | PK |  | [ComplianceAssessmentMethod](ComplianceAssessmentMethod.md) |
 | ADJ_03 | AdjustmentSource | varchar(5) | string | PK | [adjustmentsourcetype](https://dd.eionet.europa.eu/vocabulary/aq/adjustmentsourcetype/view) |  |
 | ADJ_04 | AdjustmentAssessmentMethodId | varchar(100) | string |  |  | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
-| ADJ_05 | AdjustmentDocumentId |  |  |  |  | [Documentation](Documentation.md) |
+| ADJ_05 | AdjustmentDocumentId | varchar(150) |  |  |  | [Documentation](Documentation.md) |
 
 ## Attribute details
 
@@ -125,7 +125,7 @@ ADJ_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
 ADJ_02 | AttainmentId | ATT_ZON_DU000B_00005_LV_H_aMean_2024_1 | varchar(100) | string | ✓ | 
 ADJ_03 | AdjustmentSource | H | varchar(5) | string | ✓ | ✓
 ADJ_04 | AdjustmentAssessmentMethodId | OBE_DU_SEASALT_PM10_H_LV_ADJ | varchar(100) | string |  | 
-ADJ_05 | AdjustmentDocumentId | null |  |  |  | 
+ADJ_05 | AdjustmentDocumentId | null | varchar(150) |  |  | 
 
 **Legend:** PK = Primary Key; FK = Foreign Key; CL = Code List.
 

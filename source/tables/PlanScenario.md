@@ -47,7 +47,7 @@ ScenarioAssessmentMethodId must be used for pointing to AssessmentMethodId in th
 One of the MOEResult tables (inline or external) must be populated for each ScenarioAssessmentMethodId but the results may be reported just for the grid cells corresponding to the sampling point locations.
 
 It is expected that modelling will be used for delineation of exceedance extents, including the 'reference' scenario category. However, if exceedance was reported based on sampling point measurements, the values reported in MOEResult tables for the 'reference' scenario should equal the measured values in the grid cells corresponding to the sampling point locations.
-ScenarioPollutionLevel must agree with the maximum value reported in MOEResult tables under model/OBE declared as ScenarioAssessmentMethodId.
+ScenarioAirPollutionLevel must agree with the maximum value reported in MOEResult tables under model/OBE declared as ScenarioAssessmentMethodId.
 
 Records in PlanScenario table which do not have any correspondence to records in CompliancePlanLink table or ScenarioMeasure table will be flagged for deletion in the reference data flow.
 
@@ -58,14 +58,14 @@ Keep in mind that authorities responsible for establishing plans and for reporti
 | Attribute Code | Attribute Name | SQL DB Data Type | ReportNet3 Data Type | Properties | Code list | Related table(s) |
 |---|---|---|---|---|---|---|
 | PSC_01 | CountryCode | varchar(2) | string | PK | [countries](https://dd.eionet.europa.eu/vocabulary/common/countries) |  |
-| PSC_02 | PlanId | varchar(50) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md) |
-| PSC_03 | ScenarioId | varchar(50) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[ScenarioMeasure](ScenarioMeasure.md) |
+| PSC_02 | PlanId | varchar(100) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md) |
+| PSC_03 | ScenarioId | varchar(100) | string | PK |  | [CompliancePlanLink](CompliancePlanLink.md)<br>[ScenarioMeasure](ScenarioMeasure.md) |
 | PSC_04 | ScenarioCategory | varchar(20) | string | PK | [scenariocategory](https://dd.eionet.europa.eu/vocabulary/aq/scenariocategory) |  |
-| PSC_05 | ScenarioNationalCode | varchar(50) | string |  |  |  |
+| PSC_05 | ScenarioNationalCode | varchar(100) | string |  |  |  |
 | PSC_06 | PollutantId | int | numeric |  | [pollutant](https://dd.eionet.europa.eu/vocabulary/aq/pollutant/view) |  |
 | PSC_07 | DataAggregationProcessId | varchar(50) | string |  | [aggregationprocess](https://dd.eionet.europa.eu/vocabulary/aq/aggregationprocess/view) |  |
 | PSC_08 | ScenarioYear | int | numeric |  |  |  |
-| PSC_09 | ScenarioPollutionLevel | decimal(10,2) | numeric |  |  |  |
+| PSC_09 | ScenarioAirPollutionLevel | decimal(10,3) | numeric |  |  |  |
 | PSC_10 | ExposedPopulation | int | numeric |  |  |  |
 | PSC_11 | ScenarioAssessmentMethodId | varchar(100) | string |  |  | [ModelObjectiveEstimation](ModelObjectiveEstimation.md) |
 
@@ -173,7 +173,7 @@ The calendar year for which the scenario has been modeled.
 
 [View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-08-scenarioyear)
 
-### PSC_09 – ScenarioPollutionLevel
+### PSC_09 – ScenarioAirPollutionLevel
 
 
 **Content**
@@ -182,7 +182,7 @@ Estimated air pollution level in the scenario year.
 
 **In Reference**
 
-[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-09-scenariopollutionlevel)
+[View reference attribute](https://eeadata.github.io/AQ.Documentation.ReferenceGuidePilot/tables/PlanScenario.html#psc-09-scenarioairpollutionlevel)
 
 ### PSC_10 – ExposedPopulation
 
@@ -212,14 +212,14 @@ AssessmentMethodId: the model/OBE used for producing the scenario (also to be de
 | Attribute Code | Attribute Name | Example | SQL DB Data Type | ReportNet3 Data Type | PK | CL |
 | --- | --- | --- | --- | --- | --- | --- |
 PSC_01 | CountryCode | DU | varchar(2) | string | ✓ | ✓
-PSC_02 | PlanId | PLA_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
-PSC_03 | ScenarioId | SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(50) | string | ✓ | 
+PSC_02 | PlanId | PLA_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
+PSC_03 | ScenarioId | SCE_ZON_DU000B_00005_LV_H_daysAbove | varchar(100) | string | ✓ | 
 PSC_04 | ScenarioCategory | reference | varchar(20) | string | ✓ | ✓
-PSC_05 | ScenarioNationalCode | PLA_another_scenario | varchar(50) | string |  | 
+PSC_05 | ScenarioNationalCode | PLA_another_scenario | varchar(100) | string |  | 
 PSC_06 | PollutantId | 5 | int | numeric |  | ✓
 PSC_07 | DataAggregationProcessId | P1Y-daysAbove50 | varchar(50) | string |  | ✓
 PSC_08 | ScenarioYear | 2024 | int | numeric |  | 
-PSC_09 | ScenarioPollutionLevel | 43 | decimal(10,2) | numeric |  | 
+PSC_09 | ScenarioAirPollutionLevel | 43 | decimal(10,3) | numeric |  | 
 PSC_10 | ExposedPopulation | 95250 | int | numeric |  | 
 PSC_11 | ScenarioAssessmentMethodId | MOD_DU_PM10_LOC_SCEN_REF | varchar(100) | string |  | 
 
